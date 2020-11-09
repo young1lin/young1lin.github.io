@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>电影批评 | Yasir Lin 的笔记</title><meta name="description" content="film 有胶卷的意思，形容艺术电影，movie 商业电影。 前言其中，人们关于电影的茶余饭后的 “专业化” 讨论，常常集中在影片中的故事、情境、演员的表演是否 “真实” 的议论上，仿佛 ”真实“ 是一个永恒存在、不言自明的参照系统。 然而，关于同一步影片的真实与虚假的争论，却暴露了鉴定真实与否的标准并非客观、天然。 从某种意义上来说，关于艺术真实性的种种讨论，事实上建立在艺术作品与对世界 ”本质"><meta name="author" content="Yasir Lin"><meta name="copyright" content="Yasir Lin"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon-mine.png"><link rel="canonical" href="https://young1lin.github.io/film-criticism/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><meta property="og:type" content="website"><meta property="og:title" content="电影批评"><meta property="og:url" content="https://young1lin.github.io/film-criticism/"><meta property="og:site_name" content="Yasir Lin 的笔记"><meta property="og:description" content="film 有胶卷的意思，形容艺术电影，movie 商业电影。 前言其中，人们关于电影的茶余饭后的 “专业化” 讨论，常常集中在影片中的故事、情境、演员的表演是否 “真实” 的议论上，仿佛 ”真实“ 是一个永恒存在、不言自明的参照系统。 然而，关于同一步影片的真实与虚假的争论，却暴露了鉴定真实与否的标准并非客观、天然。 从某种意义上来说，关于艺术真实性的种种讨论，事实上建立在艺术作品与对世界 ”本质"><meta property="og:image" content="https://i.loli.net/2020/07/14/BE5UqIX4eHaSwz2.png"><meta property="article:published_time" content="2020-11-08T16:00:00.000Z"><meta property="article:modified_time" content="2020-11-09T10:44:33.897Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?2ecae16d802e26c514db9438e830a2cb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: true    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Yasir Lin 的笔记" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><canvas class="fireworks"></canvas><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://i.loli.net/2020/08/15/cAenSihrD4CI3p9.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">11</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">17</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 歌单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 全部能听音乐</span></a></li><li><a class="site-page" href="/music-1/"><i class="fa-fw fas fa-music"></i><span> Best EDM of 2010-2019(Decade Mix)</span></a></li><li><a class="site-page" href="/music-2/"><i class="fa-fw fas fa-music"></i><span> The Best Of EDM 2010 - 2020</span></a></li></ul></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 电影</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/film-criticism/"><i class="fa-fw fas fa-video"></i><span> 电影批评</span></a></li><li><a class="site-page" href="/film-criticism/"><i class="fa-fw fas fa-video"></i><span> 电影艺术形式与风格</span></a></li></ul></div></div></div></div><div id="body-wrap"><header class="not-index-bg" id="page-header"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Yasir Lin 的笔记</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 歌单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 全部能听音乐</span></a></li><li><a class="site-page" href="/music-1/"><i class="fa-fw fas fa-music"></i><span> Best EDM of 2010-2019(Decade Mix)</span></a></li><li><a class="site-page" href="/music-2/"><i class="fa-fw fas fa-music"></i><span> The Best Of EDM 2010 - 2020</span></a></li></ul></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 电影</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/film-criticism/"><i class="fa-fw fas fa-video"></i><span> 电影批评</span></a></li><li><a class="site-page" href="/film-criticism/"><i class="fa-fw fas fa-video"></i><span> 电影艺术形式与风格</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="page_site-info"><h1 id="site_title">电影批评</h1></div></header><main class="layout_page" id="content-inner"><div id="page"><div id="article-container"><p>film 有胶卷的意思，形容艺术电影，movie 商业电影。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>其中，人们关于电影的茶余饭后的 “专业化” 讨论，常常集中在影片中的故事、情境、演员的表演是否 “真实” 的议论上，仿佛 ”真实“ 是一个永恒存在、不言自明的参照系统。</p>
+<p>然而，关于同一步影片的真实与虚假的争论，却暴露了鉴定真实与否的标准并非客观、天然。</p>
+<p>从某种意义上来说，关于艺术真实性的种种讨论，事实上建立在艺术作品与对世界 ”本质“ 的描述——这一假定性前提的相互参照之上。</p>
+<p>关于 ”真实“ 性的讨论，无外乎三点：</p>
+<ul>
+<li>参照着某种观念，如社会的观念、人生的观念与艺术的观念。</li>
+<li>参照着某种诸如 ”我经历过，我知道“ 等有限的经验，在这背后，同样是某种不自觉的价值、信念体系：我相信，我愿意相信。</li>
+<li>某种艺术欣赏或文化消费的趣味与成规管理。</li>
+</ul>
+<p>比如欧洲艺术电影的迷恋者，间或指斥好莱坞电影浅薄、恶俗、虚假不堪。</p>
+<p>而好莱坞电影的热爱者所击节赞叹的，却正是他的逼真、细腻和优雅。</p>
+<p><strong>影院几乎成为了 20 世纪中叶最辉煌的尘世 ”教堂“。</strong></p>
+<ul>
+<li>人们在影院中获得教益，获得日常生活的信念与价值，获得生活的方式与时尚的信息；</li>
+<li>人们在影院中片刻逃离日常生活的琐屑与痛苦，暂时遗忘世界的苦难与不公，从而进入正义永远战神邪恶、爱情永远征服死亡的奇妙世界，在其中遭遇着无数的爱神和死神；</li>
+<li>人们获得宣泄和抚慰；</li>
+<li>在光影缤纷之间，人们进入一种集体的典仪，同时享有奇妙的安宁和独处。</li>
+</ul>
+<p>也是在 20 世纪，电影曾被用作为有效的社会宣传、动员与整合的政治工具。</p>
+<h2 id="我的补充："><a href="#我的补充：" class="headerlink" title="我的补充："></a>我的补充：</h2><hr/>
+
+<p>例如《<strong>一个国家的诞生</strong>》，这部电影宣传着白人至上的思想，此片由<a href="https://zh.wikipedia.org/wiki/戴维·沃克·格里菲思" target="_blank" rel="noopener">戴维·沃克·格里菲思</a>执导，情节设定在<a href="https://zh.wikipedia.org/wiki/南北戰爭" target="_blank" rel="noopener">南北战争</a>期间及战后，于1915年2月8日首映。由于拍摄手法的创新，以及因为对<a href="https://zh.wikipedia.org/wiki/白人優越主義" target="_blank" rel="noopener">白人优越主义</a>的提倡和对<a href="https://zh.wikipedia.org/wiki/三K黨" target="_blank" rel="noopener">三K党</a>的美化所引起的争议性，使得此片在<a href="https://zh.wikipedia.org/wiki/电影史" target="_blank" rel="noopener">电影史</a>上有着重要的地位。《一个国家的诞生》的剧本是改编自<a href="https://zh.wikipedia.org/wiki/小托马斯·迪克逊" target="_blank" rel="noopener">小托马斯·迪克逊</a>将三K党描写成英雄的小说和舞台剧《<a href="https://zh.wikipedia.org/w/index.php?title=同族人&action=edit&redlink=1" target="_blank" rel="noopener">同族人</a>》。</p>
+<p>种族歧视是非常错误的思想，建议听听 <a href="https://www.youtube.com/watch?v=WpYeekQkAdc&ab_channel=BlackEyedPeasVEVO" target="_blank" rel="noopener">The Black Eyed Peas - Where Is The Love?</a> 或者女声版的 <a href="https://www.bilibili.com/video/av10133652/" target="_blank" rel="noopener">Where Is The Love? (Soule Rework)</a></p>
+<p>美国被誉为世界的灯塔，最自由的国度，其实在二战的时候还是一样的限制好莱坞对电影的制作。详情可以看这个<a href="https://www.ixueshu.com/document/f21b7d05519c59117feba414388ca95c318947a18e7f9386.html" target="_blank" rel="noopener">论文</a>。美国也因为天主教的影响，以前对电影也是做有很多限制的，并且现在电影也是分级的。国内还没有实现这种，认为所有电影都应该是老少咸宜的，事实并非如此，也并非所有人看得出导演通过电影表现出的深层次的含义。也不是是从事过电影的人，都能当好导演。 </p>
+<p><strong>电影分级：</strong>来源于 WikiPedia</p>
+<table>
+<thead>
+<tr>
+<th><img src= "/img/loading.gif" data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/RATED_G.svg/92px-RATED_G.svg.png" alt=""></th>
+<th><strong>G – 一般观众</strong>（<strong>General Audiences</strong>）所有年龄皆可观赏。电影中不含或仅含少量会让家长在让儿童观赏时感到被冒犯的内容。例如：《<a href="https://zh.wikipedia.org/wiki/公主與青蛙" target="_blank" rel="noopener">公主与青蛙</a>》、 《<a href="https://zh.wikipedia.org/wiki/反斗奇兵系列電影" target="_blank" rel="noopener">反斗奇兵系列电影</a>》。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://zh.wikipedia.org/wiki/File:RATED_PG.svg" target="_blank" rel="noopener"><img src= "/img/loading.gif" data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/RATED_PG.svg/76px-RATED_PG.svg.png" alt="PG- rating symbol"></a></td>
+<td><strong>PG – 建议家长指导</strong>（<strong>Parental Guidance Suggested</strong>）有些内容可能不适合儿童。由于影片包含部分家长可能认为不适合儿童的内容，因此建议家长在可同时进行指导。例如：《<a href="https://zh.wikipedia.org/wiki/魔境夢遊" target="_blank" rel="noopener">爱丽丝梦游奇境</a>》、《<a href="https://zh.wikipedia.org/wiki/名偵探皮卡丘_(電影)" target="_blank" rel="noopener">名侦探皮卡丘</a>》。</td>
+</tr>
+<tr>
+<td><a href="https://zh.wikipedia.org/wiki/File:RATED_PG-13.svg" target="_blank" rel="noopener"><img src= "/img/loading.gif" data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/RATED_PG-13.svg/142px-RATED_PG-13.svg.png" alt="PG-13 rating symbol"></a></td>
+<td><strong>PG-13 – 家长需特别注意</strong>（<strong>Parents Strongly Cautioned</strong>）由于影片包含部分家长可能认为不适合13岁以下观看的内容，因此建议家长需特别注意。例如：《<a href="https://zh.wikipedia.org/wiki/漫威电影宇宙系列电影" target="_blank" rel="noopener">漫威电影宇宙系列电影</a>》、《<a href="https://zh.wikipedia.org/wiki/阿凡達" target="_blank" rel="noopener">阿凡达</a>》。</td>
+</tr>
+<tr>
+<td><a href="https://zh.wikipedia.org/wiki/File:RATED_R.svg" target="_blank" rel="noopener"><img src= "/img/loading.gif" data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/RATED_R.svg/46px-RATED_R.svg.png" alt="R rating symbol"></a></td>
+<td><strong>R – 限制级</strong>（<strong>Restricted</strong>）未满十七岁必须由家长或成年监护人陪同才能入场观看。例如：《<a href="https://zh.wikipedia.org/wiki/惡棍英雄：死侍" target="_blank" rel="noopener">死侍</a>》《<a href="https://zh.wikipedia.org/wiki/格雷的五十道陰影_(電影)" target="_blank" rel="noopener">格雷的五十道阴影</a>》。</td>
+</tr>
+<tr>
+<td><a href="https://zh.wikipedia.org/wiki/File:Nc-17.svg" target="_blank" rel="noopener"><img src= "/img/loading.gif" data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Nc-17.svg/136px-Nc-17.svg.png" alt="NC-17 rating symbol"></a></td>
+<td><strong><a href="https://zh.wikipedia.org/wiki/NC-17电影列表" target="_blank" rel="noopener">NC-17</a> – 17岁或以下不得观赏</strong>（<strong>No One 17 and Under Admitted）</strong>电影的内容仅适合成人观赏，十七岁及以下的观众不得入场观看。例如:《<a href="https://zh.wikipedia.org/wiki/藍色是最溫暖的顏色" target="_blank" rel="noopener">蓝色是最温暖的颜色</a>》。</td>
+</tr>
+</tbody></table>
+<p>其实我也不懂《健忘村》这种电影是怎么过的审核，现在还没被下架，高举红色灯笼，手持能让村民忘记痛苦，统治所有村民。<a href="https://movie.douban.com/review/8326009/" target="_blank" rel="noopener">豆瓣更详细的</a>细思极恐的政治隐喻。</p>
+<hr/>
+
+<h1 id="小鞋子"><a href="#小鞋子" class="headerlink" title="小鞋子"></a>小鞋子</h1><h2 id="电影的视听语言与叙事分析"><a href="#电影的视听语言与叙事分析" class="headerlink" title="电影的视听语言与叙事分析"></a>电影的视听语言与叙事分析</h2></div><hr><div id="post-comment"><div class="comment_headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+  var from = from
+  var setting = set.split(',').filter(function(item){
+  return from.indexOf(item) > -1
+  });
+  setting = setting.length == 0 ? from :setting;
+  return setting
+}
+
+var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
+var requiredFields = requestSetting(['nick','mail'],'nick,mail')
+
+window.valine = new Valine({
+  el:'#vcomment',
+  appId: 'm0gBGr4FkIgDqftQbXOmxAKE-gzGzoHsz',
+  appKey: 'BNWTP7OOIGVhyWpa4I4mSw01',
+  placeholder: '欢迎留言指正错误',
+  avatar: 'monsterid',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'zh-CN',
+  recordIP: false,
+  serverURLs: '',
+  emojiCDN: '',
+  emojiMaps: "",
+  enableQQ: true,
+  requiredFields: requiredFields
+});</script></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://i.loli.net/2020/08/15/cAenSihrD4CI3p9.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Yasir Lin</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">11</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">17</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">3</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/young1lin" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:young1lin0108@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://young1lin.me/atom.xml" target="_blank" title="Rss"><i class="fas fa-rss"></i></a></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/2020/11/09/resume/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/07/14/BE5UqIX4eHaSwz2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="面试 HR 准备" alt="面试 HR 准备"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/11/09/resume/" title="面试 HR 准备">面试 HR 准备</div><time class="aside-post_meta post-meta__date" title="发表于 2020-11-09 00:00:00">2020-11-09</time></div></a></div><div class="aside-recent-post"><a href="/2020/10/30/UDAF/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/07/14/BE5UqIX4eHaSwz2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="UDAF 开发，求线性回归方程相关系数 R" alt="UDAF 开发，求线性回归方程相关系数 R"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/10/30/UDAF/" title="UDAF 开发，求线性回归方程相关系数 R">UDAF 开发，求线性回归方程相关系数 R</div><time class="aside-post_meta post-meta__date" title="发表于 2020-10-30 00:00:00">2020-10-30</time></div></a></div><div class="aside-recent-post"><a href="/2020/09/25/rowkey-design/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/07/14/BE5UqIX4eHaSwz2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="RowKey 设计规约" alt="RowKey 设计规约"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/09/25/rowkey-design/" title="RowKey 设计规约">RowKey 设计规约</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-25 00:00:00">2020-09-25</time></div></a></div><div class="aside-recent-post"><a href="/2020/09/14/Flashcard/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/07/14/BE5UqIX4eHaSwz2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="仅供本人使用，部分内容是缩写，其他人看不懂的" alt="仅供本人使用，部分内容是缩写，其他人看不懂的"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/09/14/Flashcard/" title="仅供本人使用，部分内容是缩写，其他人看不懂的">仅供本人使用，部分内容是缩写，其他人看不懂的</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-14 00:00:00">2020-09-14</time></div></a></div><div class="aside-recent-post"><a href="/2020/07/29/Interview/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/07/14/BE5UqIX4eHaSwz2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Interview" alt="Interview"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/07/29/Interview/" title="Interview">Interview</div><time class="aside-post_meta post-meta__date" title="发表于 2020-07-29 00:00:00">2020-07-29</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/interview/"><span class="card-category-list-name">interview</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/notes/"><span class="card-category-list-name">notes</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/tools/"><span class="card-category-list-name">tools</span><span class="card-category-list-count">3</span></a></li>
+                       
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/BigData/" style="font-size: 16px; color: #999">BigData</a> <a href="/tags/Cache/" style="font-size: 16px; color: #999">Cache</a> <a href="/tags/Docker/" style="font-size: 16px; color: #999">Docker</a> <a href="/tags/ELK/" style="font-size: 16px; color: #999">ELK</a> <a href="/tags/Effective-Java/" style="font-size: 16px; color: #999">Effective Java</a> <a href="/tags/ElasticSearch/" style="font-size: 16px; color: #999">ElasticSearch</a> <a href="/tags/Flashcard/" style="font-size: 16px; color: #999">Flashcard</a> <a href="/tags/HBase/" style="font-size: 16px; color: #999">HBase</a> <a href="/tags/Hive/" style="font-size: 16px; color: #999">Hive</a> <a href="/tags/Interview/" style="font-size: 22px; color: #99a9bf">Interview</a> <a href="/tags/JUC/" style="font-size: 16px; color: #999">JUC</a> <a href="/tags/JVM/" style="font-size: 16px; color: #999">JVM</a> <a href="/tags/Q/" style="font-size: 16px; color: #999">Q</a> <a href="/tags/Spring/" style="font-size: 16px; color: #999">Spring</a> <a href="/tags/Structure/" style="font-size: 16px; color: #999">Structure</a> <a href="/tags/UDAF/" style="font-size: 16px; color: #999">UDAF</a> <a href="/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 16px; color: #999">搭建博客</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">2</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">11</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" publish_date="7/6/2020 00:00:00">     </div></div><div class="webinfo-item"><div class="webinfo-site-wordcount-name">本站总字数 :</div><div class="webinfo-site-wordcount">54.4k</div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By Yasir Lin</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">善待家人 & 朋友 & 自己</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">繁</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="/js/third-party/fireworks.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script id="ribbon_piao" mobile="true" src="/js/third-party/piao.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><script>if (document.getElementsByClassName('mermaid').length) {
+  loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js',function () {
+    mermaid.initialize({
+      theme: 'default',
+  })
+})
+}</script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>
