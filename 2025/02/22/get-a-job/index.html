@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>找一份工作 | Yasir Lin 的笔记</title><meta name="description" content="现状不得不接受的事实是，目前软件开发就业环境很烂，远不如前几年。如果你没有完全符合你想要去的公司的要求，例如 xx 年行业经验，做过 xx，面试都不会约你，这是很正常的。如果你是 Boss 直聘投递的，20 次问候，只有一次回复，是非常正常的情况，具体的我会在【投递简历】那里细说。国内外都一样，你投国外英文简历更多都是不回的，或者回复模板发给你。 可能站在猎头的角度看，这次真的是金三银四，招聘岗位"><meta name="keywords" content="Interview"><meta name="author" content="Yasir Lin"><meta name="copyright" content="Yasir Lin"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon-mine.png"><link rel="canonical" href="https://young1lin.github.io/2025/02/22/get-a-job/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><meta property="og:type" content="article"><meta property="og:title" content="找一份工作"><meta property="og:url" content="https://young1lin.github.io/2025/02/22/get-a-job/"><meta property="og:site_name" content="Yasir Lin 的笔记"><meta property="og:description" content="现状不得不接受的事实是，目前软件开发就业环境很烂，远不如前几年。如果你没有完全符合你想要去的公司的要求，例如 xx 年行业经验，做过 xx，面试都不会约你，这是很正常的。如果你是 Boss 直聘投递的，20 次问候，只有一次回复，是非常正常的情况，具体的我会在【投递简历】那里细说。国内外都一样，你投国外英文简历更多都是不回的，或者回复模板发给你。 可能站在猎头的角度看，这次真的是金三银四，招聘岗位"><meta property="og:image" content="https://s2.loli.net/2025/02/22/ptgsrzFJvG3RQM7.jpg"><meta property="article:published_time" content="2025-02-22T11:22:00.000Z"><meta property="article:modified_time" content="2025-02-22T11:24:04.939Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="next" title="原则" href="https://young1lin.github.io/2022/03/03/principles/"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?2ecae16d802e26c514db9438e830a2cb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: true    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Yasir Lin 的笔记" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><canvas class="fireworks"></canvas><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://i.loli.net/2021/05/17/TkBDeC6rG1URKAj.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">16</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">23</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 歌单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 全部能听音乐</span></a></li><li><a class="site-page" href="/music-1/"><i class="fa-fw fas fa-music"></i><span> Best EDM of 2010-2019(Decade Mix)</span></a></li><li><a class="site-page" href="/music-2/"><i class="fa-fw fas fa-music"></i><span> The Best Of EDM 2010 - 2020</span></a></li></ul></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 电影</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/2021/06/15/film-mooc/"><i class="fa-fw fas fa-video"></i><span> 电影概论-Mooc</span></a></li><li><a class="site-page" href="/film-criticism/"><i class="fa-fw fas fa-video"></i><span> 电影批评</span></a></li><li><a class="site-page" href="/film-criticism/"><i class="fa-fw fas fa-video"></i><span> 电影艺术形式与风格</span></a></li></ul></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#现状"><span class="toc-number">1.</span> <span class="toc-text">现状</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#个人情况"><span class="toc-number">1.1.</span> <span class="toc-text">个人情况</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#列出你关心的因素"><span class="toc-number">1.1.1.</span> <span class="toc-text">列出你关心的因素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#按重要程度排序"><span class="toc-number">1.1.2.</span> <span class="toc-text">按重要程度排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#明确底线和期望"><span class="toc-number">1.1.3.</span> <span class="toc-text">明确底线和期望</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态调整"><span class="toc-number">1.1.4.</span> <span class="toc-text">动态调整</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公司招聘现状"><span class="toc-number">1.2.</span> <span class="toc-text">公司招聘现状</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#简历准备"><span class="toc-number">2.</span> <span class="toc-text">简历准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#投递简历"><span class="toc-number">3.</span> <span class="toc-text">投递简历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#投递方式"><span class="toc-number">3.1.</span> <span class="toc-text">投递方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#内推"><span class="toc-number">3.1.1.</span> <span class="toc-text">内推</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开场白"><span class="toc-number">3.2.</span> <span class="toc-text">开场白</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面试准备"><span class="toc-number">4.</span> <span class="toc-text">面试准备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#自我介绍"><span class="toc-number">4.1.</span> <span class="toc-text">自我介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#准备讲解项目闪光点内容"><span class="toc-number">4.2.</span> <span class="toc-text">准备讲解项目闪光点内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#了解公司和职位"><span class="toc-number">4.3.</span> <span class="toc-text">了解公司和职位</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面试"><span class="toc-number">5.</span> <span class="toc-text">面试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#你只有一次机会"><span class="toc-number">5.1.</span> <span class="toc-text">你只有一次机会</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拆解任务"><span class="toc-number">5.2.</span> <span class="toc-text">拆解任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HR-面试"><span class="toc-number">5.3.</span> <span class="toc-text">HR 面试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面试后"><span class="toc-number">6.</span> <span class="toc-text">面试后</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#复盘"><span class="toc-number">6.1.</span> <span class="toc-text">复盘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Offer-进度更新"><span class="toc-number">6.2.</span> <span class="toc-text">Offer 进度更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#恢复心态"><span class="toc-number">6.3.</span> <span class="toc-text">恢复心态</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他"><span class="toc-number">7.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#时间"><span class="toc-number">7.1.</span> <span class="toc-text">时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#压力"><span class="toc-number">7.2.</span> <span class="toc-text">压力</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://s2.loli.net/2025/02/22/ptgsrzFJvG3RQM7.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Yasir Lin 的笔记</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 歌单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 全部能听音乐</span></a></li><li><a class="site-page" href="/music-1/"><i class="fa-fw fas fa-music"></i><span> Best EDM of 2010-2019(Decade Mix)</span></a></li><li><a class="site-page" href="/music-2/"><i class="fa-fw fas fa-music"></i><span> The Best Of EDM 2010 - 2020</span></a></li></ul></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 电影</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/2021/06/15/film-mooc/"><i class="fa-fw fas fa-video"></i><span> 电影概论-Mooc</span></a></li><li><a class="site-page" href="/film-criticism/"><i class="fa-fw fas fa-video"></i><span> 电影批评</span></a></li><li><a class="site-page" href="/film-criticism/"><i class="fa-fw fas fa-video"></i><span> 电影艺术形式与风格</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">找一份工作</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2025-02-22 19:22:00"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2025-02-22</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2025-02-22 19:24:04"><i class="fas fa-history fa-fw"></i> 更新于 2025-02-22</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/notes/">notes</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">4k</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 12 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="far fa-comments fa-fw post-meta__icon"></i><span>评论数:</span><a href="/2025/02/22/get-a-job/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2025/02/22/get-a-job/" itemprop="commentCount"></span></a></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h1><p>不得不接受的事实是，目前软件开发就业环境很烂，远不如前几年。如果你没有完全符合你想要去的公司的要求，例如 xx 年行业经验，做过 xx，面试都不会约你，这是很正常的。如果你是 Boss 直聘投递的，20 次问候，只有一次回复，是非常正常的情况，具体的我会在【投递简历】那里细说。<strong>国内外都一样</strong>，你投国外英文简历更多都是不回的，或者回复模板发给你。</p>
+<p>可能站在猎头的角度看，这次真的是金三银四，招聘岗位增多，是因为 DeepSeek 开源炸出了一堆的 AI 相关的岗位。但是，投递的人非常非常多，<strong>普通人投递的简历大都已读不回/未读未回</strong>。</p>
+<p>大家都在“<strong>降本增效</strong>”，甚至有些企业只想通过降本来增效，而不是利用 AI 增效。例如 xx 电器，想通过 LLM Agent 做 Customer Service，完全替代人工，这种如果有得选的话，最好别去，主打降本的公司你会过得很艰难。话又说回来，这个环境又有哪些公司还在扩张呢。连 U.S. 都在精简 ZF 部门，成立 DOGE Department of Government Efficiency 来裁员。 </p>
+<p>想找到合适的工作，难上加难，给出合理的薪资，正常双休的公司，在杭州可能算是“违法”吧。很多公司的老板创业也不容易，投资人也焦虑，所以他们就想把这些焦虑转嫁给研发人员，试图以制造业的经验，增加研发人员的工时，期望得到更高的产出。可是，研发是脑力劳动，不休息，少休息，出错的概率会更大，反而 BUG 会更多，带来的潜在损失也会更大。<strong>996，大小休，直接拒绝</strong>。</p>
+<h2 id="个人情况"><a href="#个人情况" class="headerlink" title="个人情况"></a>个人情况</h2><p>首先你要明确一些你很在意的，不那么在意的，不在意的，罗列出来。<strong>明确你的目标</strong>，很重要。我给一些样例，例如你很在意薪资，对工作环境，工作时长不那么在意，对员工福利根本不在意，那你应该按重要程度这样列出来。</p>
+<h3 id="列出你关心的因素"><a href="#列出你关心的因素" class="headerlink" title="列出你关心的因素"></a>列出你关心的因素</h3><p>求职时，每个人关注的点都不一样。列了一些因素：  </p>
+<ul>
+<li><strong>薪资</strong>：期望的收入水平（如月薪、奖金等）；</li>
+<li><strong>工作时长</strong>：是否接受加班、996、大小休等高强度安排；</li>
+<li><strong>工作环境</strong>：办公条件、团队氛围、是否需要吸二手烟等；</li>
+<li><strong>员工福利</strong>：社保、公积金、带薪休假、补助等；</li>
+<li><strong>成长空间</strong>：职业发展机会、学习新技能的可能性；</li>
+<li><strong>公司稳定性</strong>：初创公司还是成熟企业，是否面临裁员风险；</li>
+<li><strong>行业和岗位</strong>：是否是你感兴趣或擅长的领域；</li>
+<li><strong>通勤时间</strong>：上下班的距离和交通便利性；</li>
+<li><strong>工作内容</strong>：是否有挑战性，能否发挥你的能力；</li>
+<li><strong>工作与生活的平衡</strong>：是否有时间陪伴家人、休息或追求兴趣。</li>
+</ul>
+<h3 id="按重要程度排序"><a href="#按重要程度排序" class="headerlink" title="按重要程度排序"></a>按重要程度排序</h3><p>将这些因素分为<strong>重要</strong>、<strong>普通</strong>和<strong>不重要</strong>三个等级。例如：<br>如果你无法接受996、薪资是底线、工作环境其次，那么可以这样排序：<br>    1. 工作时长（重要）<br>    2. 薪资（重要）<br>    3. 工作环境（普通）<br>    4. 成长空间（普通）<br>    5. 员工福利（不重要）<br>排序后，你的目标会更清晰，知道哪些条件可以妥协，哪些必须坚持。</p>
+<h3 id="明确底线和期望"><a href="#明确底线和期望" class="headerlink" title="明确底线和期望"></a>明确底线和期望</h3><p>对于每个重要因素，设定一个<strong>底线</strong>（最低接受标准）和一个<strong>期望</strong>（理想状态）：  </p>
+<ul>
+<li><strong>薪资</strong>：底线是月薪 xx K，期望是 yy K；</li>
+<li><strong>工作时长</strong>：底线是每周正常上下班，996 或大小休是接受不了的；</li>
+<li><strong>工作环境</strong>：底线是不吸二手烟，期望是有相对安静的，不会被随时打断的工作环境。  </li>
+</ul>
+<p>如果这份工作已经触及到底线了，或者底线都到不了，别犹豫，一定不要去，去了一定后悔。</p>
+<h3 id="动态调整"><a href="#动态调整" class="headerlink" title="动态调整"></a>动态调整</h3><p>如果有很长一段时间没有工作了，后续找工作会更难，这个情况<strong>只能适当调整一下你的底线和期望值</strong>。<br>也可以执行<strong>短期策略</strong>：可以先接受一份“过渡工作”，这只是权宜之计，如果你想找一份合适的工作，可能要很久，只能先做着不是那么好的工作（每天被迫吸二手烟，你不抽烟，回到家一身烟味，外加 724），只能一遍遍去找，去投递，去找到心仪的工作。</p>
+<h2 id="公司招聘现状"><a href="#公司招聘现状" class="headerlink" title="公司招聘现状"></a>公司招聘现状</h2><p>在 Boss 直聘上，有些岗位招人是要收费的，发布相应的岗位，沟通要<strong>直豆</strong>，当然发软件开发的岗位，它不收钱，因为人太多了，招聘的岗位少。这个呢，我有两个信息来源。</p>
+<p>我一年前也招聘，也面试开发，让我来筛选，很多人也看不上小公司，岗位曝光度也少，曝光也要钱，小公司，主动投递的寥寥无几。</p>
+<p>还有一个是我也之前面试了个远程工作，我也比较了解前后端开发，知己解彼，也尽量帮他解决问题，让一个创业一年多的老板觉得我比较可靠，想拉我做技术合伙人（受宠若惊），也和我说了现在的一些情况。他发布销售岗位要钱，发布软件岗位不要钱，并且一天啥也不干就能收到三四十份简历，也和我感叹，高中没毕业来做开发的大有人在。然而现在的情况，有很多公司只要 211 以上或者留学，招聘要求上写明了。</p>
+<p>国内远程是这样一种情况，<strong>你在和全国的人竞争一个岗位</strong>，老板可以花八千一个月就能在东北招一个八年甚至更多年经验的开发。更别说国外的远程了，你在和全世界的人一起竞争，就算你准备好了英文简历，英语自我介绍，英文面试所需内容，可能也没用，因为你不够出彩，没有在 MAANG 工作过，不能从众人中脱颖而出，你不是那个 Outlier，被拒绝是常态，要接受这种情况。</p>
+<p><em>MAANG 泛指超大公司，Meta，Amazon，Apple，Netflix，Google 的缩写</em>。</p>
+<p>截一下图，来自于 How To Stand Out In An Insanely Competitive Tech Market (Ex-Amazon Principal Engineer)<br><img src= "/img/loading.gif" data-src="https://s2.loli.net/2025/02/22/OJ9r7HZvhMgy56N.png" alt="outlier.png"></p>
+<h1 id="简历准备"><a href="#简历准备" class="headerlink" title="简历准备"></a>简历准备</h1><p>《软技能：代码之外的生存指南》第二版，上面推荐你雇佣一位专业的简历写手，帮你写简历。现在看来，其实有点过时了，完全可以交给 Claude 或者 DeepSeek R1 来帮你优化简历，只需要合适的，明确的提示词即可。</p>
+<p>怎么写，可以参考一下我<a href="https://github.com/young1lin/notes/blob/master/PrepareForInterview/Java_%E5%B7%A5%E7%A8%8B%E5%B8%88_%E5%BC%A0%E4%B8%89_zh.md" target="_blank" rel="noopener">这个</a>，也可以直接看下面的几个视频</p>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=VDFgGi-lrD0" target="_blank" rel="noopener">We showed real résumés to an expert and the feedback was brutal</a></li>
+<li><a href="https://www.youtube.com/watch?v=BYUy1yvjHxE&t=60s" target="_blank" rel="noopener">Create Your Resume for Google: Tips and Advice</a></li>
+<li><a href="https://www.youtube.com/watch?v=aKjsy-b00QM&t=16s" target="_blank" rel="noopener">The Resume That Got Me Into Google (software engineer resume tips)</a></li>
+<li><a href="https://www.youtube.com/watch?v=8Stfdfcdt0E&t=447s" target="_blank" rel="noopener">The Resume That Got Me Into Microsoft - Intern Software Engineer Resume Tips</a></li>
+<li><a href="https://www.youtube.com/watch?v=w1IQx8hEnTU" target="_blank" rel="noopener">神奇4步法，打造HR无法拒绝的简历</a></li>
+</ol>
+<p>搞个 OpenAI 的 Key，用套壳的开源项目，本地运行 23 年的时候用 GPT-3 加点提示词输出就能很好帮你优化简历了。现在也不需要那么麻烦了，直接用各个产品自带的系统内置的提示词 + CoT 就能输出很好的优化建议了。<br><img src= "/img/loading.gif" data-src="https://s2.loli.net/2023/12/11/qBSrwXxmsui1pPy.png" alt="20231211102606.png"></p>
+<p>关于 CoT Chain of Thought 的，我会在大模型相关的文章写明，来源于这篇 2022 年的论文 <a href="https://arxiv.org/abs/2201.11903" target="_blank" rel="noopener">Chain of Thought Prompting Elicits Reasoning in Large Language Models</a> <a href="https://arxiv.org/search/cs?searchtype=author&query=Wei,+J" target="_blank" rel="noopener">Jason Wei</a>, <a href="https://arxiv.org/search/cs?searchtype=author&query=Wang,+X" target="_blank" rel="noopener">Xuezhi Wang</a></p>
+<h1 id="投递简历"><a href="#投递简历" class="headerlink" title="投递简历"></a>投递简历</h1><p>如果你期望一周安排最少 3 次面试，按照 20 次回复一次，5 次回复有一个面试来算，你周一到周五，每天要投 60 次简历。这就是现实，如果你在大公司工作过，或者学历比较高，那每天可能只需要更少的时间去投递简历，写开场白。</p>
+<h2 id="投递方式"><a href="#投递方式" class="headerlink" title="投递方式"></a>投递方式</h2><p>从推荐优先度排序</p>
+<ol>
+<li>内推</li>
+<li>Boss 直聘</li>
+<li>公司官网招聘</li>
+<li>其他招聘网站</li>
+</ol>
+<h3 id="内推"><a href="#内推" class="headerlink" title="内推"></a>内推</h3><p>内推也分几种，根据靠谱程度排序，更靠谱的更靠前。</p>
+<ol>
+<li>猎头（好的猎头可以帮你找到非常好的岗位）</li>
+<li>V2EX（上面也会有发布招聘信息）</li>
+<li>LeetCode（如果你经常刷题的话，上面经常有大公司招聘内推）</li>
+<li>技术群</li>
+<li>私下圈子</li>
+</ol>
+<h2 id="开场白"><a href="#开场白" class="headerlink" title="开场白"></a>开场白</h2><p>Boss 直聘是有开场白这种说法的，如果你的打招呼只是“你好，我可以了解下这个岗位”之类的，很少会理你。这个时候，需要你利用 ChatGPT 或者 Claude 等大模型，把你的简历文本放上去，注意需要使用三个反引号开始，放入你的简历文本，三个反引号结束，表示这是一段内容，这是提示词的一种简单使用。在三个反引号之外，输入你的内容，将 · 替换成反引号。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">请帮我根据简历内容，以及招聘信息编写一个合适的开场白。能让招聘人员能看到我的开场白，更符合这个岗位。要求以 xxx 开头，以 xxx 结尾。</span><br><span class="line">这是我的简历</span><br><span class="line">···</span><br><span class="line">简历内容</span><br><span class="line">···</span><br><span class="line">这是岗位招聘信息</span><br><span class="line">···</span><br><span class="line">招聘信息</span><br><span class="line">···</span><br></pre></td></tr></table></figure>
+
+<p>开场白这个自动化了，你可以直接复制粘贴，开始海投了。</p>
+<h1 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h1><p>在《乔布斯传》中也介绍了，<strong>即使强如乔布斯，上台演讲前也需要反复练习</strong>。如果你毫无准备就去面试，那你就是浪费了这次宝贵的机会，尤其是这样的一个环境下。</p>
+<h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2><p>不建议使用大模型来写自我介绍，你可以参考，但是不要完全照搬。大模型写出来的，是“标准”的，没有人味的自我介绍。这种自我介绍很标准，但很普通，也不能帮助面试官快速了解你做的项目，内容。</p>
+<p>可以直接照着简历上的项目经验，工作内容，大致说明做了什么。很可能面试官在面试你前，根本没看过你的简历。更别说你写的个人博客，文章等等。现在这个环境，需要你符合相应的工作经验，例如区块链交易平台做了 xx 年，医疗行业做了 xx 年。简单概括工作过的内容，能快速让面试官了解大概。至于怎么写，每个人情况不一样，可以参考的内容也不尽相同，重点是突出你和这个岗位的契合度，以这个为核心，辅以你的工作过的内容展开会更为合适。</p>
+<h2 id="准备讲解项目闪光点内容"><a href="#准备讲解项目闪光点内容" class="headerlink" title="准备讲解项目闪光点内容"></a>准备讲解项目闪光点内容</h2><p>准备好平时工作中的闪光点，重要的事，并且展示你在这件事中展现出来的 significant 能力。</p>
+<h2 id="了解公司和职位"><a href="#了解公司和职位" class="headerlink" title="了解公司和职位"></a>了解公司和职位</h2><p>不要什么都投，有些岗位写明了只要 xx 学历以上，xx 年行业经验，如果不符合，最好不要投，避免影响心态。</p>
+<h1 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h1><p>最好提前半小时到面试地点，留有一点的时间来应对突发情况，也是 “The Psychology of Money” 推荐的 Room for Error。到了后也可以再练习一下自我介绍等其他内容，接近约定的时间 5 分钟左右再去会更好。</p>
+<p>很多时候，你也只有一次机会，需要展现出你的各项能力。</p>
+<h2 id="你只有一次机会"><a href="#你只有一次机会" class="headerlink" title="你只有一次机会"></a>你只有一次机会</h2><p><strong>没有要求你着西装打呔</strong>，只是一个人的<strong>第一印象很重要</strong>，如果一个邋里邋遢，油头红面的人来面试，你会觉得这个人很不专业。不得不承认的一件事就是，如果同样的技术水平，沟通表达能力，一个长得好看的，就是比长得普通的更容易拿到 offer。这被称为“<strong>外貌偏见</strong>”，影响招聘决策，尤其是在面试阶段。即使长相一般，只要穿着得体，干净整洁，依然比你什么都不收拾要好的多。</p>
+<h2 id="拆解任务"><a href="#拆解任务" class="headerlink" title="拆解任务"></a>拆解任务</h2><p>如果你经常面试别人，或者去面试，你肯定会喜欢这样的人——将一个大问题拆解成若干个小问题，逐一解决各个子问题，最后整合，完成问题的解决。即使如果有小瑕疵，都无伤大雅。这其实就是自顶向下，拆解问题的能力体现，这也是 10x 程序员的基础能力。</p>
+<p>尽量引导面试的人，将任务拆解，即使遇到完全陌生的领域，可以先头脑风暴，从各个角度思考，最后自底向上，分门别类达到该目标的拆解。这，是<strong>结构化思维</strong>。</p>
+<h2 id="HR-面试"><a href="#HR-面试" class="headerlink" title="HR 面试"></a>HR 面试</h2><p>相较于技术面试，HR 面试其实也很重要。HR 可能会问你一些问题，请提前演练，准备好相应的答案。</p>
+<ol>
+<li>准备好你的自我介绍可能招来的问题。</li>
+<li>你的职业规划是什么？</li>
+<li>为什么考虑我们公司？</li>
+<li>你认为自己取得的最大成绩是什么？是哪些因素造就了你取得这样的成绩？</li>
+<li>你觉得你工作/学习这些年，带给你最大的变化是什么？</li>
+<li>你觉得你是个什么样的人？简短几句评价你自己。</li>
+<li>你有什么问题想要问我的吗？</li>
+</ol>
+<p>可以参考一下<a href="http://youtube.com/@danlok-588/videos" target="_blank" rel="noopener">他的视频</a>。</p>
+<h1 id="面试后"><a href="#面试后" class="headerlink" title="面试后"></a>面试后</h1><p>面试后，并不是万事大吉，或者一切都毁了。如果面试不是很好，这只是一次面试，一次失败的经历，漫长的人生中，你会经历更多的失败，这一次不会是最后一次。做好复盘，恢复心态，很重要。</p>
+<h2 id="复盘"><a href="#复盘" class="headerlink" title="复盘"></a>复盘</h2><p>记录好每次面试，碰到不懂的问题需要文档记录。比如在面试的时候“憋大招”，想半天也不和面试官沟通，这些都是不合适的行为。每次面试，必须要复盘，必须要记录在文档上，避免犯同样的错误。国内的公司是这样的，会因为一次面试否定你整个人，这是行业现象，你必须在面试中保持 120% 甚至 200% 的实力。没有复盘，是难以进步的。</p>
+<h2 id="Offer-进度更新"><a href="#Offer-进度更新" class="headerlink" title="Offer 进度更新"></a>Offer 进度更新</h2><p>我碰到的，一般情况，如果觉得合适，基本面试完或者面试的时候就会直接给 offer 或者有意向，如果让你等通知的，基本不用等了。收拾好心情，准备下一回的面试。不用过分在意是否拿到 offer，你要做的是准备好下一场的面试。</p>
+<h2 id="恢复心态"><a href="#恢复心态" class="headerlink" title="恢复心态"></a>恢复心态</h2><p>不要因为一场糟糕的面试否定你自己，要时刻记住，你不是一成不变的，你是可以通过自身的努力，付出，得到一个更好的成果，更好的环境。<em>我属于那座山，是那座山塑造了我。只是随着年龄的增长，我开始思考，我的起点是否就是我的终点——一个人初具的雏形是否就是他唯一真实的样貌。</em></p>
+<div style="text-align: right;">——《你当像鸟飞往你的山》</div>
+
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>我能想到的，就时间和压力这两块内容。</p>
+<h2 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h2><p>即使是找工作，也不至于每天 24 小时都要去做，急是没有用的，放轻松，深呼吸。</p>
+<h2 id="压力"><a href="#压力" class="headerlink" title="压力"></a>压力</h2><p>如果你有房贷，车贷，换工作并不适合你，压力会非常大，你会急着找工作，只要有 offer 你就接，也不管什么提升自己，更不可能考察工作的同事，环境，这些其实非常重要。微小习惯改变一生，环境改变习惯。</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Yasir Lin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://young1lin.github.io/2025/02/22/get-a-job/">https://young1lin.github.io/2025/02/22/get-a-job/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://young1lin.github.io" target="_blank">Yasir Lin 的笔记</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Interview/">Interview</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5efdebeafffaba83" async="async"></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/03/03/principles/"><img class="next-cover" data-src="https://res.weread.qq.com/wrepub/epub_921568_53" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">原则</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/07/29/Interview/" title="For Interview"><img class="relatedPosts_cover" data-src="https://i.loli.net/2021/05/28/nqF2DvMljTyrQk3.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-29</div><div class="relatedPosts_title">For Interview</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+  var from = from
+  var setting = set.split(',').filter(function(item){
+  return from.indexOf(item) > -1
+  });
+  setting = setting.length == 0 ? from :setting;
+  return setting
+}
+
+var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
+var requiredFields = requestSetting(['nick','mail'],'nick,mail')
+
+window.valine = new Valine({
+  el:'#vcomment',
+  appId: 'm0gBGr4FkIgDqftQbXOmxAKE-gzGzoHsz',
+  appKey: 'BNWTP7OOIGVhyWpa4I4mSw01',
+  placeholder: '欢迎留言指正错误',
+  avatar: 'monsterid',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'zh-CN',
+  recordIP: false,
+  serverURLs: '',
+  emojiCDN: '',
+  emojiMaps: "",
+  enableQQ: true,
+  requiredFields: requiredFields
+});</script></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Yasir Lin</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">善待家人 & 朋友 & 自己</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">繁</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fas fa-comments"></i></a><button class="close" id="mobile-toc-button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="/js/third-party/fireworks.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script id="ribbon_piao" mobile="true" src="/js/third-party/piao.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><script>if (document.getElementsByClassName('mermaid').length) {
+  loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js',function () {
+    mermaid.initialize({
+      theme: 'default',
+  })
+})
+}</script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>
