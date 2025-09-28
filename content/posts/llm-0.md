@@ -1,5 +1,5 @@
 +++
-title = "大语言模型-0"
+title = "llm-0"
 date = 2025-03-08T00:04:00Z
 tags = ["LLM", "AI"]
 categories = ["notes"]

@@ -388,7 +388,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">大语言模型-0
+    <h2 class="entry-hint-parent">最近用 LLM 产品写代码的一些感想
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前言 在 ChatGPT 刚出来的时候，也就是 GPT-3 就开始用了，那个时候免费用，也勉强能用来写代码。它能在提供的沙箱环境执行 Python 代码，任何微小的校验方法编写，例如验证身份证方法直接丢给它，让它写，提示词就写：根据你学到的知识，帮我编写下面的代码—— 就是要它和训练的数据输出一模一样的内容。到后面 ChatGPT4 出来，让它转 Python 后端项目到 Java 项目，DAG 构建族谱，计算同一个祠堂下两个人的关系，两千行的代码，也能正常转，只不过提示词要多写点，还得一点点手动拆分代码。那个时候是和 Claude 一起用，即使两个都是 Pro Plan 但是架不住代码比较多消耗 Token 很快。现在只有 Claude 写的代码能勉强用于生产，因为简单的代码 Cursor 就能自动补全，GPT-5 也就那样，甚至开源的 Qwen3-Coder-480B-A35B-Instruct 写代码能力都比 GPT-5 强。
+在当前阶段，LLM 根本替代不了高级开发，尤其是一些大模型，例如 Qwen3 或者 GPT5 完全比不上 Claude4.1。但是把一些琐碎的，低层级的任务丢给大模型，它会做得很好，不要一句话，“帮我把这个文档弄一下”，这种没有明确的目的废话。
+正确的话术应该：编写一个 Python 程序，输入的是 Markdown 格式的文档，将文档中表格数据输出成 SQL INSERT 语句，碰到复杂的表格则跳过处理，对于 HTML 代码编写的表格不予处理，对 Markdown 语法的表格，先获取表格头部信息提取对应英文字段，创建合适的表名，转成 MySQL8 的 SQL 语法创建表，并且生成 INSERT 语句插入数据。执行 Python 程序，输出建表和插入数据的 SQL，输出文件是 init.sql。
+就是有着明确的问题，明确的处理方式，以及预期结果，毕竟 Garbage in, garbage out。你不可能指望垃圾数据，片汤话就能解决问题，传统的监督学习还要一个个标注数据，大模型能做到零样本输出看似它学会了思考，学会了表达，实际不是。在它训练的数据中，如果这部分存在过，就得让它过度拟合，回答。就像做数据治理，这家厂商给的性别字段叫 gender:(male,female,unknown)，另一个厂商上报的数据是 sex(0,1,-1) 这些都可以做影射到符合国标 GB/T 2261.1-2003 的字段上，统一叫 gender(0,1,2,9)，但是有些他上报 g:(x, y, trans, plastic bag, walmart bag)，这样就输入的是垃圾信息， 别想治理出能用的数据。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-08-28 00:00:00 +0000 UTC'>August 28, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to 最近用 LLM 产品写代码的一些感想" href="http://localhost:1313/posts/llm-write-code/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">llm-1
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>大语言模型 LLM 初探 先进行接口调用，快速了解大语言模型能做什么，再逐个了解其原理。
+通过 HTTP 请求初探 POST https://api.deepseek.com/chat/completions HTTP/1.1 Content-Type: application/json Accept: application/json Authorization: Bearer {{$dotenv DEEPSEEK_API_KEY}} { &#34;messages&#34;: [ { &#34;content&#34;: &#34;你是一个智能客服 Alice，你的主要作用就是帮用户解答疑问&#34;, &#34;role&#34;: &#34;system&#34; }, { &#34;content&#34;: &#34;你好，你是谁？&#34;, &#34;role&#34;: &#34;user&#34; } ], &#34;model&#34;: &#34;deepseek-chat&#34;, &#34;stream&#34;: false, &#34;temperature&#34;: 0 } 回复的内容
+HTTP/1.1 200 OK Date: Wed, 06 Aug 2025 08:21:59 GMT Content-Type: application/json Transfer-Encoding: chunked Connection: close vary: origin, access-control-request-method, access-control-request-headers access-control-allow-credentials: true x-ds-trace-id: 4f241ebb167c3c01b3a97ed15dccc06a Strict-Transport-Security: max-age=31536000; includeSubDomains; preload X-Content-Type-Options: nosniff Server: CW Content-Encoding: gzip { &#34;id&#34;: &#34;379e029d-6fe0-4c17-8b1b-a834033f810e&#34;, &#34;object&#34;: &#34;chat.completion&#34;, &#34;created&#34;: 1754468519, &#34;model&#34;: &#34;deepseek-chat&#34;, &#34;choices&#34;: [ { &#34;index&#34;: 0, &#34;message&#34;: { &#34;role&#34;: &#34;assistant&#34;, &#34;content&#34;: &#34;你好！我是智能客服Alice，很高兴为你服务。我是一个AI助手，可以帮助解答问题、提供信息或协助处理各种事务。有什么我可以帮你的吗？&#34; }, &#34;logprobs&#34;: null, &#34;finish_reason&#34;: &#34;stop&#34; } ], &#34;usage&#34;: { &#34;prompt_tokens&#34;: 21, &#34;completion_tokens&#34;: 33, &#34;total_tokens&#34;: 54, &#34;prompt_tokens_details&#34;: { &#34;cached_tokens&#34;: 0 }, &#34;prompt_cache_hit_tokens&#34;: 0, &#34;prompt_cache_miss_tokens&#34;: 21 }, &#34;system_fingerprint&#34;: &#34;fp_8802369eaa_prod0623_fp8_kvcache&#34; } 从上面的例子我们可以发现，大模型有三个 role（角色），system 就是系统角色，user 是用户，assistant 就是大模型，与之相应的 content 就是它们之间的对话内容。 请求内容中的参数除了 messages 还有 model 表示使用什么模型，stream 表示是否流式回复，temperature 暂且按下不表后续会详细说明。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-08-11 00:00:00 +0800 CST'>August 11, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to llm-1" href="http://localhost:1313/posts/llm-1/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">llm-0
     </h2>
   </header>
   <div class="entry-content">
@@ -403,7 +434,7 @@ DeepSeek 这 xx 条指令帮你更好掌握 xx 创始人梁文峰 xx 量化投�
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2025-03-08 00:04:00 +0000 UTC'>March 8, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to 大语言模型-0" href="http://localhost:1313/posts/llm-0/"></a>
+  <a class="entry-link" aria-label="post link to llm-0" href="http://localhost:1313/posts/llm-0/"></a>
 </article>
     </main>
     

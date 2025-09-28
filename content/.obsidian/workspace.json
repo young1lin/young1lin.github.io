@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/get-a-job.md",
+                "file": "posts/llm-1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "get-a-job"
+              "title": "llm-1"
             }
           }
         ],
@@ -109,17 +109,17 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/get-a-job.md",
-                "collapseAll": false,
+                "file": "posts/llm-1.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": false,
+                "backlinkCollapsed": true,
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "get-a-job 的反向链接列表"
+              "title": "llm-1 的反向链接列表"
             }
           },
           {
@@ -157,21 +157,21 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "posts/get-a-job.md",
+                "file": "posts/llm-1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "get-a-job 的大纲"
+              "title": "llm-1 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -186,19 +186,22 @@
   },
   "active": "911578553bb93810",
   "lastOpenFiles": [
+    "Pasted image 20250928220126.png",
+    "posts/llm-0.md",
+    "posts/llm-1.md",
+    "posts/llm-write-code.md",
+    "posts/interview.md",
+    "posts/get-a-job.md",
+    "posts/effective-java-spring.md",
+    "films/film-mooc.md",
+    "posts/rowkey-design.md",
+    "posts/tft.md",
+    "posts/principles.md",
+    "posts/mac-docker -mirrors.md",
     "search.en-us.md",
     "新建 文本文档.txt",
     "search.md",
-    "posts/effective-java-spring.md",
-    "posts/get-a-job.md",
-    "posts/tft.md",
     "posts/test.md",
-    "posts/interview.md",
-    "posts/llm-0.md",
-    "posts/mac-docker -mirrors.md",
-    "films/film-mooc.md",
-    "posts/rowkey-design.md",
-    "posts/principles.md",
     "posts/flashcard.md",
     "posts/technical-insider.md",
     "posts/Flashcard.md",
