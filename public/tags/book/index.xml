@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Book on Young1lin&#39;s Blog</title>
+    <link>http://localhost:1313/tags/book/</link>
+    <description>Recent content in Book on Young1lin&#39;s Blog</description>
+    <generator>Hugo -- 0.150.1</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 03 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>技术&#34;内幕&#34;</title>
+      <link>http://localhost:1313/posts/technical-insider/</link>
+      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/technical-insider/</guid>
+      <description>&lt;p&gt;有趣，但无用的知识系列。&lt;/p&gt;
+&lt;h1 id=&#34;rsa-算法&#34;&gt;RSA 算法&lt;/h1&gt;
+&lt;p&gt;由 &lt;a href=&#34;https://en.wikipedia.org/wiki/Ron_Rivest&#34;&gt;Ron Rivest&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Adi_Shamir&#34;&gt;Adi Shamir&lt;/a&gt;, and &lt;a href=&#34;https://en.wikipedia.org/wiki/Leonard_Adleman&#34;&gt;Leonard Adleman&lt;/a&gt; 三位的姓首字母写的。&lt;/p&gt;
+&lt;h1 id=&#34;cloud-native-java&#34;&gt;《Cloud Native Java》&lt;/h1&gt;
+&lt;p&gt;爪哇岛，岛上盛产咖啡；美国人有多爱喝咖啡，看英国人有多爱喝茶一样，波士顿倾茶事件，彻底惹怒了大英帝国（以前的称呼）。看看《硅谷》这部剧就知道了，咖啡 = 命，没有咖啡机的公司，不去。《Cloud Native Java》Josh Long 写的，书封面有几种意思，&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;这个鸟是蓝耳翠鸟（Alcedo menintiong）濒危野生动物，希望能唤起大家对动物的保护之心。当然，《高性能 MySQL》也是一样。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;这个鸟在 Java island（爪哇岛）上生存。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;鸟在天上飞，飞向云端的意思。迎合了云原生的概念，鸟就寓意为 Java，Cloud  就是云，如鱼得水，如鸟入天空。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;具体的可以看他的视频 &lt;a href=&#34;https://www.youtube.com/watch?v=Z5q-CXbvM1E&amp;amp;t=307s&#34;&gt;https://www.youtube.com/watch?v=Z5q-CXbvM1E&amp;t=307s&lt;/a&gt; 他自己介绍的。&lt;/p&gt;
+&lt;p&gt;关于爪哇岛的，在印尼还是比较发达的，而且上面有华人，而且不准看中文，我是在《枪炮、病菌与钢铁》中看到的，一本不错的书籍，还有《自私的基因》。&lt;/p&gt;
+&lt;h1 id=&#34;oreilly-系列图书&#34;&gt;O&amp;rsquo;reilly 系列图书&lt;/h1&gt;
+&lt;p&gt;《高性能 MySQL》&lt;/p&gt;
+&lt;p&gt;《设计数据密集型应用》&lt;/p&gt;
+&lt;p&gt;《机器学习实战》&lt;/p&gt;
+&lt;p&gt;等等，大部分书籍都是以濒危物种作为封面的，主要一方面是呼吁大家珍惜动物，这些动物对世界很重要。&lt;/p&gt;
+&lt;p&gt;具体可以看 animals.oreilly.com 网站查看。&lt;/p&gt;
+&lt;h1 id=&#34;雪花算法&#34;&gt;雪花算法&lt;/h1&gt;
+&lt;p&gt;Snowflake 没有一片雪花是相同的。&lt;/p&gt;
+&lt;h1 id=&#34;银弹&#34;&gt;银弹&lt;/h1&gt;
+&lt;p&gt;在 20 世纪 80 年代中期，Fred Brooks 发表了著名的论文《没有银弹：软件工程的本质性与附属性工作》。在介绍中，他将软件项目比作狼人。&lt;/p&gt;
+&lt;p&gt;“我们熟悉的软件项目都有这样的特点（至少在非技术经理看来是这样的），通常是无辜而直接的，但是它却有可能成为一个错过进度、挥霍预算并且产品有缺陷的怪物。因此，我们听到了迫切需要银弹的呼声，希望能让软件成本像计算机硬件成本那样迅速下降”。&lt;/p&gt;
+&lt;p&gt;他认为，由于软件开发的本质，在软件开发中没有银弹。这本身就是一项内在复杂的努力。在 20 世纪 80 年代，大多数软件都运行在单台只有单核处理器的机器上，互联网还处于早期发展阶段，智能手机也还属于遥远的未来，没有人听说过虚拟化或云计算。Brooks 写的主要是技术复杂性，现在我们更加意识到软件开发中所涉及的社会、心理和商业过程的复杂性。&lt;/p&gt;
+&lt;p&gt;在古老的传说里。狼人是不死的。想要杀死狼人有几种方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;像杀死吸血鬼那样用木桩钉权住狼人的心脏。&lt;/li&gt;
+&lt;li&gt;将月光遮住&lt;/li&gt;
+&lt;li&gt;用银子做的子弹射穿狼人的心脏或头&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;当然现实中是没有狼人的。但现实中确实有银弹这个东西。而其意义也类似于能杀死狼人的最好办法。现实中的狼人可以是一个棘手的项目，或者一件不可能的事。而“银弹”就是指能解决这些事的方法，或者技术手段。&lt;/p&gt;
+&lt;p&gt;《没有银弹》主张并断言在未来的十年之内（从1986年文章发表后开始计算），不会有任何单一的软件工程上的突破，能够让程序设计的生产力得到一个数量级的提升。不过，作者认为这个假设现在已不再成立。&lt;/p&gt;
+&lt;p&gt;假设软件开发的总工作量为 10，其中，本质性工作占掉 1，附属性工作占掉 9，那么改善附属性工作，将之消除，就可以把软件工作量减轻到 1（因为附属性工作变成 0），此时我们可以说，软件工作开发的轻松程度提升了一个数量级（因为由 10 进步到 1，差 10 倍）。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

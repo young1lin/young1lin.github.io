@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>LLM | YL&#39;s Log</title>
+<meta name="keywords" content="">
+<meta name="description" content="YL&#39;s Log">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tags/llm/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.4a977a24927dfcb104c05a21e8acc6782a45726abfb278fdc609607b38e0aa5c.css" integrity="sha256-Spd6JJJ9/LEEwFoh6KzGeCpFcmq/snj9xglgezjgqlw=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/llm/index.xml">
+<link rel="alternate" hreflang="zh-cn" href="http://localhost:1313/tags/llm/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    function initTOC() {
+        const toc = document.querySelector('.toc');
+        if (!toc) return;
+
+        
+        const headings = document.querySelectorAll('.post-content h1[id], .post-content h2[id], .post-content h3[id], .post-content h4[id], .post-content h5[id], .post-content h6[id]');
+        const tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+        
+        if (headings.length === 0 || tocLinks.length === 0) return;
+
+        let currentActiveLink = null;
+        
+        
+        function scrollTocToActiveItem(activeLink) {
+            if (!activeLink) return;
+            
+            const tocContainer = document.querySelector('.toc');
+            if (!tocContainer) return;
+            
+            const containerRect = tocContainer.getBoundingClientRect();
+            const linkRect = activeLink.getBoundingClientRect();
+            
+            const linkTop = linkRect.top - containerRect.top + tocContainer.scrollTop;
+            const containerHeight = tocContainer.clientHeight;
+            const currentScrollTop = tocContainer.scrollTop;
+            
+            const targetScrollTop = linkTop - (containerHeight / 2) + (activeLink.offsetHeight / 2);
+            
+            const visibleTop = currentScrollTop + containerHeight * 0.2;
+            const visibleBottom = currentScrollTop + containerHeight * 0.8;
+            
+            const needsScroll = linkTop < visibleTop || linkTop > visibleBottom;
+            
+            if (needsScroll) {
+                tocContainer.scrollTo({
+                    top: Math.max(0, Math.min(targetScrollTop, tocContainer.scrollHeight - containerHeight)),
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        
+        function removeAllActiveStates() {
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                link.style.fontWeight = '';
+                link.style.color = '';
+                link.style.backgroundColor = '';
+            });
+        }
+        
+        
+        function setActiveLink(targetId) {
+            removeAllActiveStates();
+            
+            const decodedTargetId = decodeURIComponent(targetId);
+            
+            let activeLink = null;
+            
+            activeLink = document.querySelector(`.toc a[href="#${targetId}"]`);
+            
+            if (!activeLink) {
+                const encodedId = encodeURIComponent(targetId);
+                activeLink = document.querySelector(`.toc a[href="#${encodedId}"]`);
+            }
+            
+            if (!activeLink) {
+                tocLinks.forEach(link => {
+                    const linkHash = link.getAttribute('href').substring(1);
+                    const decodedLinkHash = decodeURIComponent(linkHash);
+                    if (decodedLinkHash === targetId || decodedLinkHash === decodedTargetId || linkHash === targetId) {
+                        activeLink = link;
+                    }
+                });
+            }
+            
+            if (activeLink) {
+                activeLink.classList.add('active');
+                activeLink.style.fontWeight = 'bold';
+                activeLink.style.color = 'var(--primary)';
+                activeLink.style.backgroundColor = 'var(--hover)';
+                
+                currentActiveLink = activeLink;
+                scrollTocToActiveItem(activeLink);
+            }
+        }
+        
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '-10% 0px -80% 0px',
+            threshold: 0
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            let visibleEntries = entries.filter(entry => entry.isIntersecting);
+            
+            if (visibleEntries.length > 0) {
+                let topEntry = visibleEntries[0];
+                let minTop = topEntry.boundingClientRect.top;
+                
+                visibleEntries.forEach(entry => {
+                    const rect = entry.boundingClientRect;
+                    if (rect.top < minTop && rect.top >= 0) {
+                        minTop = rect.top;
+                        topEntry = entry;
+                    }
+                });
+                
+                setActiveLink(topEntry.target.id);
+            }
+        }, observerOptions);
+        
+        
+        headings.forEach(heading => {
+            if (heading.id) {
+                observer.observe(heading);
+            }
+        });
+        
+        
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const decodedTargetId = decodeURIComponent(targetId);
+                
+                let targetElement = document.getElementById(targetId) || document.getElementById(decodedTargetId);
+                
+                if (targetElement) {
+                    const headerHeight = 80; 
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - headerHeight;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    setTimeout(() => {
+                        setActiveLink(targetElement.id);
+                    }, 100);
+                }
+            });
+        });
+        
+        
+        setTimeout(() => {
+            const firstHeading = headings[0];
+            if (firstHeading && firstHeading.id) {
+                setActiveLink(firstHeading.id);
+            }
+        }, 500);
+    }
+
+    
+    initTOC();
+
+    
+    function handleTocResponsive() {
+        const screenWidth = window.innerWidth;
+        const toc = document.querySelector('.toc');
+        
+        if (toc) {
+            if (screenWidth <= 1200) {
+                toc.style.display = 'none';
+            } else {
+                toc.style.display = 'block';
+            }
+        }
+    }
+
+    
+    window.addEventListener('resize', handleTocResponsive);
+    
+    
+    window.addEventListener('load', handleTocResponsive);
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    function initHeaderScroll() {
+        const header = document.querySelector('.header');
+        if (!header) return;
+
+        let lastScrollTop = 0;
+        const scrollThreshold = 50; 
+
+        function handleScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > scrollThreshold) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScrollTop = scrollTop;
+        }
+
+        
+        let ticking = false;
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(handleScroll);
+                ticking = true;
+                setTimeout(() => { ticking = false; }, 16);
+            }
+        }
+
+        
+        window.addEventListener('scroll', requestTick, { passive: true });
+        
+        
+        handleScroll();
+    }
+
+    
+    initHeaderScroll();
+
+    
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        
+        anchor.removeEventListener("click", arguments.callee);
+        
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const id = this.getAttribute("href").substr(1);
+            const targetElement = document.querySelector(`[id='${decodeURIComponent(id)}']`);
+            
+            if (targetElement) {
+                const headerHeight = 100; 
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerHeight;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+                
+                if (id === "top") {
+                    history.replaceState(null, null, " ");
+                } else {
+                    history.pushState(null, null, `#${id}`);
+                }
+            }
+        });
+    });
+});
+</script>
+
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="YL&#39;s Log (Alt + H)">YL&#39;s Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/films" title="电影">
+                    <span>电影</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    LLM
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">大语言模型-0
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>又是一波风口来了 又开始了，不懂行的，只会高谈阔论放没有味道屁的，又开始了，“李一舟” 们又复活了。开始利用大家的焦虑，开始卖些没有营养的课，新一波的收割又来了。那些高谈阔论的砖家疯狂啃噬着这新鲜的养料。
+DeepSeek 这 xx 条指令帮你更好掌握 xx 创始人梁文峰 xx 量化投资 xx 我用 DeepSeek 赚到了 xx xx 大学 DeepSeek xx xx 宣布接入 DeepSeek AI 破局！ 还有很多，就不列举了，点进去全都是依托谢特，毫无营养的内容，基本都是割韭菜，卖低质量课的。没有调查，就没有发言权，我明知道那些点进去是垃圾内容，我还是强忍着恶心，本着应该调查再发表观点的心态去看了，确实都是一坨，根本不用点进去看。到最后基本都是加群卖课，准备开始割你，这些人想钱想疯了。
+一月份的时候 CNBC、The Daily Show、各个行业的博主都来了，人人都可以评价 DeepSeek，都可以上来说两句，在自己行业的视角。这很正常，没问题，但是就像盲人摸象，只知道部分事实，那不是事实。《事实》里面，人们只会报独特的消息，所有的媒体才不会浪费时间去编造那些不符合我们基本本能的故事。
+与其听一些“砖家”高谈阔论，说一些没有味的屁话，不如自己真正找到一手或者近一手的资料，去学点真东西。
+背景介绍 这里只做大语言模型和扩散模型相关的内容推荐，更深层次的机器学习，神经网络，深度学习里面种种细节其实也不用完全掌握。只要会用就行了，很多底层细节是不需要知道的。
+你不需要有高性能的 GPU，也不需要有足够的编程知识，更不需要了解 TCP/IP，不需要了解 TCP 粘包，TCP Sequence，就是个简单的 HTTP 请求，也不需要了解 OAuth2 协议，甚至也不需要充钱，只需要注册 DeepSeek 或者 Kimi 账号，使用它们的平台生成一个 API Key 放到 Authorization: Bearer 后面即可，最后面有演示内容。本质上就是根据你输入的内容，结合大模型“学习”过的知识，给你回答。
+幸存者偏差 可能或多或少看到谁谁谁用 Cursor，毫无编程经验，就写出一个 xx APP，赚到了钱。对，没错，这些是真的，但是只是部分事实。不是所有人都可以这样，并且好的软件，它是要维护的，是要人来参与的。就算你用 Cursor 写出了这样的 APP，但是它是要不断迭代的，要重构，要写良好的 AAA 单元测试。这些，Cursor 还差一点，并且我在工作中很少见到人写测试代码，但是如果你真的编程到了一定程度，你就会发现，写好规划文档占三分之一时间、单元测试和集成测试等其他测试占用一半时间，测试才是软件开发最重要的事情，开发其实只是占用六分之一的时间。
+并且，如果不懂 Git，不了解 GitLab、Github，毫无软件开发经验，用 Cursor 写出来的东西，不会做版本控制，也不知道提交到远端仓库，本地电脑坏了，或者其他意外情况，代码全丢了，那就全完了。就算了解 Git，也不了解软件开发推崇的敏捷开发，项目管理，版本变更兼容，需求和实现需要定期同步等等的坑，光有想法和结构化思维，是做不出来可迭代的，优秀的产品。没有人能一次性写出完美的代码，就算是 Linux Kernnel 的代码，也有大约 20% 的提交都是重构的代码，重构非常重要。重构的前提，是编写良好的单元测试。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-03-08 00:04:00 +0000 UTC'>March 8, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to 大语言模型-0" href="http://localhost:1313/posts/llm-0/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">YL&#39;s Log</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

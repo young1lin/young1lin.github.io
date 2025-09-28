@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>TFT on YL&#39;s Log</title>
+    <link>http://localhost:1313/tags/tft/</link>
+    <description>Recent content in TFT on YL&#39;s Log</description>
+    <generator>Hugo -- 0.150.1</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 18 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>云顶之弈如何从零到最强王者</title>
+      <link>http://localhost:1313/posts/tft/</link>
+      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tft/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;我玩了比较久的云顶之弈，也**“间接开发”过阵容**，就是 S3 最火热的 6 暗星羊刀水银泽拉斯。最快两天从水晶之痕没有段位到超凡大师（后面排到人比较慢，不愿玩，而且段位提升只是把数的堆积）。我也是美服以及艾欧尼亚两个赛季超凡大师，最高到一区前 200 名左右吧，3 月 26 日左右（具体几号真忘了）早上8 点斗鱼、卷子的第一把，和南波儿的两个小弟的7点多到8点那一把的录播视频为证。&lt;/p&gt;
+&lt;p&gt;只要你时间够，上个王者不成问题。后面比较喜欢玩 PBE（测试服），提前感受版本，厄加特的大招开始是&lt;strong&gt;没有写明&lt;/strong&gt;无视复活甲的，也是我向官方报告的 “bug”，后面官方改了技能说明，之前的英文介绍里面没有 GA（Guardian Angel）。其他的大家都知道的 bug，我也不愿向官方反馈。&lt;/p&gt;
+&lt;p&gt;第三个，仅需两天（一天16个小时左右），50 多把即可从零上超凡大师，多的 8 把左右是打的维护赛。&lt;/p&gt;
+&lt;p&gt;玩游戏也是要学习的，也是要动脑子的，只有不断进步，不断精进，才能更好去玩游戏。其他的下棋类的游戏，我也玩过，其实 TFT 大多都是抄 Dota 自走棋的，做得越来越像了，只不过简化了而已。&lt;/p&gt;
+&lt;p&gt;{% tabs content-1 %}&lt;/p&gt;
+&lt;!-- tab 美服 --&gt;
+&lt;p&gt;&lt;img alt=&#34;s2 NorthAmerica.png&#34; loading=&#34;lazy&#34; src=&#34;https://i.loli.net/2021/01/03/YzTqi82tJWLOU6S.png&#34;&gt;&lt;/p&gt;
+&lt;!-- endtab --&gt;
+&lt;!-- tab 国服一区 --&gt;
+&lt;p&gt;&lt;img alt=&#34;国服一区.png&#34; loading=&#34;lazy&#34; src=&#34;https://i.loli.net/2021/01/03/iH3DsZJdWEwvkNh.png&#34;&gt;&lt;/p&gt;
+&lt;!-- endtab --&gt;
+&lt;!-- tab 国服十四区 --&gt;
+&lt;p&gt;&lt;img alt=&#34;国服14区.png&#34; loading=&#34;lazy&#34; src=&#34;https://i.loli.net/2021/01/03/kQhUvrixLZ3CjKe.png&#34;&gt;&lt;/p&gt;
+&lt;!-- endtab --&gt;
+&lt;p&gt;{% endtabs %}&lt;/p&gt;
+&lt;h1 id=&#34;基础&#34;&gt;基础&lt;/h1&gt;
+&lt;p&gt;这里主要讲些基础按键，以及鼠标操作“抢”英雄，抢装备。&lt;/p&gt;
+&lt;h2 id=&#34;按键&#34;&gt;按键&lt;/h2&gt;
+&lt;h3 id=&#34;d&#34;&gt;D&lt;/h3&gt;
+&lt;p&gt;D 牌，换下一轮牌。D 一次需要 2 金币，具体几费英雄概率，看右下角&lt;/p&gt;
+&lt;h3 id=&#34;f&#34;&gt;F&lt;/h3&gt;
+&lt;p&gt;升级，在左下角有对应的当前经验以及升级所需经验。一次升级需要 4 金币，一级对应着可以上一人口，8 级代表至少可以上 8 人口。3-2 和 4-1 是一些快节奏的上人口搜排阵容时间。例如法师，3-2 升 6，D 牌，4-1 升7 D牌，靠质量和血量赢，这就意味着 2 阶段不能乱升级，最大化保留经济。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

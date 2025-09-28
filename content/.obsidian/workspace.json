@@ -1,0 +1,219 @@
+{
+  "main": {
+    "id": "46ccff5c670e4db7",
+    "type": "split",
+    "children": [
+      {
+        "id": "cc7fe61aa8d9c5de",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2afff666e7376445",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "films/film-mooc.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "film-mooc"
+            }
+          },
+          {
+            "id": "911578553bb93810",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/get-a-job.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "get-a-job"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4d2d7f063b6011c0",
+    "type": "split",
+    "children": [
+      {
+        "id": "e2f0ef0cc60b105e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4b309f0a6f0716f1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "6a5e5dbe14225f66",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "0060498c03b06463",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4970977dbd29a611",
+    "type": "split",
+    "children": [
+      {
+        "id": "2cd74431d3783ea7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "301fa0152836f278",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "posts/get-a-job.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "get-a-job 的反向链接列表"
+            }
+          },
+          {
+            "id": "7d592b225334426c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "posts/get-a-job.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "get-a-job 的出链列表"
+            }
+          },
+          {
+            "id": "6f658d2f74f12eb2",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "b0a9d1e9dace4025",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "posts/get-a-job.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "get-a-job 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:创建新数据库": false
+    }
+  },
+  "active": "911578553bb93810",
+  "lastOpenFiles": [
+    "search.en-us.md",
+    "新建 文本文档.txt",
+    "search.md",
+    "posts/effective-java-spring.md",
+    "posts/get-a-job.md",
+    "posts/tft.md",
+    "posts/test.md",
+    "posts/interview.md",
+    "posts/llm-0.md",
+    "posts/mac-docker -mirrors.md",
+    "films/film-mooc.md",
+    "posts/rowkey-design.md",
+    "posts/principles.md",
+    "posts/flashcard.md",
+    "posts/technical-insider.md",
+    "posts/Flashcard.md",
+    "posts/TFT.md",
+    "posts/LLM-0.md",
+    "posts/Interview.md",
+    "posts/BigData.md",
+    "posts/Effective-Java-With-Spring.md",
+    "posts/Get-a-job.md",
+    "en-us/tags",
+    "en-us/新建文件夹",
+    "tags",
+    "新建文件夹",
+    "en-us",
+    "films",
+    "posts/my-first-post.md"
+  ]
+}

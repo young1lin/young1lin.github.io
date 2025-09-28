@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Film | YL&#39;s Log</title>
+<meta name="keywords" content="">
+<meta name="description" content="YL&#39;s Log">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tags/film/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.4a977a24927dfcb104c05a21e8acc6782a45726abfb278fdc609607b38e0aa5c.css" integrity="sha256-Spd6JJJ9/LEEwFoh6KzGeCpFcmq/snj9xglgezjgqlw=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/film/index.xml">
+<link rel="alternate" hreflang="zh-cn" href="http://localhost:1313/tags/film/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    function initTOC() {
+        const toc = document.querySelector('.toc');
+        if (!toc) return;
+
+        
+        const headings = document.querySelectorAll('.post-content h1[id], .post-content h2[id], .post-content h3[id], .post-content h4[id], .post-content h5[id], .post-content h6[id]');
+        const tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+        
+        if (headings.length === 0 || tocLinks.length === 0) return;
+
+        let currentActiveLink = null;
+        
+        
+        function scrollTocToActiveItem(activeLink) {
+            if (!activeLink) return;
+            
+            const tocContainer = document.querySelector('.toc');
+            if (!tocContainer) return;
+            
+            const containerRect = tocContainer.getBoundingClientRect();
+            const linkRect = activeLink.getBoundingClientRect();
+            
+            const linkTop = linkRect.top - containerRect.top + tocContainer.scrollTop;
+            const containerHeight = tocContainer.clientHeight;
+            const currentScrollTop = tocContainer.scrollTop;
+            
+            const targetScrollTop = linkTop - (containerHeight / 2) + (activeLink.offsetHeight / 2);
+            
+            const visibleTop = currentScrollTop + containerHeight * 0.2;
+            const visibleBottom = currentScrollTop + containerHeight * 0.8;
+            
+            const needsScroll = linkTop < visibleTop || linkTop > visibleBottom;
+            
+            if (needsScroll) {
+                tocContainer.scrollTo({
+                    top: Math.max(0, Math.min(targetScrollTop, tocContainer.scrollHeight - containerHeight)),
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        
+        function removeAllActiveStates() {
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                link.style.fontWeight = '';
+                link.style.color = '';
+                link.style.backgroundColor = '';
+            });
+        }
+        
+        
+        function setActiveLink(targetId) {
+            removeAllActiveStates();
+            
+            const decodedTargetId = decodeURIComponent(targetId);
+            
+            let activeLink = null;
+            
+            activeLink = document.querySelector(`.toc a[href="#${targetId}"]`);
+            
+            if (!activeLink) {
+                const encodedId = encodeURIComponent(targetId);
+                activeLink = document.querySelector(`.toc a[href="#${encodedId}"]`);
+            }
+            
+            if (!activeLink) {
+                tocLinks.forEach(link => {
+                    const linkHash = link.getAttribute('href').substring(1);
+                    const decodedLinkHash = decodeURIComponent(linkHash);
+                    if (decodedLinkHash === targetId || decodedLinkHash === decodedTargetId || linkHash === targetId) {
+                        activeLink = link;
+                    }
+                });
+            }
+            
+            if (activeLink) {
+                activeLink.classList.add('active');
+                activeLink.style.fontWeight = 'bold';
+                activeLink.style.color = 'var(--primary)';
+                activeLink.style.backgroundColor = 'var(--hover)';
+                
+                currentActiveLink = activeLink;
+                scrollTocToActiveItem(activeLink);
+            }
+        }
+        
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '-10% 0px -80% 0px',
+            threshold: 0
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            let visibleEntries = entries.filter(entry => entry.isIntersecting);
+            
+            if (visibleEntries.length > 0) {
+                let topEntry = visibleEntries[0];
+                let minTop = topEntry.boundingClientRect.top;
+                
+                visibleEntries.forEach(entry => {
+                    const rect = entry.boundingClientRect;
+                    if (rect.top < minTop && rect.top >= 0) {
+                        minTop = rect.top;
+                        topEntry = entry;
+                    }
+                });
+                
+                setActiveLink(topEntry.target.id);
+            }
+        }, observerOptions);
+        
+        
+        headings.forEach(heading => {
+            if (heading.id) {
+                observer.observe(heading);
+            }
+        });
+        
+        
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const decodedTargetId = decodeURIComponent(targetId);
+                
+                let targetElement = document.getElementById(targetId) || document.getElementById(decodedTargetId);
+                
+                if (targetElement) {
+                    const headerHeight = 80; 
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - headerHeight;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    setTimeout(() => {
+                        setActiveLink(targetElement.id);
+                    }, 100);
+                }
+            });
+        });
+        
+        
+        setTimeout(() => {
+            const firstHeading = headings[0];
+            if (firstHeading && firstHeading.id) {
+                setActiveLink(firstHeading.id);
+            }
+        }, 500);
+    }
+
+    
+    initTOC();
+
+    
+    function handleTocResponsive() {
+        const screenWidth = window.innerWidth;
+        const toc = document.querySelector('.toc');
+        
+        if (toc) {
+            if (screenWidth <= 1200) {
+                toc.style.display = 'none';
+            } else {
+                toc.style.display = 'block';
+            }
+        }
+    }
+
+    
+    window.addEventListener('resize', handleTocResponsive);
+    
+    
+    window.addEventListener('load', handleTocResponsive);
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    function initHeaderScroll() {
+        const header = document.querySelector('.header');
+        if (!header) return;
+
+        let lastScrollTop = 0;
+        const scrollThreshold = 50; 
+
+        function handleScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > scrollThreshold) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScrollTop = scrollTop;
+        }
+
+        
+        let ticking = false;
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(handleScroll);
+                ticking = true;
+                setTimeout(() => { ticking = false; }, 16);
+            }
+        }
+
+        
+        window.addEventListener('scroll', requestTick, { passive: true });
+        
+        
+        handleScroll();
+    }
+
+    
+    initHeaderScroll();
+
+    
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        
+        anchor.removeEventListener("click", arguments.callee);
+        
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const id = this.getAttribute("href").substr(1);
+            const targetElement = document.querySelector(`[id='${decodeURIComponent(id)}']`);
+            
+            if (targetElement) {
+                const headerHeight = 100; 
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerHeight;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+                
+                if (id === "top") {
+                    history.replaceState(null, null, " ");
+                } else {
+                    history.pushState(null, null, `#${id}`);
+                }
+            }
+        });
+    });
+});
+</script>
+
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="YL&#39;s Log (Alt + H)">YL&#39;s Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/films" title="电影">
+                    <span>电影</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Film
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">电影概论-Mooc
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>源自于电影概论
+一、电影总览 八大艺术 来源于 Wikipedia
+八大艺术来源 八大艺术的分类来源已不可考，但有两个明显的现象是：
+人们提到八大艺术时，往往目的放在想要引介不在此艺术之中之物，例如新兴的游戏设计，有人指为第九艺术。 会提到八大艺术的理论，是因为摄影的发明对以后的各项科学、艺术、媒体及商业行为有巨大的贡献，也改变了人类以往的视觉经验，并进而衍生电影的发明，故变成第八艺术。 八大艺术列表 八大艺术包含：
+绘画 雕塑 建筑 音乐 文学 舞蹈 戏剧 电影 概览 电影经历过程 基本上，一部电影会经历三个阶段：制作(production)、发行(distribution)及放映(exhibition)。后面的数字化的售卖，是比较靠后的了，比如 DVD 版，放到各大视频平台售卖之类的。
+电影元素 光 色彩 声音 画面构图 镜头构图 电影创作过程 剧作 导演 表演 拍摄 剪辑 大部分的电影生产过程会经过四个主要的阶段，和上面的 MOOC 的对应了起来。
+编剧与集资（scriptwriting and founding）：电影观念开发完成，完成剧本。电影工作者也需要为拍片计划获得财务援助。 拍片准备（preparation for filming）：一旦脚本大致完成，且至少有了某些资金，电影工作就可以开始计划实体的生产过程。 拍摄（shooting）：电影工作者创造出电影的影像和声音。 组合（assmebly）：这些影像与声音组合成最终的形态，其中牵涉到剪辑图片与声音、执行特效、加入音乐或额外对白，以及加上标题名称。 这些阶段可能会相互重叠。后面会介绍，好莱坞的 “制片人中心制” 来详细介绍制片人这一角色，这里只是做个大概的介绍。总的来说，这四个阶段会产生几十种专业的分工。
+编剧与集资阶段 （The Scripting and Funding Phase） 核心人物
+制片（producer） 执行制片（executive producer）：通常负责安排财务与洽谈版权。 在线制片（line producer）：监管导演、演员与剧组的日常工作。由助理制片所指派。 助理制片（associate producer）：负责协调冲印厂或技术人员。 编剧（screenwriter） 制片主要负责财务及组织上的工作。如果是独立制片，则要去发掘拍片计划，并说服制片公司或赞助者出资，也可能雇佣制片人去整合项目计划。在编剧的过程中，制片还要照顾整个拍片计划、筹募资金、安排人事等。在拍摄及剪辑期间，制片往往是编导和出资者之间的桥梁。在电影完成后，制片通常还要安排发行、宣传、营销、以及监督成本的回收。单一制片或许可以接管所有这些工作，但一般不会这么做。
+剧本的完成会经历几个阶段。
+大致交代主要情节（action）的大纲（treatment） 一份货多份完整脚本 最后的拍摄脚本（shooting script） 有的电影，可能会有好几个编剧一起编写，或者制片直接换编剧写剧本，例如《异形：普罗米修斯》，其实换了好几个编剧。如果直拍呢货导演不满意某一个作者的剧本，可以雇其他做和加以修改。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-06-15 00:00:00 +0800 CST'>June 15, 2021</span></footer>
+  <a class="entry-link" aria-label="post link to 电影概论-Mooc" href="http://localhost:1313/films/film-mooc/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">YL&#39;s Log</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

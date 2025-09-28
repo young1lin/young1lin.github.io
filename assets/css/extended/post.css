@@ -1,0 +1,16 @@
+/* 自适应宽度，左右边距100px */
+.main {
+    max-width: none !important;
+    width: auto !important;
+    margin: 0 100px !important;
+    padding: 0 !important;
+}
+
+.post-content {
+    max-width: 100% !important;
+}
+
+/* 移除之前的grid布局 */
+.post-single {
+    display: block !important;
+}

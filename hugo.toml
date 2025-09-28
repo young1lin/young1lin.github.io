@@ -1,0 +1,84 @@
+baseURL = 'https://young1lin.github.io'
+languageCode = 'zh-cn'
+title = "Young1lin's Blog"
+theme = 'paper-mod'
+
+defaultContentLanguage = 'zh-cn'
+defaultContentLanguageInSubdir = false
+
+[languages]
+[languages.zh-CN]
+languageName = '中文'
+languageCode = 'zh-CN'
+weight = 1
+title = "YL's Log"
+
+[languages.zh-CN.params]
+description = "YL's Log"
+
+[[languages.zh-CN.menu.main]]
+name = '首页'
+url = '/'
+weight = 10
+[[languages.zh-CN.menu.main]]
+name = '搜索'
+url = '/search/'
+weight = 20
+[[languages.zh-CN.menu.main]]
+name = '标签'
+url = '/tags/'
+weight = 30
+[[languages.zh-CN.menu.main]]
+name = '电影'
+url = '/films'
+weight = 40
+
+# 暂时不使用多语言
+# [languages.en-US]
+# languageName = 'English'
+# languageCode = 'en-US'
+# weight = 2
+# title = "YL's Log"
+
+# [languages.en-US.params]
+# description = "YL's Log"
+
+# [[languages.en-US.menu.main]]
+# name = 'Home'
+# url = '/en-us/'
+# weight = 10
+# [[languages.en-US.menu.main]]
+# name = 'Search'
+# url = '/en-us/search/'
+# weight = 20
+# [[languages.en-US.menu.main]]
+# name = 'Tags'
+# url = '/en-us/tags/'
+# weight = 30
+
+[params]
+env = "development"
+ShowToc = true
+TocOpen = true
+ShowCodeCopyButtons = true
+searchHidden = false
+
+[params.homeInfoParams]
+Title = ""
+Content = """
+"""
+[[params.socialIcons]]
+name = "github"
+url = "https://www.github.com/young1lin"
+
+# [[params.socialIcons]]
+# name = "email"
+# url = "mailto:your-email"
+# 多语言输出配置
+[outputs]
+home = ['HTML', 'RSS', 'JSON']
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true

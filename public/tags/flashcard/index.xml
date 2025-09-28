@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Flashcard on Young1lin&#39;s Blog</title>
+    <link>http://localhost:1313/tags/flashcard/</link>
+    <description>Recent content in Flashcard on Young1lin&#39;s Blog</description>
+    <generator>Hugo -- 0.150.1</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 14 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/flashcard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>仅供本人使用，部分内容是缩写，其他人看不懂的</title>
+      <link>http://localhost:1313/posts/flashcard/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/flashcard/</guid>
+      <description>&lt;style&gt;
+    #head {
+        width: 100%;
+        height: 50px;
+        display: flex;
+    }
+
+    #head-left {
+        width: 30%;
+        float: right;
+    }
+    
+    #head-center {
+        width: 40%;
+        text-align: center;
+        font-size: 18px
+    }
+    
+    #head-right {
+        width: 30%;
+        float: left;
+    }
+    
+    #body {
+        width: 100%;
+        height: 900px;
+        display: flex;
+    }
+    #body h1{
+    	display:none;
+    }
+    #content-input {
+        width: 50%;
+        height: 900px;
+        padding:0 0 0 0;
+        background-color: #fafafa;
+    }
+    
+    #leave-message-textarea {
+        width: 100%;
+    	height:900px;
+        outline: 0;
+        border: 1px solid #a0b3d6;
+        font-size: 14px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-user-modify: read-write-plaintext-only;
+        line-height: 24px;
+        border-color: rgba(82, 168, 236, 0.8);
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+    }
+    
+    [contentEditable=true]:empty:not(:focus):before {
+        content: attr(data-text);
+    }
+    
+    #content-output {
+        width: 50%;
+        height: 900px;
+        overflow: auto;
+        background-color: #fafafa;
+        padding: 1em;
+        border: 1px solid #a0b3d6;
+    }
+    
+    button {
+        appearance: button;
+        -webkit-writing-mode: horizontal-tb !important;
+        text-rendering: auto;
+        color: -internal-light-dark(buttontext, rgb(170, 170, 170));
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: center;
+        align-items: flex-start;
+        cursor: default;
+        background-color: -internal-light-dark(rgb(239, 239, 239), rgb(74, 74, 74));
+        box-sizing: border-box;
+        margin: 0em;
+        font: 400 13.3333px Arial;
+        padding: 1px 6px;
+        border-width: 2px;
+        border-style: outset;
+        border-color: -internal-light-dark(rgb(118, 118, 118), rgb(195, 195, 195));
+        border-image: initial;
+    }
+    
+    .btn {
+        margin-left: 10px;
+        border-radius: 20px;
+        padding: 12px 23px;
+        color: #fff;
+        display: inline-block;
+        line-height: 1;
+        white-space: nowrap;
+        cursor: pointer;
+        background: #fff;
+        border: 1px solid #dcdfe6;
+        text-align: center;
+        box-sizing: border-box;
+        outline: none;
+        margin: 0;
+        transition: .1s;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    
+    .btn:hover {
+        color: #409eff;
+        border-color: #c6e2ff;
+        background-color: #ecf5ff;
+    }
+    
+    .fleft {
+        float: left;
+    }
+    
+    .fright {
+        float: right;
+    }
+    
+    .bg-blue {
+        background-color: #409eff;
+        border-color: #409eff;
+    }
+    
+    .bg-gray {
+        background-color: #909399;
+        border-color: #909399;
+    }
+    
+    .bg-green {
+        background-color: #67c23a;
+        border-color: #67c23a;
+    }
+    
+    .bg-red {
+        background-color: #f56c6c;
+        border-color: #f56c6c;
+    }
+&lt;/style&gt;
+&lt;script type=&#34;text/javascript&#34; async&gt;
+    // 所有的 cardId
+    let flashCards = [];
+    // cardId 和 对应的 内容
+    let flashCardContentMap = new Map();
+    // 已经掌握的 cards 的 id
+    let archiveCards = [];
+    // 历史记录 cards
+    let historyCards = [];
+    // 当执行上一个的操作时，下一个 id 将被缓存起来
+    let nextCards = [];
+    // 缓存已经递归调用查找过的内容
+    let existArchiveCards = [];
+    // 获取最小值到最大值之前的整数随机数
+    function GetRandomNum(Min, Max) {
+        var Range = Max - Min;
+        var Rand = Math.random();
+        return (Min + Math.round(Rand * Range));
+    }
+
+    function getRandomCard(){
+    	//let cardId = getRandomCard();
+        let randomNum = GetRandomNum(0, flashCards.length - 1);
+        let cardId = flashCards[randomNum];
+        // 之后实现这个功能
+        //cardId = getRandomFlashCard(cardId);
+        return cardId;
+    }
+    // function getRandomFlashCard(cardId) {
+    // 	for(let existCard in existArchiveCards){
+    // 		if(existCard === cardId){
+    // 			getRandomFlashCard();
+    // 		}
+    // 	}
+    //     for(let i=0,len=archiveCards.length;i&lt;len;i++){
+    //     	if(archiveCards[i] === cardId &amp;&amp; i+1 != len){
+    //     		existArchiveCards.push(cardId);
+    //     		getRandomFlashCard();
+    //     	}else{
+    //     		existArchiveCards = [];
+    //     		return archiveCards[i];
+    //     	}
+    //     }
+    // }
+    /**
+     * 根据 cardId 获取 cardContent
+     * @param carId H2 标题 名称
+     */
+    function getRandomFlashCardContent(cardId) {
+        if (cardId === null || cardId === &#34;&#34;) {
+            return &#34;&#34;;
+        }
+        return flashCardContentMap.get(cardId);
+    }
+    /**
+     * 输出内容直输出板
+     * @param content 内容
+     */
+    function outputContent(content) {
+        $(&#34;#content-output&#34;).html(&#34;&#34;);
+        $(&#34;#content-output&#34;).html(content);
+    }
+    
+    /**
+     * 清空输出内容
+     */
+    function clearOutputArea() {
+        $(&#34;#content-output&#34;).html(&#34;&#34;);
+    }
+    /**
+    * 获取下个 card 并且赋值
+    */
+    function getNextCard(){
+    	let cardId;
+        let currentCardId = getCurrentCardId();
+        // 先把当前 id push 到历史记录里面
+        if(currentCardId != &#34;&#34; &amp;&amp; currentCardId != null &amp;&amp; currentCardId != undefined ){
+        	// 如果当前值不为空， push 进去
+        	historyCards.push(currentCardId);
+        }
+    	let alreadyNextCard = nextCards.pop();
+    	if(alreadyNextCard === null || alreadyNextCard === undefined || alreadyNextCard === &#34;&#34;){
+    		cardId = getRandomCard();
+    	}else{
+    		cardId = alreadyNextCard;
+    	}
+    	// 这里限制一下历史记录cards
+    	historyCards.push(cardId);
+        pushTitle(cardId);
+    }
+    /**
+    * 获取上一页内容
+    */
+    function getPreviousCard(){
+    	// 当前 ID 先弹出来
+        let currentCardId = historyCards.pop();
+        let cardId = historyCards.pop();
+        // 再把当前 id 缓存起来
+        if(currentCardId != &#34;&#34; &amp;&amp; currentCardId != null &amp;&amp; currentCardId != undefined &amp;&amp; cardId != undefined){
+            nextCards.push(currentCardId);
+            pushTitle(cardId);
+        }else{
+        	alert(&#34;到头了&#34;);
+        }
+    }
+    /**
+    * 获取当前 cardId 的值
+    */
+    function getCurrentCardId(){
+    	return $(&#34;#cardTitle&#34;).html();
+    }
+    function pushTitle(cardId){
+    	$(&#34;#cardTitle&#34;).html(cardId);
+    	$(&#34;#content-output&#34;).html(&#34;&#34;);
+    }
+    /**
+    * 各个按钮点击事件绑定
+    */
+    function btnsOnclickBind(){
+    	// btn-show
+        $(&#34;#btn-show&#34;).click(function(event) {
+            let cardId = $(&#34;#cardTitle&#34;).html();
+            let content = getRandomFlashCardContent(cardId);
+            outputContent(content);
+        });
+        // btn-hide
+        $(&#34;#btn-hide&#34;).click(function(event) {
+        	$(&#34;#content-output&#34;).html(&#34;&#34;);
+        });
+        // btn-mastered
+        $(&#34;#btn-mastered&#34;).click(function(event) {
+        	//alert(&#34;待完善&#34;);
+        	console.log(&#34;待完善&#34;);
+        });
+        // 理论上这里应该不能弹出
+        // btn-previous
+        $(&#34;#btn-previous&#34;).click(function(event) {
+            getPreviousCard();
+        });
+        // btn-next
+        $(&#34;#btn-next&#34;).click(function(event) {
+            getNextCard();
+        });
+        // TODO 待实现btn-output 
+        // let content = getRandomFlashCardContent(cardId);
+    }
+    window.onload = function() {
+        $.get(&#34;/2020/07/29/Interview&#34;, function(data) {
+            let dom = $.parseHTML(data);
+            var a = $(data).find(&#34;h2&#34;);
+            for (let i = 0; i &lt; a.length; i++) {
+                // 给 Flashcard id 赋值
+                flashCards.push(a[i].id);
+            }
+            $(&#34;#hhh&#34;).append(dom);
+            for (let i = 0; i &lt; flashCards.length; i++) {
+                if (i + 1 != flashCards.length) {
+                    let content = $(&#34;#&#34; + flashCards[i]).nextUntil(&#34;#&#34; + flashCards[i + 1]);
+                    // 如果 h2 标签之间有 h1 标签，那么就是跨区间的，需要重新定位
+                    // let h1Content = content.find(&#34;h1&#34;).prevObject;
+                    //if(content.find(&#34;h1&#34;)){
+                    //   let h1Id = content.find(&#34;h1&#34;).id;
+                    //   content = $(&#34;#&#34;+flashCards[i]).nextUntil(&#34;#&#34;+h1Id);
+                    // }
+                    flashCardContentMap.set(flashCards[i], content);
+                }
+            }
+            // btn add onclick event ======= start
+            // 对各个按钮进行 onclick 事件绑定
+            btnsOnclickBind();
+            getNextCard();
+            // btn add onclick event ======= end;
+            $(&#34;#leave-message-textarea&#34;).html(&#34;&#34;);
+        });
+    };
+&lt;/script&gt;
+&lt;!-- head start --&gt;
+&lt;div id=&#34;head&#34;&gt;
+    &lt;div id=&#34;head-left&#34;&gt;
+        &lt;button id=&#34;btn-show&#34; class=&#34;btn bg-blue fright&#34; type=&#34;button&#34;&gt;
+            &lt;span&gt;显示内容&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button id=&#34;btn-hide&#34; class=&#34;btn bg-gray fright&#34; type=&#34;button&#34;&gt;
+            &lt;span&gt;隐藏内容&lt;/span&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div id=&#34;head-center&#34;&gt;
+        &lt;span id=&#34;cardTitle&#34;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div id=&#34;head-right&#34;&gt;
+        &lt;button id=&#34;btn-previous&#34; class=&#34;btn bg-red fleft&#34; type=&#34;button&#34;&gt;
+            &lt;span&gt;上一个&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button id=&#34;btn-next&#34; class=&#34;btn bg-green fleft&#34; type=&#34;button&#34;&gt;
+            &lt;span&gt;下一个&lt;/span&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;!-- &lt;input id=&#34;btn-output&#34; type=&#34;button&#34; value=&#34;导出未掌握内容&#34;&gt; --&gt;
+&lt;/div&gt;
+&lt;!-- head end --&gt;
+&lt;!-- body start --&gt;
+&lt;div id=&#34;body&#34;&gt;
+    &lt;div id=&#34;content-input&#34;&gt;
+        &lt;div id=&#34;leave-message-textarea&#34; contenteditable=&#34;true&#34; data-text=&#34;自我解答&#34;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id=&#34;content-output&#34; &gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- body end --&gt;
+&lt;!-- hidden content --&gt;
+&lt;div id=&#34;hhh&#34; style=&#34;display: none;&#34;&gt;&lt;/div&gt;
+&lt;p&gt;11&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

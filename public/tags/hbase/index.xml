@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>HBase on YL&#39;s Log</title>
+    <link>http://localhost:1313/tags/hbase/</link>
+    <description>Recent content in HBase on YL&#39;s Log</description>
+    <generator>Hugo -- 0.150.1</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hbase/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RowKey 设计规约</title>
+      <link>http://localhost:1313/posts/rowkey-design/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/rowkey-design/</guid>
+      <description>&lt;h1 id=&#34;rowkey-尽量简短&#34;&gt;RowKey 尽量简短&lt;/h1&gt;
+&lt;p&gt;Data Block 是 HBase 中文件读取的最小单元。Data Block中主要存储用户的KeyValue数据，而KeyValue结构是HBase存储的核心。HBase中所有数据都是以KeyValue结构存储在HBase中。&lt;/p&gt;
+&lt;p&gt;KeyValue由4个部分构成，分别为Key Length、Value Length、Key和Value。其中，Key Length和Value Length是两个固定长度的数值，Value是用户写入的实际数据，Key是一个复合结构，由多个部分构成：Rowkey、Column Family、Column Qualif ier、TimeStamp以及KeyType。其中，KeyType有四种类型，分别是Put、Delete、DeleteColumn和DeleteFamily。&lt;/p&gt;
+&lt;p&gt;HBase中数据在最底层是以KeyValue的形式存储的，其中Key是一个比较复杂的复合结构。&lt;/p&gt;
+&lt;p&gt;这也是HBase系统在表结构设计时经常强调Rowkey、Column Family以及ColumnQualif ier尽可能设置短的根本原因。列族一般情况下设置为 1 个。&lt;/p&gt;
+&lt;p&gt;——《HBase 原理与实战》&lt;/p&gt;
+&lt;h1 id=&#34;等长&#34;&gt;等长&lt;/h1&gt;
+&lt;p&gt;类似桶排序规则。&lt;/p&gt;
+&lt;h1 id=&#34;id-在前&#34;&gt;ID 在前&lt;/h1&gt;
+&lt;p&gt;&amp;lt;user_id&amp;gt;&amp;lt;业务字段&amp;gt;&lt;/p&gt;
+&lt;h1 id=&#34;优先级排序&#34;&gt;优先级排序&lt;/h1&gt;
+&lt;p&gt;高频查询的越靠前&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

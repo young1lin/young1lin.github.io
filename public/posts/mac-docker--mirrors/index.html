@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Mac 下 Docker 更改国内镜像源 | YL&#39;s Log</title>
+<meta name="keywords" content="Docker">
+<meta name="description" content="打开 DockerDesktop
+
+如果你有其他配置改了的，直接复制这个，记住前面的逗号不要删
+,&#34;registry-mirrors&#34;: [&#34;https://docker.mirrors.ustc.edu.cn&#34;,&#34;https://hub-mirror.c.163.com&#34;]
+如果你之前什么都没改，复制粘贴下面内容
+{
+  &#34;debug&#34;: true,
+  &#34;experimental&#34;: false,
+  &#34;registry-mirrors&#34;: [&#34;https://docker.mirrors.ustc.edu.cn&#34;,&#34;https://hub-mirror.c.163.com&#34;]
+}
+如果在上图的界面报错，不能改
+打开 Terminal 进入 Users/YourName目录下，复制粘贴进去
+cd .docker
+vi deamon.json
+重启docker，镜像生效
+{% note danger %}
+如果 docker 点 prefrence一直在更新状态，检查一下daemon.json 文件是否格式正确
+{% endnote %}
+如果不想换镜像源，可以开代理
+
+别问我什么是代理，问就是不知道
+我的本地代理端口是10080，你要是服务器的话，http://[ ip address]:[port]
+像这样
+二选一，别两个都写，或者打开 terminal，
+export ALL_PROXY=socks5://127.0.0.1:10080;
+export http_proxy=socks5://127.0.0.1:10080; 
+export https_proxy=socks5://127.0.0.1:10080;，
+
+终极方案
+Dockerfile
+FROM 你的服务器后，加上，Docker Compose 建议下一种方法。
+ENV http_proxy &lt;HTTP_PROXY&gt;
+ENV https_proxy &lt;HTTPS_PROXY&gt;
+打开终端后设置
+export http_proxy=&#34;&lt;HTTPS_PROXY&gt;&#34;
+export https_proxy=&#34;&lt;HTTPS_PROXY&gt;&#34;
+引用
+
+https://www.jianshu.com/p/419eaf4425a6
+http://pangguoming.com/blog/architecture/docker-configuration-file-daemon.json">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/mac-docker--mirrors/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.4a977a24927dfcb104c05a21e8acc6782a45726abfb278fdc609607b38e0aa5c.css" integrity="sha256-Spd6JJJ9/LEEwFoh6KzGeCpFcmq/snj9xglgezjgqlw=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="http://localhost:1313/posts/mac-docker--mirrors/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    function initTOC() {
+        const toc = document.querySelector('.toc');
+        if (!toc) return;
+
+        
+        const headings = document.querySelectorAll('.post-content h1[id], .post-content h2[id], .post-content h3[id], .post-content h4[id], .post-content h5[id], .post-content h6[id]');
+        const tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+        
+        if (headings.length === 0 || tocLinks.length === 0) return;
+
+        let currentActiveLink = null;
+        
+        
+        function scrollTocToActiveItem(activeLink) {
+            if (!activeLink) return;
+            
+            const tocContainer = document.querySelector('.toc');
+            if (!tocContainer) return;
+            
+            const containerRect = tocContainer.getBoundingClientRect();
+            const linkRect = activeLink.getBoundingClientRect();
+            
+            const linkTop = linkRect.top - containerRect.top + tocContainer.scrollTop;
+            const containerHeight = tocContainer.clientHeight;
+            const currentScrollTop = tocContainer.scrollTop;
+            
+            const targetScrollTop = linkTop - (containerHeight / 2) + (activeLink.offsetHeight / 2);
+            
+            const visibleTop = currentScrollTop + containerHeight * 0.2;
+            const visibleBottom = currentScrollTop + containerHeight * 0.8;
+            
+            const needsScroll = linkTop < visibleTop || linkTop > visibleBottom;
+            
+            if (needsScroll) {
+                tocContainer.scrollTo({
+                    top: Math.max(0, Math.min(targetScrollTop, tocContainer.scrollHeight - containerHeight)),
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        
+        function removeAllActiveStates() {
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                link.style.fontWeight = '';
+                link.style.color = '';
+                link.style.backgroundColor = '';
+            });
+        }
+        
+        
+        function setActiveLink(targetId) {
+            removeAllActiveStates();
+            
+            const decodedTargetId = decodeURIComponent(targetId);
+            
+            let activeLink = null;
+            
+            activeLink = document.querySelector(`.toc a[href="#${targetId}"]`);
+            
+            if (!activeLink) {
+                const encodedId = encodeURIComponent(targetId);
+                activeLink = document.querySelector(`.toc a[href="#${encodedId}"]`);
+            }
+            
+            if (!activeLink) {
+                tocLinks.forEach(link => {
+                    const linkHash = link.getAttribute('href').substring(1);
+                    const decodedLinkHash = decodeURIComponent(linkHash);
+                    if (decodedLinkHash === targetId || decodedLinkHash === decodedTargetId || linkHash === targetId) {
+                        activeLink = link;
+                    }
+                });
+            }
+            
+            if (activeLink) {
+                activeLink.classList.add('active');
+                activeLink.style.fontWeight = 'bold';
+                activeLink.style.color = 'var(--primary)';
+                activeLink.style.backgroundColor = 'var(--hover)';
+                
+                currentActiveLink = activeLink;
+                scrollTocToActiveItem(activeLink);
+            }
+        }
+        
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '-10% 0px -80% 0px',
+            threshold: 0
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            let visibleEntries = entries.filter(entry => entry.isIntersecting);
+            
+            if (visibleEntries.length > 0) {
+                let topEntry = visibleEntries[0];
+                let minTop = topEntry.boundingClientRect.top;
+                
+                visibleEntries.forEach(entry => {
+                    const rect = entry.boundingClientRect;
+                    if (rect.top < minTop && rect.top >= 0) {
+                        minTop = rect.top;
+                        topEntry = entry;
+                    }
+                });
+                
+                setActiveLink(topEntry.target.id);
+            }
+        }, observerOptions);
+        
+        
+        headings.forEach(heading => {
+            if (heading.id) {
+                observer.observe(heading);
+            }
+        });
+        
+        
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const decodedTargetId = decodeURIComponent(targetId);
+                
+                let targetElement = document.getElementById(targetId) || document.getElementById(decodedTargetId);
+                
+                if (targetElement) {
+                    const headerHeight = 80; 
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - headerHeight;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    setTimeout(() => {
+                        setActiveLink(targetElement.id);
+                    }, 100);
+                }
+            });
+        });
+        
+        
+        setTimeout(() => {
+            const firstHeading = headings[0];
+            if (firstHeading && firstHeading.id) {
+                setActiveLink(firstHeading.id);
+            }
+        }, 500);
+    }
+
+    
+    initTOC();
+
+    
+    function handleTocResponsive() {
+        const screenWidth = window.innerWidth;
+        const toc = document.querySelector('.toc');
+        
+        if (toc) {
+            if (screenWidth <= 1200) {
+                toc.style.display = 'none';
+            } else {
+                toc.style.display = 'block';
+            }
+        }
+    }
+
+    
+    window.addEventListener('resize', handleTocResponsive);
+    
+    
+    window.addEventListener('load', handleTocResponsive);
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    function initHeaderScroll() {
+        const header = document.querySelector('.header');
+        if (!header) return;
+
+        let lastScrollTop = 0;
+        const scrollThreshold = 50; 
+
+        function handleScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > scrollThreshold) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScrollTop = scrollTop;
+        }
+
+        
+        let ticking = false;
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(handleScroll);
+                ticking = true;
+                setTimeout(() => { ticking = false; }, 16);
+            }
+        }
+
+        
+        window.addEventListener('scroll', requestTick, { passive: true });
+        
+        
+        handleScroll();
+    }
+
+    
+    initHeaderScroll();
+
+    
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        
+        anchor.removeEventListener("click", arguments.callee);
+        
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const id = this.getAttribute("href").substr(1);
+            const targetElement = document.querySelector(`[id='${decodeURIComponent(id)}']`);
+            
+            if (targetElement) {
+                const headerHeight = 100; 
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerHeight;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+                
+                if (id === "top") {
+                    history.replaceState(null, null, " ");
+                } else {
+                    history.pushState(null, null, `#${id}`);
+                }
+            }
+        });
+    });
+});
+</script>
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="YL&#39;s Log (Alt + H)">YL&#39;s Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/films" title="电影">
+                    <span>电影</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Mac 下 Docker 更改国内镜像源
+    </h1>
+    <div class="post-meta"><span title='2020-07-16 00:00:00 +0000 UTC'>July 16, 2020</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e6%89%93%e5%bc%80-dockerdesktop" aria-label="打开 DockerDesktop">打开 DockerDesktop</a></li>
+                <li>
+                    <a href="#%e5%a6%82%e6%9e%9c%e4%bd%a0%e6%9c%89%e5%85%b6%e4%bb%96%e9%85%8d%e7%bd%ae%e6%94%b9%e4%ba%86%e7%9a%84%e7%9b%b4%e6%8e%a5%e5%a4%8d%e5%88%b6%e8%bf%99%e4%b8%aa%e8%ae%b0%e4%bd%8f%e5%89%8d%e9%9d%a2%e7%9a%84%e9%80%97%e5%8f%b7%e4%b8%8d%e8%a6%81%e5%88%a0" aria-label="如果你有其他配置改了的，直接复制这个，记住前面的逗号不要删">如果你有其他配置改了的，直接复制这个，记住前面的逗号不要删</a></li>
+                <li>
+                    <a href="#%e5%a6%82%e6%9e%9c%e4%bd%a0%e4%b9%8b%e5%89%8d%e4%bb%80%e4%b9%88%e9%83%bd%e6%b2%a1%e6%94%b9%e5%a4%8d%e5%88%b6%e7%b2%98%e8%b4%b4%e4%b8%8b%e9%9d%a2%e5%86%85%e5%ae%b9" aria-label="如果你之前什么都没改，复制粘贴下面内容">如果你之前什么都没改，复制粘贴下面内容</a></li>
+                <li>
+                    <a href="#%e5%a6%82%e6%9e%9c%e5%9c%a8%e4%b8%8a%e5%9b%be%e7%9a%84%e7%95%8c%e9%9d%a2%e6%8a%a5%e9%94%99%e4%b8%8d%e8%83%bd%e6%94%b9" aria-label="如果在上图的界面报错，不能改">如果在上图的界面报错，不能改</a></li>
+                <li>
+                    <a href="#%e5%a6%82%e6%9e%9c%e4%b8%8d%e6%83%b3%e6%8d%a2%e9%95%9c%e5%83%8f%e6%ba%90%e5%8f%af%e4%bb%a5%e5%bc%80%e4%bb%a3%e7%90%86" aria-label="如果不想换镜像源，可以开代理">如果不想换镜像源，可以开代理</a></li>
+                <li>
+                    <a href="#%e7%bb%88%e6%9e%81%e6%96%b9%e6%a1%88" aria-label="终极方案">终极方案</a><ul>
+                        
+                <li>
+                    <a href="#dockerfile" aria-label="Dockerfile">Dockerfile</a></li>
+                <li>
+                    <a href="#%e6%89%93%e5%bc%80%e7%bb%88%e7%ab%af%e5%90%8e%e8%ae%be%e7%bd%ae" aria-label="打开终端后设置">打开终端后设置</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%bc%95%e7%94%a8" aria-label="引用">引用</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="打开-dockerdesktop">打开 <code>DockerDesktop</code><a hidden class="anchor" aria-hidden="true" href="#打开-dockerdesktop">#</a></h1>
+<p><img alt="docker更改国内镜像源.png" loading="lazy" src="https://i.loli.net/2020/07/16/BM374ek9xKfoOZT.png"></p>
+<h1 id="如果你有其他配置改了的直接复制这个记住前面的逗号不要删">如果你有其他配置改了的，直接复制这个，记住前面的逗号不要删<a hidden class="anchor" aria-hidden="true" href="#如果你有其他配置改了的直接复制这个记住前面的逗号不要删">#</a></h1>
+<pre tabindex="0"><code>,&#34;registry-mirrors&#34;: [&#34;https://docker.mirrors.ustc.edu.cn&#34;,&#34;https://hub-mirror.c.163.com&#34;]
+</code></pre><h1 id="如果你之前什么都没改复制粘贴下面内容">如果你之前什么都没改，复制粘贴下面内容<a hidden class="anchor" aria-hidden="true" href="#如果你之前什么都没改复制粘贴下面内容">#</a></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;debug&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;experimental&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;registry-mirrors&#34;</span>: [<span style="color:#e6db74">&#34;https://docker.mirrors.ustc.edu.cn&#34;</span>,<span style="color:#e6db74">&#34;https://hub-mirror.c.163.com&#34;</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="如果在上图的界面报错不能改">如果在上图的界面报错，不能改<a hidden class="anchor" aria-hidden="true" href="#如果在上图的界面报错不能改">#</a></h1>
+<p>打开 Terminal 进入 Users/YourName目录下，复制粘贴进去</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd .docker
+</span></span><span style="display:flex;"><span>vi deamon.json
+</span></span></code></pre></div><p>重启<code>docker</code>，镜像生效</p>
+<p>{% note danger %}</p>
+<p>如果 <code>docker</code> 点 <code>prefrence</code>一直在更新状态，检查一下<code>daemon.json</code> 文件是否格式正确</p>
+<p>{% endnote %}</p>
+<h1 id="如果不想换镜像源可以开代理">如果不想换镜像源，可以开代理<a hidden class="anchor" aria-hidden="true" href="#如果不想换镜像源可以开代理">#</a></h1>
+<blockquote>
+<p>别问我什么是代理，问就是不知道</p>
+<p>我的本地代理端口是10080，你要是服务器的话，<code>http://[ ip address]:[port]</code></p>
+<p>像这样</p>
+<p>二选一，别两个都写，或者打开 <code>terminal</code>，</p>
+<p><code>export ALL_PROXY=socks5://127.0.0.1:10080;</code>
+<code>export http_proxy=socks5://127.0.0.1:10080; </code>
+<code>export https_proxy=socks5://127.0.0.1:10080;</code>，</p></blockquote>
+<p><img alt="proxy.png" loading="lazy" src="https://i.loli.net/2020/07/20/2vHdlr7B34L5fGX.png"></p>
+<h1 id="终极方案">终极方案<a hidden class="anchor" aria-hidden="true" href="#终极方案">#</a></h1>
+<h2 id="dockerfile">Dockerfile<a hidden class="anchor" aria-hidden="true" href="#dockerfile">#</a></h2>
+<p>FROM 你的服务器后，加上，Docker Compose 建议下一种方法。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">ENV</span> http_proxy &lt;HTTP_PROXY&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> https_proxy &lt;HTTPS_PROXY&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="打开终端后设置">打开终端后设置<a hidden class="anchor" aria-hidden="true" href="#打开终端后设置">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export http_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;HTTPS_PROXY&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;HTTPS_PROXY&gt;&#34;</span>
+</span></span></code></pre></div><h1 id="引用">引用<a hidden class="anchor" aria-hidden="true" href="#引用">#</a></h1>
+<blockquote>
+<p><a href="https://www.jianshu.com/p/419eaf4425a6">https://www.jianshu.com/p/419eaf4425a6</a></p>
+<p><a href="http://pangguoming.com/blog/architecture/docker-configuration-file-daemon.json">http://pangguoming.com/blog/architecture/docker-configuration-file-daemon.json</a></p></blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/docker/">Docker</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">YL&#39;s Log</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

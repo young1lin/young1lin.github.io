@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>BigData on Young1lin&#39;s Blog</title>
+    <link>http://localhost:1313/tags/bigdata/</link>
+    <description>Recent content in BigData on Young1lin&#39;s Blog</description>
+    <generator>Hugo -- 0.150.1</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 18 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/bigdata/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大数据简介</title>
+      <link>http://localhost:1313/posts/bigdata/</link>
+      <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/bigdata/</guid>
+      <description>&lt;h1 id=&#34;大数据bigdata三要素&#34;&gt;大数据（BigData）三要素&lt;/h1&gt;
+&lt;p&gt;“大数据”是指传统数据处理应用软件时，不足以处理的大的或者复杂的数据集的术语。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;大数据是个抽象的概念&lt;/strong&gt;，和虚拟机一样，具体实现各有不同。每个语言的实现都是不一样的，这里讲的是 Java 相关的，应用相对来说很广的大数据组件。要了解结构化/非结构化/半结构化数据、数据挖掘相关的内容，可自行搜索其他的，这里只讲部分。&lt;/p&gt;
+&lt;p&gt;大数据又称海量数据。所有的大数据相关的中间件都离不开下面三个问题。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如何保存海量数据&lt;/li&gt;
+&lt;li&gt;如何从海量数据中取有用的数据&lt;/li&gt;
+&lt;li&gt;以什么格式保存海量数据，高效插入和查询数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;什么上卷，下钻，slice，dice，那是 OLAP 里面的内容，Wikipedia 里面把这个搞在一起了，虽然事实上两者经常混在一起。&lt;/p&gt;
+&lt;h2 id=&#34;如何保存海量数据&#34;&gt;如何保存海量数据&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;GFS 登场&lt;/strong&gt;，不要跟我说什么 RAID，不停加磁盘也是有限制的。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文件就是字节序列，仅此而已——《深入理解计算机系统》&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Google File System 是 Google 发表的论文，提出了这个概念，Google 内部有实现了这个理论文件系统。Hadoop 内部实现叫 HDFS（Hadoop Distrubuted File System），其实就是加强版的文件系统。&lt;/p&gt;
+&lt;p&gt;下面是 HDFS 的总体架构图，主要是分两块&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;hdfs&#34; loading=&#34;lazy&#34; src=&#34;https://hadoop.apache.org/docs/r1.2.1/images/hdfsarchitecture.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;namenode&#34;&gt;NameNode&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;什么是元信息？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;元信息是关于信息的信息，用于描述信息的结构、语义、用途和用法等。[^1]:&lt;/p&gt;
+&lt;p&gt;我认为是最小单元信息，精简的不能再精简的那种信息，相当于句柄。&lt;/p&gt;
+&lt;p&gt;这里的 NameNode 就是部署在一台服务器上，上面保存了元（必要的）信息。例如在 HDFS 中的文件路径，文件权限信息，文件具体在哪几个 DataNode 上的信息。比如我一个存在 HDFS 上一个文件，路径是 /tmp/shaluan/aorui.log，它是一个日志文件，我通过客户端传上去的。然后元信息就有[^2]:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;文件、目录自身的属性信息，例如文件名，目录名，能对这个文件进行 write/read/recute 等操作信息等。&lt;/li&gt;
+&lt;li&gt;文件记录的信息的存储相关的信息，例如存储块信息，分块情况，副本个数等。&lt;/li&gt;
+&lt;li&gt;记录 HDFS 的 DataNode 的信息，用于 DataNode 的管理。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;NameNode 也是有主备（这里是主备，不是主从）的，保证 HDFS 高可用。&lt;/p&gt;
+&lt;h3 id=&#34;datanode&#34;&gt;DataNode&lt;/h3&gt;
+&lt;p&gt;**实际保存的文件的组件。**可以看作一个 NameNode 部署在一个服务器上。&lt;/p&gt;
+&lt;p&gt;数据你看上去是 TB 级别的，其实里面被分成了很多个文件块。可能是 1 GB 一个文件块，每次读取文件的时候，就读那一小块。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

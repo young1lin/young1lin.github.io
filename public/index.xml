@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>YL&#39;s Log</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on YL&#39;s Log</description>
+    <generator>Hugo -- 0.150.1</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 08 Mar 2025 00:04:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大语言模型-0</title>
+      <link>http://localhost:1313/posts/llm-0/</link>
+      <pubDate>Sat, 08 Mar 2025 00:04:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/llm-0/</guid>
+      <description>&lt;h1 id=&#34;又是一波风口来了&#34;&gt;又是一波风口来了&lt;/h1&gt;
+&lt;p&gt;又开始了，不懂行的，只会高谈阔论放没有味道屁的，又开始了，“李一舟” 们又复活了。开始利用大家的焦虑，开始卖些没有营养的课，新一波的收割又来了。那些高谈阔论的砖家疯狂啃噬着这新鲜的养料。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;DeepSeek 这 xx 条指令帮你更好掌握 xx&lt;/li&gt;
+&lt;li&gt;创始人梁文峰 xx 量化投资 xx&lt;/li&gt;
+&lt;li&gt;我用 DeepSeek 赚到了 xx&lt;/li&gt;
+&lt;li&gt;xx 大学 DeepSeek xx&lt;/li&gt;
+&lt;li&gt;xx 宣布接入 DeepSeek&lt;/li&gt;
+&lt;li&gt;AI 破局！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;还有很多，就不列举了，点进去全都是依托谢特，毫无营养的内容，基本都是割韭菜，卖低质量课的。&lt;strong&gt;没有调查，就没有发言权&lt;/strong&gt;，我明知道那些点进去是垃圾内容，我还是强忍着恶心，本着应该调查再发表观点的心态去看了，确实都是一坨，根本不用点进去看。到最后基本都是加群卖课，准备开始割你，这些人想钱想疯了。&lt;/p&gt;
+&lt;p&gt;一月份的时候 CNBC、The Daily Show、各个行业的博主都来了，人人都可以评价 DeepSeek，都可以上来说两句，在自己行业的视角。这很正常，没问题，但是就像&lt;strong&gt;盲人摸象&lt;/strong&gt;，只知道&lt;strong&gt;部分事实，那不是事实&lt;/strong&gt;。《事实》里面，人们只会报独特的消息，&lt;em&gt;所有的媒体才不会浪费时间去编造那些不符合我们基本本能的故事&lt;/em&gt;。&lt;/p&gt;
+&lt;p&gt;与其听一些“砖家”高谈阔论，说一些没有味的屁话，不如自己真正找到一手或者近一手的资料，去学点真东西。&lt;/p&gt;
+&lt;h1 id=&#34;背景介绍&#34;&gt;背景介绍&lt;/h1&gt;
+&lt;p&gt;这里只做大语言模型和扩散模型相关的内容推荐，更深层次的机器学习，神经网络，深度学习里面种种细节其实也不用完全掌握。只要会用就行了，很多底层细节是不需要知道的。&lt;/p&gt;
+&lt;p&gt;你不需要有高性能的 GPU，也不需要有足够的编程知识，更不需要了解 TCP/IP，不需要了解 TCP 粘包，TCP Sequence，就是个简单的 HTTP 请求，也不需要了解 OAuth2 协议，甚至也不需要充钱，只需要注册 DeepSeek 或者 Kimi 账号，使用它们的平台生成一个 API Key 放到 &lt;code&gt;Authorization: Bearer &lt;/code&gt;后面即可，最后面有演示内容。本质上就是根据你输入的内容，结合大模型“学习”过的知识，给你回答。&lt;/p&gt;
+&lt;h2 id=&#34;幸存者偏差&#34;&gt;幸存者偏差&lt;/h2&gt;
+&lt;p&gt;可能或多或少看到谁谁谁用 Cursor，毫无编程经验，就写出一个 xx APP，赚到了钱。对，没错，这些是真的，但是只是部分事实。不是所有人都可以这样，并且好的软件，它是要维护的，是要人来参与的。就算你用 Cursor 写出了这样的 APP，但是它是要不断迭代的，要重构，要写良好的 AAA 单元测试。这些，Cursor 还差一点，并且我在工作中很少见到人写测试代码，但是如果你真的编程到了一定程度，你就会发现，写好规划文档占三分之一时间、单元测试和集成测试等其他测试占用一半时间，&lt;strong&gt;测试才是软件开发最重要的事情&lt;/strong&gt;，开发其实只是占用六分之一的时间。&lt;/p&gt;
+&lt;p&gt;并且，如果不懂 Git，不了解 GitLab、Github，毫无软件开发经验，用 Cursor 写出来的东西，不会做版本控制，也不知道提交到远端仓库，本地电脑坏了，或者其他意外情况，代码全丢了，那就全完了。就算了解 Git，也不了解软件开发推崇的敏捷开发，项目管理，版本变更兼容，需求和实现需要定期同步等等的坑，光有想法和结构化思维，是做不出来可迭代的，优秀的产品。没有人能一次性写出完美的代码，就算是 Linux Kernnel 的代码，也有大约 20% 的提交都是重构的代码，&lt;strong&gt;重构非常重要&lt;/strong&gt;。重构的前提，是编写良好的单元测试。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>找一份工作</title>
+      <link>http://localhost:1313/posts/get-a-job/</link>
+      <pubDate>Sat, 22 Feb 2025 19:22:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/get-a-job/</guid>
+      <description>&lt;h1 id=&#34;现状&#34;&gt;现状&lt;/h1&gt;
+&lt;p&gt;不得不接受的事实是，目前软件开发就业环境很烂，远不如前几年。如果你没有完全符合你想要去的公司的要求，例如 xx 年行业经验，做过 xx，面试都不会约你，这是很正常的。如果你是 Boss 直聘投递的，20 次问候，只有一次回复，是非常正常的情况，具体的我会在【投递简历】那里细说。&lt;strong&gt;国内外都一样&lt;/strong&gt;，你投国外英文简历更多都是不回的，或者回复模板发给你。&lt;/p&gt;
+&lt;p&gt;可能站在猎头的角度看，这次真的是金三银四，招聘岗位增多，是因为 DeepSeek 开源炸出了一堆的 AI 相关的岗位。但是，投递的人非常非常多，&lt;strong&gt;普通人投递的简历大都已读不回/未读未回&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;大家都在“&lt;strong&gt;降本增效&lt;/strong&gt;”，甚至有些企业只想通过降本来增效，而不是利用 AI 增效。例如 xx 电器，想通过 LLM Agent 做 Customer Service，完全替代人工，这种如果有得选的话，最好别去，主打降本的公司你会过得很艰难。话又说回来，这个环境又有哪些公司还在扩张呢。连 U.S. 都在精简 ZF 部门，成立 DOGE Department of Government Efficiency 来裁员。&lt;/p&gt;
+&lt;p&gt;想找到合适的工作，难上加难，给出合理的薪资，正常双休的公司，在杭州可能算是“违法”吧。很多公司的老板创业也不容易，投资人也焦虑，所以他们就想把这些焦虑转嫁给研发人员，试图以制造业的经验，增加研发人员的工时，期望得到更高的产出。可是，研发是脑力劳动，不休息，少休息，出错的概率会更大，反而 BUG 会更多，带来的潜在损失也会更大。&lt;strong&gt;996，大小休，直接拒绝&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;个人情况&#34;&gt;个人情况&lt;/h2&gt;
+&lt;p&gt;首先你要明确一些你很在意的，不那么在意的，不在意的，罗列出来。&lt;strong&gt;明确你的目标&lt;/strong&gt;，很重要。我给一些样例，例如你很在意薪资，对工作环境，工作时长不那么在意，对员工福利根本不在意，那你应该按重要程度这样列出来。&lt;/p&gt;
+&lt;h3 id=&#34;列出你关心的因素&#34;&gt;列出你关心的因素&lt;/h3&gt;
+&lt;p&gt;求职时，每个人关注的点都不一样。列了一些因素：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;薪资&lt;/strong&gt;：期望的收入水平（如月薪、奖金等）；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工作时长&lt;/strong&gt;：是否接受加班、996、大小休等高强度安排；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工作环境&lt;/strong&gt;：办公条件、团队氛围、是否需要吸二手烟等；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;员工福利&lt;/strong&gt;：社保、公积金、带薪休假、补助等；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;成长空间&lt;/strong&gt;：职业发展机会、学习新技能的可能性；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;公司稳定性&lt;/strong&gt;：初创公司还是成熟企业，是否面临裁员风险；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;行业和岗位&lt;/strong&gt;：是否是你感兴趣或擅长的领域；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;通勤时间&lt;/strong&gt;：上下班的距离和交通便利性；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工作内容&lt;/strong&gt;：是否有挑战性，能否发挥你的能力；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工作与生活的平衡&lt;/strong&gt;：是否有时间陪伴家人、休息或追求兴趣。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;按重要程度排序&#34;&gt;按重要程度排序&lt;/h3&gt;
+&lt;p&gt;将这些因素分为&lt;strong&gt;重要&lt;/strong&gt;、&lt;strong&gt;普通&lt;/strong&gt;和&lt;strong&gt;不重要&lt;/strong&gt;三个等级。例如：&lt;br&gt;
+如果你无法接受996、薪资是底线、工作环境其次，那么可以这样排序：&lt;br&gt;
+1. 工作时长（重要）
+2. 薪资（重要）
+3. 工作环境（普通）
+4. 成长空间（普通）
+5. 员工福利（不重要）
+排序后，你的目标会更清晰，知道哪些条件可以妥协，哪些必须坚持。&lt;/p&gt;
+&lt;h3 id=&#34;明确底线和期望&#34;&gt;明确底线和期望&lt;/h3&gt;
+&lt;p&gt;对于每个重要因素，设定一个&lt;strong&gt;底线&lt;/strong&gt;（最低接受标准）和一个&lt;strong&gt;期望&lt;/strong&gt;（理想状态）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;薪资&lt;/strong&gt;：底线是月薪 xx K，期望是 yy K；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工作时长&lt;/strong&gt;：底线是每周正常上下班，996 或大小休是接受不了的；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工作环境&lt;/strong&gt;：底线是不吸二手烟，期望是有相对安静的，不会被随时打断的工作环境。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果这份工作已经触及到底线了，或者底线都到不了，别犹豫，一定不要去，去了一定后悔。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>原则</title>
+      <link>http://localhost:1313/posts/principles/</link>
+      <pubDate>Thu, 03 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/principles/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;对我而言，有意义的工作是指一项我能全身心投入的使命；有意义的人际关系是指我既深深地关心对方，对方也深深地关心我。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我发现，我能够成功的唯一途径将是：&lt;/p&gt;
+&lt;p&gt;1．找到与我观点不同的最聪明的人，以便自己能够努力理解他们的推理。&lt;/p&gt;
+&lt;p&gt;2．知道自己在什么时候不能有明确的意见，不急于下结论。&lt;/p&gt;
+&lt;p&gt;3．逐步归纳永恒和普适的原则，对其进行测试，将其系统化。&lt;/p&gt;
+&lt;p&gt;4．通过平衡风险来保持较大的回报，并降低下行波动。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我逐渐认识到，股价反映了人们的预期，所以当实际结果比预期好时，股价上涨；当实际结果比预期差时，股价下跌。而大多数人会因为近期的经验而产生偏见。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过市场交易赚钱是很困难的。对此，才华横溢的交易者和投资家伯纳德·巴鲁克形象地说道：“如果你已经做好准备放弃一切其他东西，像医科学生研究解剖一样仔细地研究市场的整个历史和背景，并研究所有主要上市公司——如果你能做到上述的一切，同时你还拥有赌博者的镇定、洞察者的第六感和狮子的勇气，你才有可能抓住一丝机会。”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我了解到，如果你以勤奋和有创造性的方式工作，你几乎可以得到你想要的任何东西，但你不可能同时得到所有东西。成熟意味着你可以放弃一些好的选择，从而追求更好的选择。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;就我们一致同意的相处规范而言，最重要的一条是，我们需要做三件事：&lt;/p&gt;
+&lt;p&gt;1．把我们的真实想法摆在桌面上；&lt;/p&gt;
+&lt;p&gt;2．存在经过深思熟虑的分歧，但人们愿意在相互了解的过程中更改观点；&lt;/p&gt;
+&lt;p&gt;3．如果分歧依然存在，拥有一种大家一致同意的决策方式（如投票或者拥有清晰的权威），以便我们能够不带怨气地把分歧留在身后。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;管理的资金太多有可能损害业绩，原因是太大的规模会影响市场走向，导致建仓和平仓的成本很高。在2010年实现超过40%的收益率后，我们不得不考虑向客户退回很多资金，尽管他们其实希望将更多的钱交由我们管理。我们一直谨慎地让自己不要变得过大，以免竭泽而渔。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在我看来，人生由三个阶段组成：在第一个阶段，我们依赖其他人，我们学习；在第二个阶段，其他人依赖我们，我们工作；在第三个阶段，当其他人不再依赖我们、我们也不必再工作时，我们就可以自由地体验生活了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;王岐山：有能力的人居安思危。安然无忧的是愚人。假如冲突能在变得尖锐之前被解决的话，世界上就不会有英雄了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;做到头脑极度开放、极度透明&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;对于快速学习和有效改变而言，头脑极度开放、极度透明是价值无限的&lt;/strong&gt;。学习过程是一连串的实时反馈循环：我们做决定，看到结果，然后根据结果改进对现实的理解。做到头脑极度开放能够增强这些反馈循环的效率，因为这能让你和其他人无比清晰地看到你在做什么、为什么这么做，而不会产生误解。你的头脑越开放，你就越不会自欺，其他人也就越会给你诚实的反馈。如果他们是“可信”的人（知道什么样的人是“可信”[插图]的也很重要），你就会从他们那里受益良多。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不要担心其他人的看法，使之成为你的障碍&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拥抱极度求真和极度透明将带来更有意义的工作和更有意义的人际关系&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;人在尝试理解任何东西（经济、市场、天气等）时，都可以从两种视角出发：&lt;/p&gt;
+&lt;p&gt;1．自上而下：努力找到这些东西背后的唯一驱动法则或规律。例如，在理解市场时，人可以研究影响所有经济和市场的普适法则，如供求关系；在理解物种时，人可以集中了解基因密码是如何对所有物种发生作用的。金字塔原理，结构化思维。&lt;/p&gt;
+&lt;p&gt;2．自下而上：研究每种具体情况及其背后的法则或规律，例如，小麦市场独特的法则或规律，或者使鸭子区别于其他物种的基因序列。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;痛苦+反思=进步&lt;/p&gt;
+&lt;p&gt;如果你能养成一种习惯，面对精神痛苦时能够自动地反思痛苦而不是躲避痛苦，你将能够快速地学习和进化&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;生活中的大多数东西都不过是“同类情况的重演”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;但大多数人缺乏勇气克服自身弱点，也缺乏勇气做出这一改变所要求的不容易做出的抉择。归根到底，这可以总结为以下5项抉择：1．不要混淆你的愿望和事实。&lt;/p&gt;
+&lt;p&gt;2．不要为自身形象担心，只需关心能不能实现你的目标。&lt;/p&gt;
+&lt;p&gt;3．不要过于重视直接结果而忽视后续、再后续的结果。&lt;/p&gt;
+&lt;p&gt;4．不要让痛苦妨碍进步。&lt;/p&gt;
+&lt;p&gt;5．不要把不好的结果归咎于任何人，从自己身上找原因。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在我看来，个人进化过程（即我在上一条描述的循环）通过5个不同的步骤发生。如果你能把那5件事都做好，你几乎肯定可以成功。这五步大概是：&lt;/p&gt;
+&lt;p&gt;1．有明确的目标。&lt;/p&gt;
+&lt;p&gt;2．找到阻碍你实现这些目标的问题，并且不容忍问题。&lt;/p&gt;
+&lt;p&gt;3．准确诊断问题，找到问题的根源。&lt;/p&gt;
+&lt;p&gt;4．规划可以解决问题的方案。&lt;/p&gt;
+&lt;p&gt;5．做一切必要的事来践行这些方案，实现成果。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;有明确的目标&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;排列优先顺序：尽管你几乎可以得到你想要的任何东西，但你不可能得到你想要的所有东西&lt;/strong&gt;。我的事情只有两类，重要的和紧急的，紧急的事情永远都是不重要的，重要的事情永远都是不紧急的。——《架构整洁之道》&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不要混淆目标和欲望&lt;/strong&gt;。合理的目标是你真正需要实现的东西，欲望则是你想要但会阻止你实现目标的东西。欲望通常是直接结果。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;调和你的目标和欲望，以明确你在生活中真正想要的东西&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不要把成功的装饰误认为成功本身&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;永远不要因为你觉得某个目标无法实现就否决它&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;谨记伟大的期望创造伟大的能力&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;如果你拥有灵活性并自我归责，那么几乎没有什么能阻止你成功&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;知道如何对待挫折和知道如何前进一样重要&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;找出问题，并且不容忍问题&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;把令人痛苦的问题视为考验你的潜在进步机会&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;不要逃避问题，因为问题根植于看起来并不美好的残酷现实。&lt;/li&gt;
+&lt;li&gt;要精准地找到问题所在。&lt;/li&gt;
+&lt;li&gt;不要把问题的某个原因误认为问题本身。&lt;/li&gt;
+&lt;li&gt;区分大问题和小问题。我只做重要的事情。&lt;/li&gt;
+&lt;li&gt;找出一个问题之后，不要容忍问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;诊断问题，找到问题的根源&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;先把问题是什么弄明白，再决定怎么做。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;区分直接原因和根本原因&lt;/strong&gt;。在《肥胖代码》里面，你变胖的直接原因是你吃了很多东西，根本原因是胰岛素产生过多且持久。压力大会生成皮质醇，进而产生很多胰岛素。吃精致碳水会比同等卡路里的油脂更容易发胖，因为前者产生更多的胰岛素。一个人酗酒的直接原因是喝了太多酒，根本原因可能是遗传，也有可能是小时候的环境影响。&lt;/li&gt;
+&lt;li&gt;认识到了解人（包括你自己）的特性，有助于对其形成合理预期。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;规划方案&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前进之前先回顾。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;把你的问题看作一部机器产生的一系列结果&lt;/strong&gt;。通过俯视你的机器并思考如何改变这部机器以创造更好的结果来从事更高层次的思考。你要站在更高的维度思考问题。&lt;/li&gt;
+&lt;li&gt;谨记实现你的目标通常有很多途径。&lt;/li&gt;
+&lt;li&gt;把你的方案设想为一个电影剧本，然后循序渐进地思考由谁来做什么事。&lt;/li&gt;
+&lt;li&gt;把你的方案写下来，让所有人都能看到，并对照方案执行。&lt;/li&gt;
+&lt;li&gt;要明白，规划一个好方案不一定需要很多时间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;坚定地从头至尾执行方案&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;规划做得再好，不执行也无济于事。&lt;/li&gt;
+&lt;li&gt;良好工作习惯的重要性常被大大低估。&lt;/li&gt;
+&lt;li&gt;建立清晰的衡量标准来确保你在严格执行方案。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;谨记：如果你找到了解决方案，弱点是不重要的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;考察你犯错误的类型，并识别你通常在五步流程中的哪一步上做得不好。&lt;/li&gt;
+&lt;li&gt;每个人都至少有一个最大的弱点阻碍其成功，找到你的这个弱点并处理它。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;影响合理决策的两个最大的障碍是你的自我意识和思维盲点。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>电影概论-Mooc</title>
+      <link>http://localhost:1313/films/film-mooc/</link>
+      <pubDate>Tue, 15 Jun 2021 00:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/films/film-mooc/</guid>
+      <description>&lt;p&gt;源自于&lt;a href=&#34;https://www.icourse163.org/learn/HENU-1003369001?tid=1461424469#/learn/content?type=detail&amp;amp;id=1237803381&amp;amp;sm=1&#34;&gt;电影概论&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;一电影总览&#34;&gt;一、电影总览&lt;/h1&gt;
+&lt;h2 id=&#34;八大艺术&#34;&gt;八大艺术&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/zh-cn/%E5%85%AB%E5%A4%A7%E8%97%9D%E8%A1%93&#34;&gt;来源于 Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;八大艺术来源&#34;&gt;八大艺术来源&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;八大艺术&lt;/strong&gt;的分类来源已不可考，但有两个明显的现象是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;人们提到八大艺术时，往往目的放在想要引介不在此艺术之中之物，例如新兴的&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E9%9B%BB%E5%AD%90%E9%81%8A%E6%88%B2&#34;&gt;游戏&lt;/a&gt;设计，有人指为第九艺术。&lt;/li&gt;
+&lt;li&gt;会提到八大艺术的理论，是因为摄影的发明对以后的各项科学、艺术、媒体及商业行为有巨大的贡献，也改变了人类以往的视觉经验，并进而衍生电影的发明，故变成第八艺术。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;八大艺术列表&#34;&gt;八大艺术列表&lt;/h3&gt;
+&lt;p&gt;八大艺术包含：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%B9%AA%E7%95%AB&#34;&gt;绘画&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E9%9B%95%E5%A1%91&#34;&gt;雕塑&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%BB%BA%E7%AF%89&#34;&gt;建筑&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E9%9F%B3%E6%A8%82&#34;&gt;音乐&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%96%87%E5%AD%B8&#34;&gt;文学&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E8%88%9E%E8%B9%88&#34;&gt;舞蹈&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%88%B2%E5%8A%87&#34;&gt;戏剧&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E9%9B%BB%E5%BD%B1&#34;&gt;电影&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;概览&#34;&gt;概览&lt;/h1&gt;
+&lt;h3 id=&#34;电影经历过程&#34;&gt;电影经历过程&lt;/h3&gt;
+&lt;p&gt;基本上，一部电影会经历三个阶段：制作(production)、发行(distribution)及放映(exhibition)。后面的数字化的售卖，是比较靠后的了，比如 DVD 版，放到各大视频平台售卖之类的。&lt;/p&gt;
+&lt;h2 id=&#34;电影元素&#34;&gt;电影元素&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;光&lt;/li&gt;
+&lt;li&gt;色彩&lt;/li&gt;
+&lt;li&gt;声音&lt;/li&gt;
+&lt;li&gt;画面构图&lt;/li&gt;
+&lt;li&gt;镜头构图&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;电影创作过程&#34;&gt;电影创作过程&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;剧作&lt;/li&gt;
+&lt;li&gt;导演&lt;/li&gt;
+&lt;li&gt;表演&lt;/li&gt;
+&lt;li&gt;拍摄&lt;/li&gt;
+&lt;li&gt;剪辑&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;大部分的电影生产过程会经过四个主要的阶段，和上面的 MOOC 的对应了起来。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;编剧与集资（scriptwriting and founding）：电影观念开发完成，完成剧本。电影工作者也需要为拍片计划获得财务援助。&lt;/li&gt;
+&lt;li&gt;拍片准备（preparation for filming）：一旦脚本大致完成，且至少有了某些资金，电影工作就可以开始计划实体的生产过程。&lt;/li&gt;
+&lt;li&gt;拍摄（shooting）：电影工作者创造出电影的影像和声音。&lt;/li&gt;
+&lt;li&gt;组合（assmebly）：这些影像与声音组合成最终的形态，其中牵涉到剪辑图片与声音、执行特效、加入音乐或额外对白，以及加上标题名称。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这些阶段可能会相互重叠。后面会介绍，好莱坞的 “制片人中心制” 来详细介绍制片人这一角色，这里只是做个大概的介绍。总的来说，这四个阶段会产生几十种专业的分工。&lt;/p&gt;
+&lt;h3 id=&#34;编剧与集资阶段-the-scripting-and-funding-phase&#34;&gt;编剧与集资阶段 （The Scripting and Funding Phase）&lt;/h3&gt;
+&lt;p&gt;核心人物&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;制片（producer）
+&lt;ol&gt;
+&lt;li&gt;执行制片（executive producer）：通常负责安排财务与洽谈版权。&lt;/li&gt;
+&lt;li&gt;在线制片（line producer）：监管导演、演员与剧组的日常工作。由助理制片所指派。&lt;/li&gt;
+&lt;li&gt;助理制片（associate producer）：负责协调冲印厂或技术人员。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;编剧（screenwriter）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;制片主要负责财务及组织上的工作。如果是独立制片，则要去发掘拍片计划，并说服制片公司或赞助者出资，也可能雇佣制片人去整合项目计划。在编剧的过程中，制片还要照顾整个拍片计划、筹募资金、安排人事等。在拍摄及剪辑期间，制片往往是编导和出资者之间的桥梁。在电影完成后，制片通常还要安排发行、宣传、营销、以及监督成本的回收。单一制片&lt;strong&gt;或许可以&lt;/strong&gt;接管所有这些工作，但一般不会这么做。&lt;/p&gt;
+&lt;p&gt;剧本的完成会经历几个阶段。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;大致交代主要情节（action）的大纲（treatment）&lt;/li&gt;
+&lt;li&gt;一份货多份完整脚本&lt;/li&gt;
+&lt;li&gt;最后的拍摄脚本（shooting script）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;有的电影，可能会有好几个编剧一起编写，或者制片直接换编剧写剧本，例如《异形：普罗米修斯》，其实换了好几个编剧。如果直拍呢货导演不满意某一个作者的剧本，可以雇其他做和加以修改。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>云顶之弈如何从零到最强王者</title>
+      <link>http://localhost:1313/posts/tft/</link>
+      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tft/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;我玩了比较久的云顶之弈，也**“间接开发”过阵容**，就是 S3 最火热的 6 暗星羊刀水银泽拉斯。最快两天从水晶之痕没有段位到超凡大师（后面排到人比较慢，不愿玩，而且段位提升只是把数的堆积）。我也是美服以及艾欧尼亚两个赛季超凡大师，最高到一区前 200 名左右吧，3 月 26 日左右（具体几号真忘了）早上8 点斗鱼、卷子的第一把，和南波儿的两个小弟的7点多到8点那一把的录播视频为证。&lt;/p&gt;
+&lt;p&gt;只要你时间够，上个王者不成问题。后面比较喜欢玩 PBE（测试服），提前感受版本，厄加特的大招开始是&lt;strong&gt;没有写明&lt;/strong&gt;无视复活甲的，也是我向官方报告的 “bug”，后面官方改了技能说明，之前的英文介绍里面没有 GA（Guardian Angel）。其他的大家都知道的 bug，我也不愿向官方反馈。&lt;/p&gt;
+&lt;p&gt;第三个，仅需两天（一天16个小时左右），50 多把即可从零上超凡大师，多的 8 把左右是打的维护赛。&lt;/p&gt;
+&lt;p&gt;玩游戏也是要学习的，也是要动脑子的，只有不断进步，不断精进，才能更好去玩游戏。其他的下棋类的游戏，我也玩过，其实 TFT 大多都是抄 Dota 自走棋的，做得越来越像了，只不过简化了而已。&lt;/p&gt;
+&lt;p&gt;{% tabs content-1 %}&lt;/p&gt;
+&lt;!-- tab 美服 --&gt;
+&lt;p&gt;&lt;img alt=&#34;s2 NorthAmerica.png&#34; loading=&#34;lazy&#34; src=&#34;https://i.loli.net/2021/01/03/YzTqi82tJWLOU6S.png&#34;&gt;&lt;/p&gt;
+&lt;!-- endtab --&gt;
+&lt;!-- tab 国服一区 --&gt;
+&lt;p&gt;&lt;img alt=&#34;国服一区.png&#34; loading=&#34;lazy&#34; src=&#34;https://i.loli.net/2021/01/03/iH3DsZJdWEwvkNh.png&#34;&gt;&lt;/p&gt;
+&lt;!-- endtab --&gt;
+&lt;!-- tab 国服十四区 --&gt;
+&lt;p&gt;&lt;img alt=&#34;国服14区.png&#34; loading=&#34;lazy&#34; src=&#34;https://i.loli.net/2021/01/03/kQhUvrixLZ3CjKe.png&#34;&gt;&lt;/p&gt;
+&lt;!-- endtab --&gt;
+&lt;p&gt;{% endtabs %}&lt;/p&gt;
+&lt;h1 id=&#34;基础&#34;&gt;基础&lt;/h1&gt;
+&lt;p&gt;这里主要讲些基础按键，以及鼠标操作“抢”英雄，抢装备。&lt;/p&gt;
+&lt;h2 id=&#34;按键&#34;&gt;按键&lt;/h2&gt;
+&lt;h3 id=&#34;d&#34;&gt;D&lt;/h3&gt;
+&lt;p&gt;D 牌，换下一轮牌。D 一次需要 2 金币，具体几费英雄概率，看右下角&lt;/p&gt;
+&lt;h3 id=&#34;f&#34;&gt;F&lt;/h3&gt;
+&lt;p&gt;升级，在左下角有对应的当前经验以及升级所需经验。一次升级需要 4 金币，一级对应着可以上一人口，8 级代表至少可以上 8 人口。3-2 和 4-1 是一些快节奏的上人口搜排阵容时间。例如法师，3-2 升 6，D 牌，4-1 升7 D牌，靠质量和血量赢，这就意味着 2 阶段不能乱升级，最大化保留经济。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RowKey 设计规约</title>
+      <link>http://localhost:1313/posts/rowkey-design/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/rowkey-design/</guid>
+      <description>&lt;h1 id=&#34;rowkey-尽量简短&#34;&gt;RowKey 尽量简短&lt;/h1&gt;
+&lt;p&gt;Data Block 是 HBase 中文件读取的最小单元。Data Block中主要存储用户的KeyValue数据，而KeyValue结构是HBase存储的核心。HBase中所有数据都是以KeyValue结构存储在HBase中。&lt;/p&gt;
+&lt;p&gt;KeyValue由4个部分构成，分别为Key Length、Value Length、Key和Value。其中，Key Length和Value Length是两个固定长度的数值，Value是用户写入的实际数据，Key是一个复合结构，由多个部分构成：Rowkey、Column Family、Column Qualif ier、TimeStamp以及KeyType。其中，KeyType有四种类型，分别是Put、Delete、DeleteColumn和DeleteFamily。&lt;/p&gt;
+&lt;p&gt;HBase中数据在最底层是以KeyValue的形式存储的，其中Key是一个比较复杂的复合结构。&lt;/p&gt;
+&lt;p&gt;这也是HBase系统在表结构设计时经常强调Rowkey、Column Family以及ColumnQualif ier尽可能设置短的根本原因。列族一般情况下设置为 1 个。&lt;/p&gt;
+&lt;p&gt;——《HBase 原理与实战》&lt;/p&gt;
+&lt;h1 id=&#34;等长&#34;&gt;等长&lt;/h1&gt;
+&lt;p&gt;类似桶排序规则。&lt;/p&gt;
+&lt;h1 id=&#34;id-在前&#34;&gt;ID 在前&lt;/h1&gt;
+&lt;p&gt;&amp;lt;user_id&amp;gt;&amp;lt;业务字段&amp;gt;&lt;/p&gt;
+&lt;h1 id=&#34;优先级排序&#34;&gt;优先级排序&lt;/h1&gt;
+&lt;p&gt;高频查询的越靠前&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>For Interview</title>
+      <link>http://localhost:1313/posts/interview/</link>
+      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/interview/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;仅供本人面试前准备，其他人还是别看了，没意义。有很多我缩写，省去了很多易理解的部分。&lt;/p&gt;
+&lt;p&gt;我尽量找别人已经总结过的东西，而不是自己写，无意义，面试的八股文罢了。都是靠努力就能实现的东西。&lt;/p&gt;
+&lt;h1 id=&#34;常见容器&#34;&gt;常见容器&lt;/h1&gt;
+&lt;h2 id=&#34;arraylist-详解&#34;&gt;ArrayList 详解&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://note.youdao.com/ynoteshare1/index.html?id=efd2a3a29d2626acea2b053e56bae5cc&amp;amp;type=notebook#/04F1A0EFF8F241C2A89E2234AAF0A36A&#34;&gt;https://note.youdao.com/ynoteshare1/index.html?id=efd2a3a29d2626acea2b053e56bae5cc&amp;type=notebook#/04F1A0EFF8F241C2A89E2234AAF0A36A&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;底层&lt;strong&gt;基于数组&lt;/strong&gt;实现&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;创建 ArrayList 如果不指定大小&lt;/strong&gt;，会先创建一个&lt;strong&gt;大小为 0 的 Object[ ] 数组&lt;/strong&gt; ，&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;第一次添加数据&lt;/strong&gt;时，会&lt;strong&gt;扩容&lt;/strong&gt;成 ArrayList 的 默认大小 &lt;strong&gt;default_capacity：10&lt;/strong&gt;**；**&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;创建时如果&lt;strong&gt;指定大小&lt;/strong&gt;，直接&lt;strong&gt;创建指定大小的Object[ ]数组&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;add（）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;对 &lt;strong&gt;size+1&lt;/strong&gt;，去&lt;strong&gt;判断数组是否满了&lt;/strong&gt;，如果满了就&lt;strong&gt;调用 grow（）方法扩容&lt;/strong&gt;，扩容大小为，&lt;strong&gt;原数组大小 + 原数组大小右移一位&lt;/strong&gt;。也就是扩容到原来的&lt;strong&gt;1.5倍&lt;/strong&gt;。JDK 1.6 是 1.5 倍 +1 ，JDK 1.7，1.8 是 1.5 倍。&lt;/li&gt;
+&lt;li&gt;然后把老数组拷贝到新数组里&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;elementData&lt;/strong&gt; = &lt;strong&gt;Arrays.copyOf(elementData, newCapacity);&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;最后 &lt;strong&gt;elementData[ size++ ] = e&lt;/strong&gt;，对数组赋值，（并且size+1）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;add（index，e）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;首先&lt;strong&gt;对index做数组越界检查rangeCheck(index)&lt;/strong&gt;;  如果越界了，抛数组越界异常&lt;/li&gt;
+&lt;li&gt;如果没越界，还是&lt;strong&gt;对 size + 1，判断是否需要扩容&lt;/strong&gt;，如果需要扩容，调用&lt;strong&gt;grow&lt;/strong&gt;方法&lt;/li&gt;
+&lt;li&gt;如果需要扩容，调用&lt;strong&gt;System.arraycopy（1,2,3,4,5）&lt;strong&gt;方法。参数解释&lt;/strong&gt;1：原来的数组，2：从哪里开始复制。3：复制的目标数组。4：目标数组的第几位开始复制。5：一共复制几个数&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;System.arraycopy(elementData, index, elementData, index + 1, size - index);&lt;/li&gt;
+&lt;li&gt;假设把数字6插入到第3位，复制过后的数组是，1 2 3 4 5 -&amp;gt; &lt;strong&gt;1 2 3 3 4 5&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;然后再把目标的位置的值修改，变为 &lt;strong&gt;1 2 6 3 4 5&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;最后size++；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;set（index，e）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;首先解释，set这个方法是替换该位置原来的元素，所以不会使数组变大，不会做扩容判断&lt;/li&gt;
+&lt;li&gt;然后对index做数组越界检查，如果越界了，抛数组越界异常&lt;/li&gt;
+&lt;li&gt;把e替换到数组的index位置&lt;/li&gt;
+&lt;li&gt;返回数组index位置的原始值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;remove（index）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;首先&lt;strong&gt;对index做数组越界检查rangeCheck(index);&lt;/strong&gt;，如果越界了，抛数组越界异常&lt;/li&gt;
+&lt;li&gt;然后进行&lt;strong&gt;数组拷贝 System.arraycopy(elementData, index+1, elementData, index,size - index - 1);&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;假设把第三位数字删除，&lt;strong&gt;1 2 3 4 5 6 	- &amp;gt; 1	2 4 5 6 6&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;然后 element[size&amp;ndash;] = null;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;最后&lt;strong&gt;返回被删除的值&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;get（index）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;首先对index做数组越界检查&lt;strong&gt;rangeCheck(index);&lt;/strong&gt;，如果越界了，抛数组越界异常&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;return elementData(index);&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;总结来说，AraayList的get方法效率非常高，直接返回对应下标值，add方法和remove方法，效率就有点低了，需要考虑数组扩容和数组拷贝的问题&lt;/strong&gt;**。**&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mac 下 Docker 更改国内镜像源</title>
+      <link>http://localhost:1313/posts/mac-docker--mirrors/</link>
+      <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/mac-docker--mirrors/</guid>
+      <description>&lt;h1 id=&#34;打开-dockerdesktop&#34;&gt;打开 &lt;code&gt;DockerDesktop&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img alt=&#34;docker更改国内镜像源.png&#34; loading=&#34;lazy&#34; src=&#34;https://i.loli.net/2020/07/16/BM374ek9xKfoOZT.png&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;如果你有其他配置改了的直接复制这个记住前面的逗号不要删&#34;&gt;如果你有其他配置改了的，直接复制这个，记住前面的逗号不要删&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;,&amp;#34;registry-mirrors&amp;#34;: [&amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;,&amp;#34;https://hub-mirror.c.163.com&amp;#34;]
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;如果你之前什么都没改复制粘贴下面内容&#34;&gt;如果你之前什么都没改，复制粘贴下面内容&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;debug&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;experimental&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;registry-mirrors&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://hub-mirror.c.163.com&amp;#34;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;如果在上图的界面报错不能改&#34;&gt;如果在上图的界面报错，不能改&lt;/h1&gt;
+&lt;p&gt;打开 Terminal 进入 Users/YourName目录下，复制粘贴进去&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd .docker
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vi deamon.json
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;重启&lt;code&gt;docker&lt;/code&gt;，镜像生效&lt;/p&gt;
+&lt;p&gt;{% note danger %}&lt;/p&gt;
+&lt;p&gt;如果 &lt;code&gt;docker&lt;/code&gt; 点 &lt;code&gt;prefrence&lt;/code&gt;一直在更新状态，检查一下&lt;code&gt;daemon.json&lt;/code&gt; 文件是否格式正确&lt;/p&gt;
+&lt;p&gt;{% endnote %}&lt;/p&gt;
+&lt;h1 id=&#34;如果不想换镜像源可以开代理&#34;&gt;如果不想换镜像源，可以开代理&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;别问我什么是代理，问就是不知道&lt;/p&gt;
+&lt;p&gt;我的本地代理端口是10080，你要是服务器的话，&lt;code&gt;http://[ ip address]:[port]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;像这样&lt;/p&gt;
+&lt;p&gt;二选一，别两个都写，或者打开 &lt;code&gt;terminal&lt;/code&gt;，&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;export ALL_PROXY=socks5://127.0.0.1:10080;&lt;/code&gt;
+&lt;code&gt;export http_proxy=socks5://127.0.0.1:10080; &lt;/code&gt;
+&lt;code&gt;export https_proxy=socks5://127.0.0.1:10080;&lt;/code&gt;，&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt=&#34;proxy.png&#34; loading=&#34;lazy&#34; src=&#34;https://i.loli.net/2020/07/20/2vHdlr7B34L5fGX.png&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;终极方案&#34;&gt;终极方案&lt;/h1&gt;
+&lt;h2 id=&#34;dockerfile&#34;&gt;Dockerfile&lt;/h2&gt;
+&lt;p&gt;FROM 你的服务器后，加上，Docker Compose 建议下一种方法。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;ENV&lt;/span&gt; http_proxy &amp;lt;HTTP_PROXY&amp;gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;ENV&lt;/span&gt; https_proxy &amp;lt;HTTPS_PROXY&amp;gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;打开终端后设置&#34;&gt;打开终端后设置&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export http_proxy&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;HTTPS_PROXY&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export https_proxy&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;HTTPS_PROXY&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;引用&#34;&gt;引用&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/419eaf4425a6&#34;&gt;https://www.jianshu.com/p/419eaf4425a6&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://pangguoming.com/blog/architecture/docker-configuration-file-daemon.json&#34;&gt;http://pangguoming.com/blog/architecture/docker-configuration-file-daemon.json&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Effective Java(with Spring core)</title>
+      <link>http://localhost:1313/posts/effective-java-spring/</link>
+      <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/effective-java-spring/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.oreilly.com/library/view/effective-java/9780134686097/&#34;&gt;电子原版目录以及概要&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;请购买实体书籍，支持作者、翻译以及出版社&lt;/p&gt;
+&lt;h1 id=&#34;creating-and-destroying-objects&#34;&gt;Creating and Destroying Objects&lt;/h1&gt;
+&lt;h2 id=&#34;用静态工厂方法代替构造器&#34;&gt;用静态工厂方法代替构造器&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; Boolean &lt;span style=&#34;color:#a6e22e&#34;&gt;valueOf&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;boolean&lt;/span&gt; b){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; b &lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt; Boolean.&lt;span style=&#34;color:#a6e22e&#34;&gt;TRUE&lt;/span&gt; : Boolean.&lt;span style=&#34;color:#a6e22e&#34;&gt;FALSE&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;静态工厂方法与设计模式中的工厂方法模式不同。并不能直接对应设计模式的工厂方法。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;优势&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有名字（像这种&lt;code&gt;BigInteger.probablePrime(int bitLength,Random rnd)&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;不必每次调用他们的时候，都创建一个新对象。像&lt;code&gt;Integer.MAX_VALUE = 0x7fffffff&lt;/code&gt;（享元&lt;code&gt;Flyweight&lt;/code&gt;模式）真正的享元模式如下，&lt;code&gt;Integer&lt;/code&gt;中有个私有静态类，叫&lt;code&gt;IntergeCache&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;可以返回原返回类型的任何子类型的对象。&lt;code&gt;Java8&lt;/code&gt;允许接口中含有静态方法，&lt;code&gt;Java9&lt;/code&gt;允许接口中有私有的静态方法，但是静态域和静态成员变量仍然需要是公有的。&lt;/li&gt;
+&lt;li&gt;所返回的对象的类可以随着每次调用而发生变化，这取决于静态工厂方法的参数值。&lt;/li&gt;
+&lt;li&gt;方法返回的对象所属的类，在便携包含该静态工厂方法的类时可以不存在。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; Integer &lt;span style=&#34;color:#a6e22e&#34;&gt;valueOf&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; IntegerCache.&lt;span style=&#34;color:#a6e22e&#34;&gt;low&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; IntegerCache.&lt;span style=&#34;color:#a6e22e&#34;&gt;high&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; IntegerCache.&lt;span style=&#34;color:#a6e22e&#34;&gt;cache&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;i &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;IntegerCache.&lt;span style=&#34;color:#a6e22e&#34;&gt;low&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Integer(i);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;IntegerCache&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; low &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;128;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; high;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;final&lt;/span&gt; Integer cache&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// high value may be configured by property&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; h &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; 127;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;/** 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * 这里定义了最大值，也就是说这个可以配置
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * -XX:AutoBoxCacheMax=NNN，这里的 NNN 表示最大值是多少，只能改最大值，不能改最小值。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * 在设置了-XX:+AggressiveOpts启动参数后，AutoBoxCacheMax的默认值会被修改为20000并且生效。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * 这里的 -XX:+AggressiveOpts 是表示加快编译
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * aggressive adj.好争斗的, 挑衅的, 侵略性的
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * export JAVA_OPTS=&amp;#34;-Xms2048m -Xmx2048m&amp;#34;。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * 合起来翻译 积极的选择
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * - Tired compilers (hoping that it will make it into JDK7)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * - Scalar replacement (and I am still hoping that this will remove some of the memory throughput preassure 64-bit brought)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * EA and stack allocation
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * Code cache
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         */&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        String integerCacheHighPropValue &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sun.&lt;span style=&#34;color:#a6e22e&#34;&gt;misc&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;VM&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;getSavedProperty&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;java.lang.Integer.IntegerCache.high&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (integerCacheHighPropValue &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; parseInt(integerCacheHighPropValue);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Math.&lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;(i, 127);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#75715e&#34;&gt;// Maximum array size is Integer.MAX_VALUE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                h &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Math.&lt;span style=&#34;color:#a6e22e&#34;&gt;min&lt;/span&gt;(i, Integer.&lt;span style=&#34;color:#a6e22e&#34;&gt;MAX_VALUE&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;low) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;1);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt;( NumberFormatException nfe) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#75715e&#34;&gt;// If the property cannot be parsed into an int, ignore it.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        high &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; h;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        cache &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Integer&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;(high &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; low) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; 1&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; j &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; low;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; k &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; 0; k &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; cache.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;; k&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            cache&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;k&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Integer(j&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// range [-128, 127] must be interned (JLS7 5.1.7)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; IntegerCache.&lt;span style=&#34;color:#a6e22e&#34;&gt;high&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; 127;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;IntegerCache&lt;/span&gt;() {}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;缺点&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

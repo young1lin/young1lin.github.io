@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on YL&#39;s Log</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on YL&#39;s Log</description>
+    <generator>Hugo -- 0.150.1</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 08 Mar 2025 00:04:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI</title>
+      <link>http://localhost:1313/tags/ai/</link>
+      <pubDate>Sat, 08 Mar 2025 00:04:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM</title>
+      <link>http://localhost:1313/tags/llm/</link>
+      <pubDate>Sat, 08 Mar 2025 00:04:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interview</title>
+      <link>http://localhost:1313/tags/interview/</link>
+      <pubDate>Sat, 22 Feb 2025 19:22:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/interview/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Other</title>
+      <link>http://localhost:1313/tags/other/</link>
+      <pubDate>Thu, 03 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/other/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Film</title>
+      <link>http://localhost:1313/tags/film/</link>
+      <pubDate>Tue, 15 Jun 2021 00:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/film/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LOL</title>
+      <link>http://localhost:1313/tags/lol/</link>
+      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/lol/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TFT</title>
+      <link>http://localhost:1313/tags/tft/</link>
+      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/tft/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HBase</title>
+      <link>http://localhost:1313/tags/hbase/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/hbase/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cache</title>
+      <link>http://localhost:1313/tags/cache/</link>
+      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cache/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JUC</title>
+      <link>http://localhost:1313/tags/juc/</link>
+      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/juc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JVM</title>
+      <link>http://localhost:1313/tags/jvm/</link>
+      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/jvm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring</title>
+      <link>http://localhost:1313/tags/spring/</link>
+      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/spring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Structure</title>
+      <link>http://localhost:1313/tags/structure/</link>
+      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/structure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>http://localhost:1313/tags/docker/</link>
+      <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Effective Java</title>
+      <link>http://localhost:1313/tags/effective-java/</link>
+      <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/effective-java/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

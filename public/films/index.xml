@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Films on YL&#39;s Log</title>
+    <link>http://localhost:1313/films/</link>
+    <description>Recent content in Films on YL&#39;s Log</description>
+    <generator>Hugo -- 0.150.1</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 15 Jun 2021 00:00:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/films/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>电影概论-Mooc</title>
+      <link>http://localhost:1313/films/film-mooc/</link>
+      <pubDate>Tue, 15 Jun 2021 00:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/films/film-mooc/</guid>
+      <description>&lt;p&gt;源自于&lt;a href=&#34;https://www.icourse163.org/learn/HENU-1003369001?tid=1461424469#/learn/content?type=detail&amp;amp;id=1237803381&amp;amp;sm=1&#34;&gt;电影概论&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;一电影总览&#34;&gt;一、电影总览&lt;/h1&gt;
+&lt;h2 id=&#34;八大艺术&#34;&gt;八大艺术&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/zh-cn/%E5%85%AB%E5%A4%A7%E8%97%9D%E8%A1%93&#34;&gt;来源于 Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;八大艺术来源&#34;&gt;八大艺术来源&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;八大艺术&lt;/strong&gt;的分类来源已不可考，但有两个明显的现象是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;人们提到八大艺术时，往往目的放在想要引介不在此艺术之中之物，例如新兴的&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E9%9B%BB%E5%AD%90%E9%81%8A%E6%88%B2&#34;&gt;游戏&lt;/a&gt;设计，有人指为第九艺术。&lt;/li&gt;
+&lt;li&gt;会提到八大艺术的理论，是因为摄影的发明对以后的各项科学、艺术、媒体及商业行为有巨大的贡献，也改变了人类以往的视觉经验，并进而衍生电影的发明，故变成第八艺术。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;八大艺术列表&#34;&gt;八大艺术列表&lt;/h3&gt;
+&lt;p&gt;八大艺术包含：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%B9%AA%E7%95%AB&#34;&gt;绘画&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E9%9B%95%E5%A1%91&#34;&gt;雕塑&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%BB%BA%E7%AF%89&#34;&gt;建筑&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E9%9F%B3%E6%A8%82&#34;&gt;音乐&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%96%87%E5%AD%B8&#34;&gt;文学&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E8%88%9E%E8%B9%88&#34;&gt;舞蹈&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%88%B2%E5%8A%87&#34;&gt;戏剧&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E9%9B%BB%E5%BD%B1&#34;&gt;电影&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;概览&#34;&gt;概览&lt;/h1&gt;
+&lt;h3 id=&#34;电影经历过程&#34;&gt;电影经历过程&lt;/h3&gt;
+&lt;p&gt;基本上，一部电影会经历三个阶段：制作(production)、发行(distribution)及放映(exhibition)。后面的数字化的售卖，是比较靠后的了，比如 DVD 版，放到各大视频平台售卖之类的。&lt;/p&gt;
+&lt;h2 id=&#34;电影元素&#34;&gt;电影元素&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;光&lt;/li&gt;
+&lt;li&gt;色彩&lt;/li&gt;
+&lt;li&gt;声音&lt;/li&gt;
+&lt;li&gt;画面构图&lt;/li&gt;
+&lt;li&gt;镜头构图&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;电影创作过程&#34;&gt;电影创作过程&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;剧作&lt;/li&gt;
+&lt;li&gt;导演&lt;/li&gt;
+&lt;li&gt;表演&lt;/li&gt;
+&lt;li&gt;拍摄&lt;/li&gt;
+&lt;li&gt;剪辑&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;大部分的电影生产过程会经过四个主要的阶段，和上面的 MOOC 的对应了起来。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;编剧与集资（scriptwriting and founding）：电影观念开发完成，完成剧本。电影工作者也需要为拍片计划获得财务援助。&lt;/li&gt;
+&lt;li&gt;拍片准备（preparation for filming）：一旦脚本大致完成，且至少有了某些资金，电影工作就可以开始计划实体的生产过程。&lt;/li&gt;
+&lt;li&gt;拍摄（shooting）：电影工作者创造出电影的影像和声音。&lt;/li&gt;
+&lt;li&gt;组合（assmebly）：这些影像与声音组合成最终的形态，其中牵涉到剪辑图片与声音、执行特效、加入音乐或额外对白，以及加上标题名称。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这些阶段可能会相互重叠。后面会介绍，好莱坞的 “制片人中心制” 来详细介绍制片人这一角色，这里只是做个大概的介绍。总的来说，这四个阶段会产生几十种专业的分工。&lt;/p&gt;
+&lt;h3 id=&#34;编剧与集资阶段-the-scripting-and-funding-phase&#34;&gt;编剧与集资阶段 （The Scripting and Funding Phase）&lt;/h3&gt;
+&lt;p&gt;核心人物&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;制片（producer）
+&lt;ol&gt;
+&lt;li&gt;执行制片（executive producer）：通常负责安排财务与洽谈版权。&lt;/li&gt;
+&lt;li&gt;在线制片（line producer）：监管导演、演员与剧组的日常工作。由助理制片所指派。&lt;/li&gt;
+&lt;li&gt;助理制片（associate producer）：负责协调冲印厂或技术人员。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;编剧（screenwriter）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;制片主要负责财务及组织上的工作。如果是独立制片，则要去发掘拍片计划，并说服制片公司或赞助者出资，也可能雇佣制片人去整合项目计划。在编剧的过程中，制片还要照顾整个拍片计划、筹募资金、安排人事等。在拍摄及剪辑期间，制片往往是编导和出资者之间的桥梁。在电影完成后，制片通常还要安排发行、宣传、营销、以及监督成本的回收。单一制片&lt;strong&gt;或许可以&lt;/strong&gt;接管所有这些工作，但一般不会这么做。&lt;/p&gt;
+&lt;p&gt;剧本的完成会经历几个阶段。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;大致交代主要情节（action）的大纲（treatment）&lt;/li&gt;
+&lt;li&gt;一份货多份完整脚本&lt;/li&gt;
+&lt;li&gt;最后的拍摄脚本（shooting script）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;有的电影，可能会有好几个编剧一起编写，或者制片直接换编剧写剧本，例如《异形：普罗米修斯》，其实换了好几个编剧。如果直拍呢货导演不满意某一个作者的剧本，可以雇其他做和加以修改。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

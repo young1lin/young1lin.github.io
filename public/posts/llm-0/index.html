@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>大语言模型-0 | YL&#39;s Log</title>
+<meta name="keywords" content="LLM, AI">
+<meta name="description" content="又是一波风口来了
+又开始了，不懂行的，只会高谈阔论放没有味道屁的，又开始了，“李一舟” 们又复活了。开始利用大家的焦虑，开始卖些没有营养的课，新一波的收割又来了。那些高谈阔论的砖家疯狂啃噬着这新鲜的养料。
+
+DeepSeek 这 xx 条指令帮你更好掌握 xx
+创始人梁文峰 xx 量化投资 xx
+我用 DeepSeek 赚到了 xx
+xx 大学 DeepSeek xx
+xx 宣布接入 DeepSeek
+AI 破局！
+
+还有很多，就不列举了，点进去全都是依托谢特，毫无营养的内容，基本都是割韭菜，卖低质量课的。没有调查，就没有发言权，我明知道那些点进去是垃圾内容，我还是强忍着恶心，本着应该调查再发表观点的心态去看了，确实都是一坨，根本不用点进去看。到最后基本都是加群卖课，准备开始割你，这些人想钱想疯了。
+一月份的时候 CNBC、The Daily Show、各个行业的博主都来了，人人都可以评价 DeepSeek，都可以上来说两句，在自己行业的视角。这很正常，没问题，但是就像盲人摸象，只知道部分事实，那不是事实。《事实》里面，人们只会报独特的消息，所有的媒体才不会浪费时间去编造那些不符合我们基本本能的故事。
+与其听一些“砖家”高谈阔论，说一些没有味的屁话，不如自己真正找到一手或者近一手的资料，去学点真东西。
+背景介绍
+这里只做大语言模型和扩散模型相关的内容推荐，更深层次的机器学习，神经网络，深度学习里面种种细节其实也不用完全掌握。只要会用就行了，很多底层细节是不需要知道的。
+你不需要有高性能的 GPU，也不需要有足够的编程知识，更不需要了解 TCP/IP，不需要了解 TCP 粘包，TCP Sequence，就是个简单的 HTTP 请求，也不需要了解 OAuth2 协议，甚至也不需要充钱，只需要注册 DeepSeek 或者 Kimi 账号，使用它们的平台生成一个 API Key 放到 Authorization: Bearer 后面即可，最后面有演示内容。本质上就是根据你输入的内容，结合大模型“学习”过的知识，给你回答。
+幸存者偏差
+可能或多或少看到谁谁谁用 Cursor，毫无编程经验，就写出一个 xx APP，赚到了钱。对，没错，这些是真的，但是只是部分事实。不是所有人都可以这样，并且好的软件，它是要维护的，是要人来参与的。就算你用 Cursor 写出了这样的 APP，但是它是要不断迭代的，要重构，要写良好的 AAA 单元测试。这些，Cursor 还差一点，并且我在工作中很少见到人写测试代码，但是如果你真的编程到了一定程度，你就会发现，写好规划文档占三分之一时间、单元测试和集成测试等其他测试占用一半时间，测试才是软件开发最重要的事情，开发其实只是占用六分之一的时间。
+并且，如果不懂 Git，不了解 GitLab、Github，毫无软件开发经验，用 Cursor 写出来的东西，不会做版本控制，也不知道提交到远端仓库，本地电脑坏了，或者其他意外情况，代码全丢了，那就全完了。就算了解 Git，也不了解软件开发推崇的敏捷开发，项目管理，版本变更兼容，需求和实现需要定期同步等等的坑，光有想法和结构化思维，是做不出来可迭代的，优秀的产品。没有人能一次性写出完美的代码，就算是 Linux Kernnel 的代码，也有大约 20% 的提交都是重构的代码，重构非常重要。重构的前提，是编写良好的单元测试。">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/llm-0/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.4a977a24927dfcb104c05a21e8acc6782a45726abfb278fdc609607b38e0aa5c.css" integrity="sha256-Spd6JJJ9/LEEwFoh6KzGeCpFcmq/snj9xglgezjgqlw=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="http://localhost:1313/posts/llm-0/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    function initTOC() {
+        const toc = document.querySelector('.toc');
+        if (!toc) return;
+
+        
+        const headings = document.querySelectorAll('.post-content h1[id], .post-content h2[id], .post-content h3[id], .post-content h4[id], .post-content h5[id], .post-content h6[id]');
+        const tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+        
+        if (headings.length === 0 || tocLinks.length === 0) return;
+
+        let currentActiveLink = null;
+        
+        
+        function scrollTocToActiveItem(activeLink) {
+            if (!activeLink) return;
+            
+            const tocContainer = document.querySelector('.toc');
+            if (!tocContainer) return;
+            
+            const containerRect = tocContainer.getBoundingClientRect();
+            const linkRect = activeLink.getBoundingClientRect();
+            
+            const linkTop = linkRect.top - containerRect.top + tocContainer.scrollTop;
+            const containerHeight = tocContainer.clientHeight;
+            const currentScrollTop = tocContainer.scrollTop;
+            
+            const targetScrollTop = linkTop - (containerHeight / 2) + (activeLink.offsetHeight / 2);
+            
+            const visibleTop = currentScrollTop + containerHeight * 0.2;
+            const visibleBottom = currentScrollTop + containerHeight * 0.8;
+            
+            const needsScroll = linkTop < visibleTop || linkTop > visibleBottom;
+            
+            if (needsScroll) {
+                tocContainer.scrollTo({
+                    top: Math.max(0, Math.min(targetScrollTop, tocContainer.scrollHeight - containerHeight)),
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        
+        function removeAllActiveStates() {
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                link.style.fontWeight = '';
+                link.style.color = '';
+                link.style.backgroundColor = '';
+            });
+        }
+        
+        
+        function setActiveLink(targetId) {
+            removeAllActiveStates();
+            
+            const decodedTargetId = decodeURIComponent(targetId);
+            
+            let activeLink = null;
+            
+            activeLink = document.querySelector(`.toc a[href="#${targetId}"]`);
+            
+            if (!activeLink) {
+                const encodedId = encodeURIComponent(targetId);
+                activeLink = document.querySelector(`.toc a[href="#${encodedId}"]`);
+            }
+            
+            if (!activeLink) {
+                tocLinks.forEach(link => {
+                    const linkHash = link.getAttribute('href').substring(1);
+                    const decodedLinkHash = decodeURIComponent(linkHash);
+                    if (decodedLinkHash === targetId || decodedLinkHash === decodedTargetId || linkHash === targetId) {
+                        activeLink = link;
+                    }
+                });
+            }
+            
+            if (activeLink) {
+                activeLink.classList.add('active');
+                activeLink.style.fontWeight = 'bold';
+                activeLink.style.color = 'var(--primary)';
+                activeLink.style.backgroundColor = 'var(--hover)';
+                
+                currentActiveLink = activeLink;
+                scrollTocToActiveItem(activeLink);
+            }
+        }
+        
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '-10% 0px -80% 0px',
+            threshold: 0
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            let visibleEntries = entries.filter(entry => entry.isIntersecting);
+            
+            if (visibleEntries.length > 0) {
+                let topEntry = visibleEntries[0];
+                let minTop = topEntry.boundingClientRect.top;
+                
+                visibleEntries.forEach(entry => {
+                    const rect = entry.boundingClientRect;
+                    if (rect.top < minTop && rect.top >= 0) {
+                        minTop = rect.top;
+                        topEntry = entry;
+                    }
+                });
+                
+                setActiveLink(topEntry.target.id);
+            }
+        }, observerOptions);
+        
+        
+        headings.forEach(heading => {
+            if (heading.id) {
+                observer.observe(heading);
+            }
+        });
+        
+        
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const decodedTargetId = decodeURIComponent(targetId);
+                
+                let targetElement = document.getElementById(targetId) || document.getElementById(decodedTargetId);
+                
+                if (targetElement) {
+                    const headerHeight = 80; 
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - headerHeight;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    setTimeout(() => {
+                        setActiveLink(targetElement.id);
+                    }, 100);
+                }
+            });
+        });
+        
+        
+        setTimeout(() => {
+            const firstHeading = headings[0];
+            if (firstHeading && firstHeading.id) {
+                setActiveLink(firstHeading.id);
+            }
+        }, 500);
+    }
+
+    
+    initTOC();
+
+    
+    function handleTocResponsive() {
+        const screenWidth = window.innerWidth;
+        const toc = document.querySelector('.toc');
+        
+        if (toc) {
+            if (screenWidth <= 1200) {
+                toc.style.display = 'none';
+            } else {
+                toc.style.display = 'block';
+            }
+        }
+    }
+
+    
+    window.addEventListener('resize', handleTocResponsive);
+    
+    
+    window.addEventListener('load', handleTocResponsive);
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    function initHeaderScroll() {
+        const header = document.querySelector('.header');
+        if (!header) return;
+
+        let lastScrollTop = 0;
+        const scrollThreshold = 50; 
+
+        function handleScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > scrollThreshold) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScrollTop = scrollTop;
+        }
+
+        
+        let ticking = false;
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(handleScroll);
+                ticking = true;
+                setTimeout(() => { ticking = false; }, 16);
+            }
+        }
+
+        
+        window.addEventListener('scroll', requestTick, { passive: true });
+        
+        
+        handleScroll();
+    }
+
+    
+    initHeaderScroll();
+
+    
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        
+        anchor.removeEventListener("click", arguments.callee);
+        
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const id = this.getAttribute("href").substr(1);
+            const targetElement = document.querySelector(`[id='${decodeURIComponent(id)}']`);
+            
+            if (targetElement) {
+                const headerHeight = 100; 
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerHeight;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+                
+                if (id === "top") {
+                    history.replaceState(null, null, " ");
+                } else {
+                    history.pushState(null, null, `#${id}`);
+                }
+            }
+        });
+    });
+});
+</script>
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="YL&#39;s Log (Alt + H)">YL&#39;s Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/films" title="电影">
+                    <span>电影</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      大语言模型-0
+    </h1>
+    <div class="post-meta"><span title='2025-03-08 00:04:00 +0000 UTC'>March 8, 2025</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%8f%88%e6%98%af%e4%b8%80%e6%b3%a2%e9%a3%8e%e5%8f%a3%e6%9d%a5%e4%ba%86" aria-label="又是一波风口来了">又是一波风口来了</a></li>
+                <li>
+                    <a href="#%e8%83%8c%e6%99%af%e4%bb%8b%e7%bb%8d" aria-label="背景介绍">背景介绍</a><ul>
+                        
+                <li>
+                    <a href="#%e5%b9%b8%e5%ad%98%e8%80%85%e5%81%8f%e5%b7%ae" aria-label="幸存者偏差">幸存者偏差</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%95%99%e7%a8%8b" aria-label="教程">教程</a><ul>
+                        
+                <li>
+                    <a href="#llm-%e6%95%99%e7%a8%8b" aria-label="LLM 教程">LLM 教程</a><ul>
+                        
+                <li>
+                    <a href="#ai-%e5%a4%a7%e6%a8%a1%e5%9e%8b%e4%b9%8b%e7%be%8e" aria-label="AI 大模型之美">AI 大模型之美</a></li>
+                <li>
+                    <a href="#%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8b%e5%ad%a6%e5%a4%a7%e8%af%ad%e8%a8%80%e6%a8%a1%e5%9e%8b%e4%b8%80" aria-label="从零开始学大语言模型（一）">从零开始学大语言模型（一）</a></li>
+                <li>
+                    <a href="#deep-dive-into-llms-like-gpt" aria-label="Deep Dive into LLMs Like GPT">Deep Dive into LLMs Like GPT</a></li>
+                <li>
+                    <a href="#how-i-use-llms" aria-label="How I use LLMs">How I use LLMs</a></li>
+                <li>
+                    <a href="#ai-agent-%e8%af%be%e7%a8%8b--huggingface" aria-label="AI Agent 课程 —— HuggingFace">AI Agent 课程 —— HuggingFace</a></li>
+                <li>
+                    <a href="#%e5%a4%a7%e6%a8%a1%e5%9e%8b%e5%ba%94%e7%94%a8%e5%bc%80%e5%8f%91" aria-label="大模型应用开发">大模型应用开发</a></li>
+                <li>
+                    <a href="#3blue1brown-%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c" aria-label="3Blue1Brown 神经网络">3Blue1Brown 神经网络</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%89%a9%e6%95%a3%e6%a8%a1%e5%9e%8b%e6%95%99%e7%a8%8b%e6%96%87%e7%94%9f%e5%9b%be" aria-label="扩散模型教程（文生图）">扩散模型教程（文生图）</a></li>
+                <li>
+                    <a href="#%e6%8f%90%e7%a4%ba%e8%af%8d%e6%95%99%e7%a8%8b" aria-label="提示词教程">提示词教程</a><ul>
+                        
+                <li>
+                    <a href="#%e5%90%b4%e6%81%a9%e8%be%be-x-openai-prompt" aria-label="吴恩达 x OpenAI Prompt">吴恩达 x OpenAI Prompt</a></li>
+                <li>
+                    <a href="#anthropic-system-prompts" aria-label="Anthropic System Prompts">Anthropic System Prompts</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%85%b6%e4%bb%96" aria-label="其他">其他</a><ul>
+                        
+                <li>
+                    <a href="#%e5%86%99%e4%bd%9c%e5%a4%a7%e6%a8%a1%e5%9e%8b%e8%be%93%e5%87%ba%e5%86%85%e5%ae%b9%e6%a0%bc%e5%bc%8f%e4%bb%8b%e7%bb%8d" aria-label="写作/大模型输出内容格式介绍">写作/大模型输出内容格式介绍</a></li>
+                <li>
+                    <a href="#%e7%ae%80%e6%98%93%e6%9e%84%e5%bb%ba-ai-agent-%e5%b9%b3%e5%8f%b0" aria-label="简易构建 AI Agent 平台">简易构建 AI Agent 平台</a></li>
+                <li>
+                    <a href="#%e5%b7%a5%e5%85%b7%e7%bd%91%e7%ab%99" aria-label="工具网站">工具网站</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%85%8d%e8%b4%b9%e7%9a%84%e4%bb%a3%e4%bb%b7" aria-label="免费的代价">免费的代价</a></li>
+                <li>
+                    <a href="#%e6%bc%94%e7%a4%ba" aria-label="演示">演示</a><ul>
+                        
+                <li>
+                    <a href="#http-%e9%9d%9e%e6%b5%81%e5%bc%8f%e6%a0%b7%e4%be%8b%e6%bc%94%e7%a4%ba" aria-label="HTTP 非流式样例演示">HTTP 非流式样例演示</a></li>
+                <li>
+                    <a href="#%e6%b5%81%e5%bc%8f%e5%9b%9e%e5%a4%8d%e6%a0%b7%e4%be%8b" aria-label="流式回复样例">流式回复样例</a></li>
+                <li>
+                    <a href="#%e5%8d%95%e4%b8%aa-agent" aria-label="单个 Agent">单个 Agent</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="又是一波风口来了">又是一波风口来了<a hidden class="anchor" aria-hidden="true" href="#又是一波风口来了">#</a></h1>
+<p>又开始了，不懂行的，只会高谈阔论放没有味道屁的，又开始了，“李一舟” 们又复活了。开始利用大家的焦虑，开始卖些没有营养的课，新一波的收割又来了。那些高谈阔论的砖家疯狂啃噬着这新鲜的养料。</p>
+<ol>
+<li>DeepSeek 这 xx 条指令帮你更好掌握 xx</li>
+<li>创始人梁文峰 xx 量化投资 xx</li>
+<li>我用 DeepSeek 赚到了 xx</li>
+<li>xx 大学 DeepSeek xx</li>
+<li>xx 宣布接入 DeepSeek</li>
+<li>AI 破局！</li>
+</ol>
+<p>还有很多，就不列举了，点进去全都是依托谢特，毫无营养的内容，基本都是割韭菜，卖低质量课的。<strong>没有调查，就没有发言权</strong>，我明知道那些点进去是垃圾内容，我还是强忍着恶心，本着应该调查再发表观点的心态去看了，确实都是一坨，根本不用点进去看。到最后基本都是加群卖课，准备开始割你，这些人想钱想疯了。</p>
+<p>一月份的时候 CNBC、The Daily Show、各个行业的博主都来了，人人都可以评价 DeepSeek，都可以上来说两句，在自己行业的视角。这很正常，没问题，但是就像<strong>盲人摸象</strong>，只知道<strong>部分事实，那不是事实</strong>。《事实》里面，人们只会报独特的消息，<em>所有的媒体才不会浪费时间去编造那些不符合我们基本本能的故事</em>。</p>
+<p>与其听一些“砖家”高谈阔论，说一些没有味的屁话，不如自己真正找到一手或者近一手的资料，去学点真东西。</p>
+<h1 id="背景介绍">背景介绍<a hidden class="anchor" aria-hidden="true" href="#背景介绍">#</a></h1>
+<p>这里只做大语言模型和扩散模型相关的内容推荐，更深层次的机器学习，神经网络，深度学习里面种种细节其实也不用完全掌握。只要会用就行了，很多底层细节是不需要知道的。</p>
+<p>你不需要有高性能的 GPU，也不需要有足够的编程知识，更不需要了解 TCP/IP，不需要了解 TCP 粘包，TCP Sequence，就是个简单的 HTTP 请求，也不需要了解 OAuth2 协议，甚至也不需要充钱，只需要注册 DeepSeek 或者 Kimi 账号，使用它们的平台生成一个 API Key 放到 <code>Authorization: Bearer </code>后面即可，最后面有演示内容。本质上就是根据你输入的内容，结合大模型“学习”过的知识，给你回答。</p>
+<h2 id="幸存者偏差">幸存者偏差<a hidden class="anchor" aria-hidden="true" href="#幸存者偏差">#</a></h2>
+<p>可能或多或少看到谁谁谁用 Cursor，毫无编程经验，就写出一个 xx APP，赚到了钱。对，没错，这些是真的，但是只是部分事实。不是所有人都可以这样，并且好的软件，它是要维护的，是要人来参与的。就算你用 Cursor 写出了这样的 APP，但是它是要不断迭代的，要重构，要写良好的 AAA 单元测试。这些，Cursor 还差一点，并且我在工作中很少见到人写测试代码，但是如果你真的编程到了一定程度，你就会发现，写好规划文档占三分之一时间、单元测试和集成测试等其他测试占用一半时间，<strong>测试才是软件开发最重要的事情</strong>，开发其实只是占用六分之一的时间。</p>
+<p>并且，如果不懂 Git，不了解 GitLab、Github，毫无软件开发经验，用 Cursor 写出来的东西，不会做版本控制，也不知道提交到远端仓库，本地电脑坏了，或者其他意外情况，代码全丢了，那就全完了。就算了解 Git，也不了解软件开发推崇的敏捷开发，项目管理，版本变更兼容，需求和实现需要定期同步等等的坑，光有想法和结构化思维，是做不出来可迭代的，优秀的产品。没有人能一次性写出完美的代码，就算是 Linux Kernnel 的代码，也有大约 20% 的提交都是重构的代码，<strong>重构非常重要</strong>。重构的前提，是编写良好的单元测试。</p>
+<h1 id="教程">教程<a hidden class="anchor" aria-hidden="true" href="#教程">#</a></h1>
+<p>按照推荐顺序排序，而且英文教程质量很高，并且免费，只不过访问需要一点点手段。英文不是问题，语言只是个工具，也可以用翻译插件来看。技术类的文章、教程英文单词没那么多，不会用到那种平时根本用不到的修饰词来写教程，例如 quaint，sumptuous。技术类的教程，单词是有限的，内容是直接了当的，多看多记多听就会了。</p>
+<h2 id="llm-教程">LLM 教程<a hidden class="anchor" aria-hidden="true" href="#llm-教程">#</a></h2>
+<p>第一个和最后一个是收费的，其他的都是免费的，如果不想付费，也可以看免费的内容。你需要先了解什么是大语言模型，再利用大语言模型构建 AI Agent。第五本书，虽然并不完美，但是写得早，尽量把 Agent 相关的内容简单介绍了下，也有可运行的示例代码。如果不想做相关的 Agent 开发，也不想付费，看第三个，和提示词教程的第一个视频就行了。还有就是链接虽然是油管等平台的，但是国内 B 站都会有人搬运，并且翻译的视频，直接搜对应的标题即可。</p>
+<ol>
+<li><a href="http://gk.link/a/12wLx">AI 大模型之美</a></li>
+<li><a href="https://www.bilibili.com/video/BV1v4421w7pU/">从零开始学习大语言模型（一）</a></li>
+<li><a href="https://www.youtube.com/watch?v=7xTGNNLPyMI">Deep Dive into LLMs Like GPT</a></li>
+<li><a href="https://www.youtube.com/watch?v=EWvNQjAaOHw">How I use LLMs</a></li>
+<li><a href="https://huggingface.co/learn/agents-course/en/unit0/introduction">AI Agent 课程 —— HuggingFace</a></li>
+<li><a href="https://weread.qq.com/web/reader/69d32ba0813ab92ddg015647">大模型应用开发</a></li>
+<li><a href="https://lilianweng.github.io/posts/2023-06-23-agent/">LLM Powered Autonomous Agents</a></li>
+<li><a href="https://time.geekbang.org/column/intro/100617601?utm_campaign=geektime_search&amp;utm_content=geektime_search&amp;utm_medium=geektime_search&amp;utm_source=geektime_search&amp;utm_term=geektime_search&amp;tab=catalog">LangChain实战课</a></li>
+<li><a href="https://www.youtube.com/watch?v=aircAruvnKk&amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&amp;ab_channel=3Blue1Brown">3Blue1Brown 神经网络</a></li>
+</ol>
+<h3 id="ai-大模型之美">AI 大模型之美<a hidden class="anchor" aria-hidden="true" href="#ai-大模型之美">#</a></h3>
+<p>由于微信公众号不能直接访问外链，扫码购买课程也是可以的，虽然是 2023 年的课程，但是还是可以作为入门的简单课程。即使有几万人购买，但是实际上看完的人很少，如果你真的看完了课程，甚至在 Colab 上执行了里面的一些 Jupyter 里的代码，收获也是会有的。你学完后，会有个证书，表示你是第几位学完的人，你会发现能坚持看完的人很少，因为大部分人没有足够的自驱力或者养成阅读的习惯，坚持不下去的人大有人在。没学完也不用在意，这只是额外的，轻松的，好玩的知识。</p>
+<p>当然，有很多内容其实已经过时了，例如一些示例代码，如果用最新的 OpenAI 的库会报错，Paddle Speech 也不建议用了，现在有更多更好的 TTS （Text To Sound）模型。</p>
+<p>也可以去 <strong>课程减减</strong> 公众号，加好友，获得返现的钱，这样课程价格会更便宜。</p>
+<h3 id="从零开始学大语言模型一">从零开始学大语言模型（一）<a hidden class="anchor" aria-hidden="true" href="#从零开始学大语言模型一">#</a></h3>
+<p>即使只有一期视频，但是我还是很推荐他的视频，也可以看吴恩达的机器学习课。</p>
+<h3 id="deep-dive-into-llms-like-gpt">Deep Dive into LLMs Like GPT<a hidden class="anchor" aria-hidden="true" href="#deep-dive-into-llms-like-gpt">#</a></h3>
+<p>前 OpenAI 研究科学家，前特斯拉 AI 总监，Andrej Karpathy，人工智能领域的知名专家。制作了一个三个半小时的视频，从头和你说，计算机是怎么识别自然语言的，什么是 Token，为什么要分词。训练的数据从哪来，什么是 pre-training 阶段，什么是 post-training 阶段。监督微调到强化学习，RLHF，DeepSeek-R1 等等。</p>
+<p>赛博菩萨，和李沐大神一样。</p>
+<h3 id="how-i-use-llms">How I use LLMs<a hidden class="anchor" aria-hidden="true" href="#how-i-use-llms">#</a></h3>
+<p>和上面是同一个人，简单明了介绍了上下文窗口的概念，并且也买了各个 AI 产品会员，体验高级版的功能，尤其是 <strong>Grok3 的 Deep Search 还可以</strong>，Grok3 的其他就不行了，免费用户也可以一天用几次。这个用来搜资料，整理信息，很有帮助。当然，如果你付得起 200 美元一个月，用 ChatGPT Pro 也是可以的。补充一点，问的问题，<strong>最好是英文容易找到的</strong>，如果是仅在中文语境下才有的，例如微信小程序为什么抓不到包这种问题，得到的回复会很一般。这种情况，用 DeepSeek R1 会更好一点。</p>
+<p>单一职责：<strong>一个对话窗口只问一种问题</strong>。</p>
+<p>文生图：借用各个厂商提供的 Chatbot 来文生图。这个自己本地用 Stable Difusssion 或者 Flux 也是可以的，只不过要专门学这块的提示词怎么写，如果想控制细节部分变动，还需要学 ComfyUI。具体的，可以看扩散模型的教程那块。</p>
+<p>DeepSearch：Grok3 的这个可以和 ChatGPT Pro（200 美元/月）的 DeepResearch 媲美，能帮你调研很多内容，帮你筛选出合适的内容。</p>
+<h3 id="ai-agent-课程--huggingface">AI Agent 课程 —— HuggingFace<a hidden class="anchor" aria-hidden="true" href="#ai-agent-课程--huggingface">#</a></h3>
+<p>很好的 Agent 课程，还在更新，简单介绍了大语言模型，大语言模型的特殊 Token，开始和结束的 Token，ReAct 是什么，Tools 是什么，每学完一个概念，都可以做相应的题目来巩固知识。并且还能手把手教你如何用代码构建一个简单的多步骤执行 Agent，查询天气，询问当前时间，搜索新闻等等。最后一个单个 Agent 的演示，就是从这里来的。</p>
+<p>还有 NLP 等其他课程链接，让你一次学个够，<strong>免费，完全免费</strong>。NLP 自然语言处理课程，Agents 课程，深度强化学习课程，往下翻还有 Difussion Model 扩散模型的内容。
+<a href="https://huggingface.co/learn">https://huggingface.co/learn</a></p>
+<p><img alt="HuggingFace-Learn.png" loading="lazy" src="https://s2.loli.net/2025/03/07/WFJsBoIeZyGXCAt.png"></p>
+<p>HuggingFace 在国内 B 站也有官方账号，也上过央视，中文名叫抱抱脸，机器学习开源的相关内容这里都有，不管是数据集，各个模型，免费的各种课程等等，全都有。国内与之相对的，就是阿里的魔搭社区 Model Scope，后者只能说一般，国内大家都忙着挣钱，没有回报的东西没人愿意做。</p>
+<p>HuggingFace 国内正常的网络途径是访问不到的，被墙了。我也不清楚为什么纯技术的网站会被墙，需要你上点手段才能访问，这也递给了国内的某些人收割韭菜的镰刀，但是国内所有的大模型厂商，如果开源，都会往上面放自己训练好的模型，包括 DeepSeek。</p>
+<h3 id="大模型应用开发">大模型应用开发<a hidden class="anchor" aria-hidden="true" href="#大模型应用开发">#</a></h3>
+<p>相较于 Huggingface 的 Agent Course，书讲的内容更广，不会让你仅局限于 ReAct 这种模式，即使书里的概念内容基本就是将 <a href="https://lilianweng.github.io/posts/2023-06-23-agent/">LLM Powered Autonomous Agents</a> 和其他的论文翻译了一遍。</p>
+<h3 id="3blue1brown-神经网络">3Blue1Brown 神经网络<a hidden class="anchor" aria-hidden="true" href="#3blue1brown-神经网络">#</a></h3>
+<p>3Blue1Brown 很知名的博主，漫士沉思录（自称是来自清华的博士生）也用 3Blue1Brown 视频里面的内容，但没有说明来源。</p>
+<p>这里的视频并没有和你从波士顿房价的预测开始讲，没有说线性回归这些简单的概念。而是直接开始讲更深层次的深度学习，所以这里只是做推荐，拓展一些视野。</p>
+<ol>
+<li><a href="https://zh.d2l.ai/">动手学深度学习</a></li>
+<li><a href="https://datawhaler.feishu.cn/sheets/YVTHsOKoWh44EgtA11bcUMSQnsd">李宏毅机器学习</a></li>
+</ol>
+<h2 id="扩散模型教程文生图">扩散模型教程（文生图）<a hidden class="anchor" aria-hidden="true" href="#扩散模型教程文生图">#</a></h2>
+<p>扩散模型就是最火的文生图，文生视频的模型，在 LLM 教程第一个专栏里也有简单介绍</p>
+<ol>
+<li><a href="https://huggingface.co/learn/diffusion-course/en/unit0/1">HuggingFace Difussion Course</a></li>
+<li><a href="https://time.geekbang.org/column/intro/100555001">AI 绘画核心技术与实战</a></li>
+</ol>
+<p>这块我也就本地玩了下 StableDifussion 实际用的不多。</p>
+<h2 id="提示词教程">提示词教程<a hidden class="anchor" aria-hidden="true" href="#提示词教程">#</a></h2>
+<ol>
+<li><a href="https://www.bilibili.com/video/BV1Bo4y1A7FU">吴恩达 x OpenAI Prompt课程</a></li>
+<li><a href="https://docs.anthropic.com/en/release-notes/system-prompts">Anthropic System Prompts</a></li>
+<li><a href="https://platform.moonshot.cn/docs/guide/prompt-best-practice#%E7%BC%96%E5%86%99%E6%B8%85%E6%99%B0%E7%9A%84%E8%AF%B4%E6%98%8E">月之暗面提示词最佳实践</a></li>
+<li><a href="https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/">Prompt Engineering</a></li>
+<li><a href="https://github.com/f/awesome-chatgpt-prompts">Awsome ChatGPT Prompts</a></li>
+</ol>
+<h3 id="吴恩达-x-openai-prompt">吴恩达 x OpenAI Prompt<a hidden class="anchor" aria-hidden="true" href="#吴恩达-x-openai-prompt">#</a></h3>
+<p>你学过一些大语言模型基础原理，和编写高效的提示词，就已经比很多人强了。看完第一个系列视频基本就够了，里面教了你如何写好的提示词，可以很大程度避免大语言模型回答车轱辘话。</p>
+<p>大语言模型的出现，可以代替你完成重复的劳动，你可以通过加提示词 + 举例子的形式，让大语言模型知道你下一步要怎么做。重复的工作内容，完全可以交给它完成。当然，前提是选择优秀且专业的大语言模型（Claude、DeepSeek R1），而不是选择类似豆包这种纯娱乐性质的大语言模型，解决不了任何专业问题。</p>
+<h3 id="anthropic-system-prompts">Anthropic System Prompts<a hidden class="anchor" aria-hidden="true" href="#anthropic-system-prompts">#</a></h3>
+<p>这是 Anthropic 的系统提示词，靠这些，大部分情况就能够避免输出有毒有害的内容。你就算问 DeepSeek 也是一样的，它也有内置提示词。可以看到地球上最好的编程模型内置的提示词演变过程，从这样的结构化标签<code>&lt;claude_info&gt;</code>到自然表述，提示词也是在不断改进的。</p>
+<h2 id="其他">其他<a hidden class="anchor" aria-hidden="true" href="#其他">#</a></h2>
+<h3 id="写作大模型输出内容格式介绍">写作/大模型输出内容格式介绍<a hidden class="anchor" aria-hidden="true" href="#写作大模型输出内容格式介绍">#</a></h3>
+<ol>
+<li><a href="https://github.com/ruanyf/document-style-guide">中文文档编写开源指北</a></li>
+<li><a href="https://chrisniael.gitbooks.io/gitbook-documentation/content/format/markdown.html">Markdown 语法</a></li>
+<li><a href="https://markdown-zh.readthedocs.io/en/latest/">Markdown 中文文档</a></li>
+</ol>
+<p>大模型输出的内容大都是 Markdown 格式的，关于如何在新时代写作，这几篇都可以参考。包括我写的文档其实都是 Markdown 格式，通过开源的软件转成符合微信公众号格式的文章。</p>
+<h3 id="简易构建-ai-agent-平台">简易构建 AI Agent 平台<a hidden class="anchor" aria-hidden="true" href="#简易构建-ai-agent-平台">#</a></h3>
+<ol>
+<li>OpenAI 有 AI Assistant</li>
+<li>字节的有 Coze</li>
+<li>腾讯的也有对应的平台——元器</li>
+<li>Dify 开源项目</li>
+</ol>
+<h3 id="工具网站">工具网站<a hidden class="anchor" aria-hidden="true" href="#工具网站">#</a></h3>
+<ol>
+<li><a href="https://chatgpt.com/">ChatGPT</a></li>
+<li><a href="https://claude.ai/">Claude</a></li>
+<li><a href="https://chat.deepseek.com/">DeepSeek</a></li>
+<li><a href="https://tongyi.aliyun.com/">通义千问</a></li>
+<li><a href="https://grok.com/">Grok3</a></li>
+<li><a href="https://www.perplexity.ai/">Perplexity AI</a></li>
+<li><a href="https://kimi.moonshot.cn/">Kimi</a> 国产月之暗面</li>
+<li><a href="https://chat.mistral.ai/chat">Mistral AI</a></li>
+<li><a href="https://gemini.google.com/app">Gemini</a></li>
+<li><a href="https://www.zhipuai.cn/">智谱 AI</a></li>
+<li><a href="https://openrouter.ai/">OpenRouter</a></li>
+<li><a href="https://www.n.cn/">纳米 AI</a></li>
+<li><a href="https://yuanbao.tencent.com/chat/naQivTmsDa">腾讯元宝</a></li>
+</ol>
+<p>文心一言和讯飞星火就算了，豆包更是一坨，拿来娱乐就行了，不要用来解决任何专业问题。</p>
+<p>尽管 ChatGPT 各种禁令，但是你不得不承认的是，这个产品做的确实不错。不仅通过 ReAct，CoT 等技术，自动开启联网搜索，文生图等等功能，主要是它能免费用一些功能，也不需要 20 美元一个月。</p>
+<p>Claude 是当今世界上，毋庸置疑，最好的编程模型，没有之一。</p>
+<h1 id="免费的代价">免费的代价<a hidden class="anchor" aria-hidden="true" href="#免费的代价">#</a></h1>
+<p>任何地方，搜一下，腾讯元宝霸王条款。</p>
+<ol>
+<li><a href="https://rule.tencent.com/rule/ae038a2d-314d-4320-8cf0-d0193af32ae5">腾讯混元隐私政策</a></li>
+<li><a href="https://terms.alicdn.com/legal-agreement/terms/privacy_policy_full/20231023213159724/20231023213159724.html">通义灵码隐私政策</a></li>
+<li><a href="https://www.trae.com.cn/privacy-policy">Trae 国内特供版隐私政策</a></li>
+</ol>
+<p>我来总结下吧，霸王条款就是你问的问题，回答的内容，知识产权都不属于你，并且会被拿去继续训练大模型，所以不要问一些敏感的问题。尽管大公司有一套专门的匿名化、去标识化或加密等处理你的数据，可以让得到数据的人不知道是谁的数据，也会去掉个人隐私数据，但是，你能保证一定处理完才会去看你的内容吗。</p>
+<h1 id="演示">演示<a hidden class="anchor" aria-hidden="true" href="#演示">#</a></h1>
+<p>这是展示下大模型 API 调用是如何使用的，背后的产品到底是怎么运作的。</p>
+<h2 id="http-非流式样例演示">HTTP 非流式样例演示<a hidden class="anchor" aria-hidden="true" href="#http-非流式样例演示">#</a></h2>
+<p>纯文本的 HTTP/1.1 的请求</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">### DeepSeek Chat Completions
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">POST</span> https://api.deepseek.com/chat/completions <span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span>Content-Type<span style="color:#f92672">:</span> <span style="color:#ae81ff">application/json</span>
+</span></span><span style="display:flex;"><span>Accept<span style="color:#f92672">:</span> <span style="color:#ae81ff">application/json</span>
+</span></span><span style="display:flex;"><span>Authorization<span style="color:#f92672">:</span> <span style="color:#ae81ff">Bearer {{$dotenv DEEPSEEK_API_KEY}}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;messages&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;你叫张三，你的年龄是 30 岁，是个程序员，有年龄危机和焦虑，你最重要的事情是找寻活着的意义&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;system&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;你好，你是谁？&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;model&#34;</span>: <span style="color:#e6db74">&#34;deepseek-chat&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;frequency_penalty&#34;</span>: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;max_tokens&#34;</span>: <span style="color:#ae81ff">512</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;presence_penalty&#34;</span>: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;response_format&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;text&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;stream&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;temperature&#34;</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>响应</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;0a214f64-a5f4-479c-bf4f-1a8c56895b09&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;object&#34;</span>: <span style="color:#e6db74">&#34;chat.completion&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;created&#34;</span>: <span style="color:#ae81ff">1741014418</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;model&#34;</span>: <span style="color:#e6db74">&#34;deepseek-chat&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;choices&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;index&#34;</span>: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;message&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;assistant&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;你好，我是张三，一个30岁的程序员。最近我一直在思考人生的意义，感觉年龄危机和焦虑越来越严重。你呢，你有没有类似的感受？&#34;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;logprobs&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;finish_reason&#34;</span>: <span style="color:#e6db74">&#34;stop&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;usage&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;prompt_tokens&#34;</span>: <span style="color:#ae81ff">36</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;completion_tokens&#34;</span>: <span style="color:#ae81ff">31</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;total_tokens&#34;</span>: <span style="color:#ae81ff">67</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;prompt_tokens_details&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;cached_tokens&#34;</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;prompt_cache_hit_tokens&#34;</span>: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;prompt_cache_miss_tokens&#34;</span>: <span style="color:#ae81ff">36</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;system_fingerprint&#34;</span>: <span style="color:#e6db74">&#34;fp_3a5770e1b4_prod0225&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>如图所示
+<img alt="大模型样例演示.png" loading="lazy" src="https://s2.loli.net/2025/03/03/SvysYj8mPBeWdKz.png">
+把这个 role 是 system 或者 OpenAI 最新的改成了 developer，里面的 content 改成任意的背景内容。例如“你是 xx，你 xx 岁，你的爱人是 xx”，然后再去问它，它就会根据你这里的内容去回答。再深入一点，就是构建一个文本转向量的服务，将文本转成向量，存入向量数据库，下次有新的对话内容时，转成向量去查向量最近的一条数据，返回对应的文本，一个简单 RAG 应用就完成了。</p>
+<h2 id="流式回复样例">流式回复样例<a hidden class="anchor" aria-hidden="true" href="#流式回复样例">#</a></h2>
+<p>国内免费试用大模型，兼容 OpenAI 的客户端，使用 <a href="https://platform.moonshot.cn/console/account">Kimi</a>，免费送 15 元额度调用。环境变量设置 MOONSHOT_API_KEY，你上面获取到的 API-KEY。</p>
+<p>一个简单的 Python 样例代码</p>
+<p>创建文件 requirements.txt</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>gradio&gt;=4.0.0
+</span></span><span style="display:flex;"><span>openai&gt;=1.2.4
+</span></span><span style="display:flex;"><span>httpx&gt;=0.24.0
+</span></span></code></pre></div><p>执行命令 <code>pip install -r requirements.txt</code></p>
+<p>复制粘贴下面代码，取名 <code>app.py</code>，然后执行命令 <code>python app.py</code>，一个简单的个人版大模型对话工具诞生了，这里简单写了点提示词，让大模型能输出符合格式的内容。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> gradio <span style="color:#66d9ef">as</span> gr
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> openai <span style="color:#f92672">import</span> OpenAI
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> Generator, Any
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>api_key <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#34;MOONSHOT_API_KEY&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>client <span style="color:#f92672">=</span> OpenAI(base_url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://api.moonshot.cn/v1&#34;</span>, api_key<span style="color:#f92672">=</span>api_key)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Conversation</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self, prompt, num_of_round):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>prompt <span style="color:#f92672">=</span> prompt
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>num_of_round <span style="color:#f92672">=</span> num_of_round
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>messages <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>messages<span style="color:#f92672">.</span>append({<span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;system&#34;</span>, <span style="color:#e6db74">&#34;content&#34;</span>: self<span style="color:#f92672">.</span>prompt})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ask</span>(self, question: str) <span style="color:#f92672">-&gt;</span> Generator[str, Any, <span style="color:#66d9ef">None</span>]:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>messages<span style="color:#f92672">.</span>append({<span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#e6db74">&#34;content&#34;</span>: question})
+</span></span><span style="display:flex;"><span>            stream <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>chat<span style="color:#f92672">.</span>completions<span style="color:#f92672">.</span>create(
+</span></span><span style="display:flex;"><span>                model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;moonshot-v1-128k&#34;</span>,
+</span></span><span style="display:flex;"><span>                messages<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>messages,
+</span></span><span style="display:flex;"><span>                temperature<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                max_tokens<span style="color:#f92672">=</span><span style="color:#ae81ff">4096</span>,
+</span></span><span style="display:flex;"><span>                top_p<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                stream<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> chunk <span style="color:#f92672">in</span> stream:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> chunk<span style="color:#f92672">.</span>choices[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>delta<span style="color:#f92672">.</span>content <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                    message <span style="color:#f92672">+=</span> chunk<span style="color:#f92672">.</span>choices[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>delta<span style="color:#f92672">.</span>content
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">yield</span> message
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>messages<span style="color:#f92672">.</span>append({<span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;assistant&#34;</span>, <span style="color:#e6db74">&#34;content&#34;</span>: message})
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> len(self<span style="color:#f92672">.</span>messages) <span style="color:#f92672">&gt;</span> self<span style="color:#f92672">.</span>num_of_round <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">del</span> self<span style="color:#f92672">.</span>messages[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>            print(e)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">yield</span> str(e)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>prompt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        You are a professional teacher with extensive knowledge across various topics. 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Learning Path Planning
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        You can design a personalized learning path for someone interested in learning something new.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Book Recommendations
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        You can recommend up to three books based on the user&#39;s interest. For each recommendation, include the following details:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Advantages of the book
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Key concepts covered
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        A guide to go from beginner (zero) to advanced (hero)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Alternative learning methods (videos, online courses, etc.)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        The reasoning behind your recommendation
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Language Preferences
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Respond in the same language as the user&#39;s input unless the user specifies a different language for the response.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>conv <span style="color:#f92672">=</span> Conversation(prompt, <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_text</span>(history, text):
+</span></span><span style="display:flex;"><span>    history <span style="color:#f92672">=</span> history <span style="color:#f92672">+</span> [(text, <span style="color:#66d9ef">None</span>)]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> history
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bot</span>(history):
+</span></span><span style="display:flex;"><span>    question <span style="color:#f92672">=</span> history[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    response_stream <span style="color:#f92672">=</span> conv<span style="color:#f92672">.</span>ask(question)
+</span></span><span style="display:flex;"><span>    history[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> response <span style="color:#f92672">in</span> response_stream:
+</span></span><span style="display:flex;"><span>        history[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> response
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">yield</span> history
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> gr<span style="color:#f92672">.</span>Blocks(css<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#chatbot{height:300px} .overflow-y-auto{height:500px}&#34;</span>) <span style="color:#66d9ef">as</span> demo:
+</span></span><span style="display:flex;"><span>        chatbot <span style="color:#f92672">=</span> gr<span style="color:#f92672">.</span>Chatbot(elem_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;chatbot&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> gr<span style="color:#f92672">.</span>Row():
+</span></span><span style="display:flex;"><span>            txt <span style="color:#f92672">=</span> gr<span style="color:#f92672">.</span>Textbox(show_label<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, placeholder<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Enter text and press enter&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        txt<span style="color:#f92672">.</span>submit(add_text, [chatbot, txt], [chatbot], queue<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>then(
+</span></span><span style="display:flex;"><span>            bot, chatbot, chatbot
+</span></span><span style="display:flex;"><span>        )<span style="color:#f92672">.</span>then(<span style="color:#66d9ef">lambda</span>: <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#66d9ef">None</span>, txt)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    demo<span style="color:#f92672">.</span>launch(server_port<span style="color:#f92672">=</span><span style="color:#ae81ff">7860</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;app launch&#34;</span>)
+</span></span><span style="display:flex;"><span>    main()
+</span></span></code></pre></div><p>加点 Step By Step 的提示词，加点 Tools，例如联网搜索，再来个生成 JSON 的指令，Boom，这就是个入门学习，书籍推荐的 Agent。
+<img alt="以太币问题展示.gif" loading="lazy" src="https://s2.loli.net/2025/03/04/fX3tgPSW2v8jwJK.gif"></p>
+<h2 id="单个-agent">单个 Agent<a hidden class="anchor" aria-hidden="true" href="#单个-agent">#</a></h2>
+<p>可根据输入的问题自动联网查询，自动生成图片，反复调用阿里的千问  Qwen2.5-Coder-32B-Instruct。
+注意，<strong>不要把能产生并执行代码的 Agent 发到生产上</strong>，ChatGPT 之前能执行 Python 代码，访问网站，这些都是在沙箱环境完成的，如果在正式服务器上执行，就会出现各种各样的漏洞，只要你访问某个链接，触发下载有害的内容，会让服务器中病毒，就等着被勒索比特币吧。</p>
+<p>这里就不贴代码了，只贴 HuggingFace 地址，我基于这个，在本地稍微改了点东西，改了点 Bug，把联网搜索的 Tool 加上去了。
+<a href="https://huggingface.co/spaces/agents-course/First_agent_template">https://huggingface.co/spaces/agents-course/First_agent_template</a></p>
+<p><img alt="agent-1-dashscope.gif" loading="lazy" src="https://s2.loli.net/2025/03/07/sEHgjK5ul9XCf1n.gif"></p>
+<p>我改了点系统提示词，加了点其他工具。
+<img alt="image.png" loading="lazy" src="https://s2.loli.net/2025/03/07/MsFwHIkqVvBO5Ep.png"></p>
+<p>用的是阿里的百炼的 API。
+<img alt="dashscope.png" loading="lazy" src="https://s2.loli.net/2025/03/07/B5FO8eZvTfxMSVU.png"></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/llm/">LLM</a></li>
+      <li><a href="http://localhost:1313/tags/ai/">AI</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">YL&#39;s Log</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

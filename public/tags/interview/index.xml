@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Interview on YL&#39;s Log</title>
+    <link>http://localhost:1313/tags/interview/</link>
+    <description>Recent content in Interview on YL&#39;s Log</description>
+    <generator>Hugo -- 0.150.1</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 22 Feb 2025 19:22:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/interview/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>找一份工作</title>
+      <link>http://localhost:1313/posts/get-a-job/</link>
+      <pubDate>Sat, 22 Feb 2025 19:22:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/get-a-job/</guid>
+      <description>&lt;h1 id=&#34;现状&#34;&gt;现状&lt;/h1&gt;
+&lt;p&gt;不得不接受的事实是，目前软件开发就业环境很烂，远不如前几年。如果你没有完全符合你想要去的公司的要求，例如 xx 年行业经验，做过 xx，面试都不会约你，这是很正常的。如果你是 Boss 直聘投递的，20 次问候，只有一次回复，是非常正常的情况，具体的我会在【投递简历】那里细说。&lt;strong&gt;国内外都一样&lt;/strong&gt;，你投国外英文简历更多都是不回的，或者回复模板发给你。&lt;/p&gt;
+&lt;p&gt;可能站在猎头的角度看，这次真的是金三银四，招聘岗位增多，是因为 DeepSeek 开源炸出了一堆的 AI 相关的岗位。但是，投递的人非常非常多，&lt;strong&gt;普通人投递的简历大都已读不回/未读未回&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;大家都在“&lt;strong&gt;降本增效&lt;/strong&gt;”，甚至有些企业只想通过降本来增效，而不是利用 AI 增效。例如 xx 电器，想通过 LLM Agent 做 Customer Service，完全替代人工，这种如果有得选的话，最好别去，主打降本的公司你会过得很艰难。话又说回来，这个环境又有哪些公司还在扩张呢。连 U.S. 都在精简 ZF 部门，成立 DOGE Department of Government Efficiency 来裁员。&lt;/p&gt;
+&lt;p&gt;想找到合适的工作，难上加难，给出合理的薪资，正常双休的公司，在杭州可能算是“违法”吧。很多公司的老板创业也不容易，投资人也焦虑，所以他们就想把这些焦虑转嫁给研发人员，试图以制造业的经验，增加研发人员的工时，期望得到更高的产出。可是，研发是脑力劳动，不休息，少休息，出错的概率会更大，反而 BUG 会更多，带来的潜在损失也会更大。&lt;strong&gt;996，大小休，直接拒绝&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;个人情况&#34;&gt;个人情况&lt;/h2&gt;
+&lt;p&gt;首先你要明确一些你很在意的，不那么在意的，不在意的，罗列出来。&lt;strong&gt;明确你的目标&lt;/strong&gt;，很重要。我给一些样例，例如你很在意薪资，对工作环境，工作时长不那么在意，对员工福利根本不在意，那你应该按重要程度这样列出来。&lt;/p&gt;
+&lt;h3 id=&#34;列出你关心的因素&#34;&gt;列出你关心的因素&lt;/h3&gt;
+&lt;p&gt;求职时，每个人关注的点都不一样。列了一些因素：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;薪资&lt;/strong&gt;：期望的收入水平（如月薪、奖金等）；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工作时长&lt;/strong&gt;：是否接受加班、996、大小休等高强度安排；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工作环境&lt;/strong&gt;：办公条件、团队氛围、是否需要吸二手烟等；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;员工福利&lt;/strong&gt;：社保、公积金、带薪休假、补助等；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;成长空间&lt;/strong&gt;：职业发展机会、学习新技能的可能性；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;公司稳定性&lt;/strong&gt;：初创公司还是成熟企业，是否面临裁员风险；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;行业和岗位&lt;/strong&gt;：是否是你感兴趣或擅长的领域；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;通勤时间&lt;/strong&gt;：上下班的距离和交通便利性；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工作内容&lt;/strong&gt;：是否有挑战性，能否发挥你的能力；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工作与生活的平衡&lt;/strong&gt;：是否有时间陪伴家人、休息或追求兴趣。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;按重要程度排序&#34;&gt;按重要程度排序&lt;/h3&gt;
+&lt;p&gt;将这些因素分为&lt;strong&gt;重要&lt;/strong&gt;、&lt;strong&gt;普通&lt;/strong&gt;和&lt;strong&gt;不重要&lt;/strong&gt;三个等级。例如：&lt;br&gt;
+如果你无法接受996、薪资是底线、工作环境其次，那么可以这样排序：&lt;br&gt;
+1. 工作时长（重要）
+2. 薪资（重要）
+3. 工作环境（普通）
+4. 成长空间（普通）
+5. 员工福利（不重要）
+排序后，你的目标会更清晰，知道哪些条件可以妥协，哪些必须坚持。&lt;/p&gt;
+&lt;h3 id=&#34;明确底线和期望&#34;&gt;明确底线和期望&lt;/h3&gt;
+&lt;p&gt;对于每个重要因素，设定一个&lt;strong&gt;底线&lt;/strong&gt;（最低接受标准）和一个&lt;strong&gt;期望&lt;/strong&gt;（理想状态）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;薪资&lt;/strong&gt;：底线是月薪 xx K，期望是 yy K；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工作时长&lt;/strong&gt;：底线是每周正常上下班，996 或大小休是接受不了的；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工作环境&lt;/strong&gt;：底线是不吸二手烟，期望是有相对安静的，不会被随时打断的工作环境。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果这份工作已经触及到底线了，或者底线都到不了，别犹豫，一定不要去，去了一定后悔。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>For Interview</title>
+      <link>http://localhost:1313/posts/interview/</link>
+      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/interview/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;仅供本人面试前准备，其他人还是别看了，没意义。有很多我缩写，省去了很多易理解的部分。&lt;/p&gt;
+&lt;p&gt;我尽量找别人已经总结过的东西，而不是自己写，无意义，面试的八股文罢了。都是靠努力就能实现的东西。&lt;/p&gt;
+&lt;h1 id=&#34;常见容器&#34;&gt;常见容器&lt;/h1&gt;
+&lt;h2 id=&#34;arraylist-详解&#34;&gt;ArrayList 详解&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://note.youdao.com/ynoteshare1/index.html?id=efd2a3a29d2626acea2b053e56bae5cc&amp;amp;type=notebook#/04F1A0EFF8F241C2A89E2234AAF0A36A&#34;&gt;https://note.youdao.com/ynoteshare1/index.html?id=efd2a3a29d2626acea2b053e56bae5cc&amp;type=notebook#/04F1A0EFF8F241C2A89E2234AAF0A36A&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;底层&lt;strong&gt;基于数组&lt;/strong&gt;实现&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;创建 ArrayList 如果不指定大小&lt;/strong&gt;，会先创建一个&lt;strong&gt;大小为 0 的 Object[ ] 数组&lt;/strong&gt; ，&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;第一次添加数据&lt;/strong&gt;时，会&lt;strong&gt;扩容&lt;/strong&gt;成 ArrayList 的 默认大小 &lt;strong&gt;default_capacity：10&lt;/strong&gt;**；**&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;创建时如果&lt;strong&gt;指定大小&lt;/strong&gt;，直接&lt;strong&gt;创建指定大小的Object[ ]数组&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;add（）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;对 &lt;strong&gt;size+1&lt;/strong&gt;，去&lt;strong&gt;判断数组是否满了&lt;/strong&gt;，如果满了就&lt;strong&gt;调用 grow（）方法扩容&lt;/strong&gt;，扩容大小为，&lt;strong&gt;原数组大小 + 原数组大小右移一位&lt;/strong&gt;。也就是扩容到原来的&lt;strong&gt;1.5倍&lt;/strong&gt;。JDK 1.6 是 1.5 倍 +1 ，JDK 1.7，1.8 是 1.5 倍。&lt;/li&gt;
+&lt;li&gt;然后把老数组拷贝到新数组里&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;elementData&lt;/strong&gt; = &lt;strong&gt;Arrays.copyOf(elementData, newCapacity);&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;最后 &lt;strong&gt;elementData[ size++ ] = e&lt;/strong&gt;，对数组赋值，（并且size+1）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;add（index，e）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;首先&lt;strong&gt;对index做数组越界检查rangeCheck(index)&lt;/strong&gt;;  如果越界了，抛数组越界异常&lt;/li&gt;
+&lt;li&gt;如果没越界，还是&lt;strong&gt;对 size + 1，判断是否需要扩容&lt;/strong&gt;，如果需要扩容，调用&lt;strong&gt;grow&lt;/strong&gt;方法&lt;/li&gt;
+&lt;li&gt;如果需要扩容，调用&lt;strong&gt;System.arraycopy（1,2,3,4,5）&lt;strong&gt;方法。参数解释&lt;/strong&gt;1：原来的数组，2：从哪里开始复制。3：复制的目标数组。4：目标数组的第几位开始复制。5：一共复制几个数&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;System.arraycopy(elementData, index, elementData, index + 1, size - index);&lt;/li&gt;
+&lt;li&gt;假设把数字6插入到第3位，复制过后的数组是，1 2 3 4 5 -&amp;gt; &lt;strong&gt;1 2 3 3 4 5&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;然后再把目标的位置的值修改，变为 &lt;strong&gt;1 2 6 3 4 5&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;最后size++；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;set（index，e）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;首先解释，set这个方法是替换该位置原来的元素，所以不会使数组变大，不会做扩容判断&lt;/li&gt;
+&lt;li&gt;然后对index做数组越界检查，如果越界了，抛数组越界异常&lt;/li&gt;
+&lt;li&gt;把e替换到数组的index位置&lt;/li&gt;
+&lt;li&gt;返回数组index位置的原始值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;remove（index）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;首先&lt;strong&gt;对index做数组越界检查rangeCheck(index);&lt;/strong&gt;，如果越界了，抛数组越界异常&lt;/li&gt;
+&lt;li&gt;然后进行&lt;strong&gt;数组拷贝 System.arraycopy(elementData, index+1, elementData, index,size - index - 1);&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;假设把第三位数字删除，&lt;strong&gt;1 2 3 4 5 6 	- &amp;gt; 1	2 4 5 6 6&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;然后 element[size&amp;ndash;] = null;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;最后&lt;strong&gt;返回被删除的值&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;get（index）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;首先对index做数组越界检查&lt;strong&gt;rangeCheck(index);&lt;/strong&gt;，如果越界了，抛数组越界异常&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;return elementData(index);&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;总结来说，AraayList的get方法效率非常高，直接返回对应下标值，add方法和remove方法，效率就有点低了，需要考虑数组扩容和数组拷贝的问题&lt;/strong&gt;**。**&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
