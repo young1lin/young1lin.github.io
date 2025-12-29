@@ -9,7 +9,7 @@
     <lastBuildDate>Thu, 18 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://young1lin.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>从零理解 MCP</title>
+      <title>LLM-2 MCP</title>
       <link>https://young1lin.github.io/posts/mcp/</link>
       <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
       <guid>https://young1lin.github.io/posts/mcp/</guid>
@@ -49,7 +49,7 @@
 &lt;p&gt;就是有着&lt;strong&gt;明确的问题，明确的处理方式，以及预期结果&lt;/strong&gt;，毕竟 &lt;strong&gt;Garbage in, garbage out&lt;/strong&gt;。你不可能指望垃圾数据，片汤话就能解决问题，传统的监督学习还要一个个标注数据，大模型能做到零样本输出看似它学会了思考，学会了表达，实际不是。在它训练的数据中，如果这部分存在过，就得让它过度拟合，回答。就像做数据治理，这家厂商给的性别字段叫 gender:(male,female,unknown)，另一个厂商上报的数据是 sex(0,1,-1) 这些都可以做影射到符合国标 GB/T 2261.1-2003 的字段上，统一叫 gender(0,1,2,9)，但是有些他上报 g:(x, y, trans, plastic bag, walmart bag)，这样就输入的是垃圾信息， 别想治理出能用的数据。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>llm-0</title>
+      <title>LLM-0</title>
       <link>https://young1lin.github.io/posts/llm-0/</link>
       <pubDate>Sat, 08 Mar 2025 00:04:00 +0000</pubDate>
       <guid>https://young1lin.github.io/posts/llm-0/</guid>

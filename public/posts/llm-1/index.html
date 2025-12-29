@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>llm-1 | YL&#39;s Log</title>
+<title>LLM-1 | YL&#39;s Log</title>
 <meta name="keywords" content="LLM">
 <meta name="description" content="大语言模型 LLM 初探
 先进行接口调用，快速了解大语言模型能做什么，再逐个了解其原理。
@@ -418,7 +418,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <meta property="og:url" content="https://young1lin.github.io/posts/llm-1/">
   <meta property="og:site_name" content="YL&#39;s Log">
-  <meta property="og:title" content="llm-1">
+  <meta property="og:title" content="LLM-1">
   <meta property="og:description" content="大语言模型 LLM 初探 先进行接口调用，快速了解大语言模型能做什么，再逐个了解其原理。
 通过 HTTP 请求初探 POST https://api.deepseek.com/chat/completions HTTP/1.1 Content-Type: application/json Accept: application/json Authorization: Bearer {{$dotenv DEEPSEEK_API_KEY}} { &#34;messages&#34;: [ { &#34;content&#34;: &#34;你是一个智能客服 Alice，你的主要作用就是帮用户解答疑问&#34;, &#34;role&#34;: &#34;system&#34; }, { &#34;content&#34;: &#34;你好，你是谁？&#34;, &#34;role&#34;: &#34;user&#34; } ], &#34;model&#34;: &#34;deepseek-chat&#34;, &#34;stream&#34;: false, &#34;temperature&#34;: 0 } 回复的内容
 HTTP/1.1 200 OK Date: Wed, 06 Aug 2025 08:21:59 GMT Content-Type: application/json Transfer-Encoding: chunked Connection: close vary: origin, access-control-request-method, access-control-request-headers access-control-allow-credentials: true x-ds-trace-id: 4f241ebb167c3c01b3a97ed15dccc06a Strict-Transport-Security: max-age=31536000; includeSubDomains; preload X-Content-Type-Options: nosniff Server: CW Content-Encoding: gzip { &#34;id&#34;: &#34;379e029d-6fe0-4c17-8b1b-a834033f810e&#34;, &#34;object&#34;: &#34;chat.completion&#34;, &#34;created&#34;: 1754468519, &#34;model&#34;: &#34;deepseek-chat&#34;, &#34;choices&#34;: [ { &#34;index&#34;: 0, &#34;message&#34;: { &#34;role&#34;: &#34;assistant&#34;, &#34;content&#34;: &#34;你好！我是智能客服Alice，很高兴为你服务。我是一个AI助手，可以帮助解答问题、提供信息或协助处理各种事务。有什么我可以帮你的吗？&#34; }, &#34;logprobs&#34;: null, &#34;finish_reason&#34;: &#34;stop&#34; } ], &#34;usage&#34;: { &#34;prompt_tokens&#34;: 21, &#34;completion_tokens&#34;: 33, &#34;total_tokens&#34;: 54, &#34;prompt_tokens_details&#34;: { &#34;cached_tokens&#34;: 0 }, &#34;prompt_cache_hit_tokens&#34;: 0, &#34;prompt_cache_miss_tokens&#34;: 21 }, &#34;system_fingerprint&#34;: &#34;fp_8802369eaa_prod0623_fp8_kvcache&#34; } 从上面的例子我们可以发现，大模型有三个 role（角色），system 就是系统角色，user 是用户，assistant 就是大模型，与之相应的 content 就是它们之间的对话内容。 请求内容中的参数除了 messages 还有 model 表示使用什么模型，stream 表示是否流式回复，temperature 暂且按下不表后续会详细说明。">
@@ -429,7 +429,7 @@ HTTP/1.1 200 OK Date: Wed, 06 Aug 2025 08:21:59 GMT Content-Type: application/js
     <meta property="article:modified_time" content="2025-08-11T00:00:00+08:00">
     <meta property="article:tag" content="LLM">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="llm-1">
+<meta name="twitter:title" content="LLM-1">
 <meta name="twitter:description" content="大语言模型 LLM 初探
 先进行接口调用，快速了解大语言模型能做什么，再逐个了解其原理。
 通过 HTTP 请求初探
@@ -513,7 +513,7 @@ Content-Encoding: gzip
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "llm-1",
+      "name": "LLM-1",
       "item": "https://young1lin.github.io/posts/llm-1/"
     }
   ]
@@ -523,8 +523,8 @@ Content-Encoding: gzip
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "llm-1",
-  "name": "llm-1",
+  "headline": "LLM-1",
+  "name": "LLM-1",
   "description": "大语言模型 LLM 初探 先进行接口调用，快速了解大语言模型能做什么，再逐个了解其原理。\n通过 HTTP 请求初探 POST https://api.deepseek.com/chat/completions HTTP/1.1 Content-Type: application/json Accept: application/json Authorization: Bearer {{$dotenv DEEPSEEK_API_KEY}} { \u0026#34;messages\u0026#34;: [ { \u0026#34;content\u0026#34;: \u0026#34;你是一个智能客服 Alice，你的主要作用就是帮用户解答疑问\u0026#34;, \u0026#34;role\u0026#34;: \u0026#34;system\u0026#34; }, { \u0026#34;content\u0026#34;: \u0026#34;你好，你是谁？\u0026#34;, \u0026#34;role\u0026#34;: \u0026#34;user\u0026#34; } ], \u0026#34;model\u0026#34;: \u0026#34;deepseek-chat\u0026#34;, \u0026#34;stream\u0026#34;: false, \u0026#34;temperature\u0026#34;: 0 } 回复的内容\nHTTP/1.1 200 OK Date: Wed, 06 Aug 2025 08:21:59 GMT Content-Type: application/json Transfer-Encoding: chunked Connection: close vary: origin, access-control-request-method, access-control-request-headers access-control-allow-credentials: true x-ds-trace-id: 4f241ebb167c3c01b3a97ed15dccc06a Strict-Transport-Security: max-age=31536000; includeSubDomains; preload X-Content-Type-Options: nosniff Server: CW Content-Encoding: gzip { \u0026#34;id\u0026#34;: \u0026#34;379e029d-6fe0-4c17-8b1b-a834033f810e\u0026#34;, \u0026#34;object\u0026#34;: \u0026#34;chat.completion\u0026#34;, \u0026#34;created\u0026#34;: 1754468519, \u0026#34;model\u0026#34;: \u0026#34;deepseek-chat\u0026#34;, \u0026#34;choices\u0026#34;: [ { \u0026#34;index\u0026#34;: 0, \u0026#34;message\u0026#34;: { \u0026#34;role\u0026#34;: \u0026#34;assistant\u0026#34;, \u0026#34;content\u0026#34;: \u0026#34;你好！我是智能客服Alice，很高兴为你服务。我是一个AI助手，可以帮助解答问题、提供信息或协助处理各种事务。有什么我可以帮你的吗？\u0026#34; }, \u0026#34;logprobs\u0026#34;: null, \u0026#34;finish_reason\u0026#34;: \u0026#34;stop\u0026#34; } ], \u0026#34;usage\u0026#34;: { \u0026#34;prompt_tokens\u0026#34;: 21, \u0026#34;completion_tokens\u0026#34;: 33, \u0026#34;total_tokens\u0026#34;: 54, \u0026#34;prompt_tokens_details\u0026#34;: { \u0026#34;cached_tokens\u0026#34;: 0 }, \u0026#34;prompt_cache_hit_tokens\u0026#34;: 0, \u0026#34;prompt_cache_miss_tokens\u0026#34;: 21 }, \u0026#34;system_fingerprint\u0026#34;: \u0026#34;fp_8802369eaa_prod0623_fp8_kvcache\u0026#34; } 从上面的例子我们可以发现，大模型有三个 role（角色），system 就是系统角色，user 是用户，assistant 就是大模型，与之相应的 content 就是它们之间的对话内容。 请求内容中的参数除了 messages 还有 model 表示使用什么模型，stream 表示是否流式回复，temperature 暂且按下不表后续会详细说明。\n",
   "keywords": [
     "LLM"
@@ -619,7 +619,7 @@ Content-Encoding: gzip
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      llm-1
+      LLM-1
     </h1>
     <div class="post-meta"><span title='2025-08-11 00:00:00 +0800 CST'>August 11, 2025</span>
 

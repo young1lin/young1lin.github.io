@@ -1,5 +1,5 @@
 +++
-title = "llm-0"
+title = "LLM-0"
 date = 2025-03-08T00:04:00Z
 tags = ["LLM", "AI"]
 categories = ["notes"]

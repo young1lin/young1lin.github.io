@@ -1,5 +1,5 @@
 +++
-title = 'llm-1'
+title = 'LLM-1'
 date = '2025-08-11T00:00:00+08:00'
 tags = ['LLM']
 +++

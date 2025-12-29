@@ -1,5 +1,5 @@
 +++
-title = "从零理解 MCP"
+title = "LLM-2 MCP"
 date = 2025-12-18T00:00:00Z
 tags = ["LLM"]
 categories = ["notes"]
