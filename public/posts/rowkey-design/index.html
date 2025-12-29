@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>RowKey 设计规约 | YL&#39;s Log</title>
 <meta name="keywords" content="HBase">
 <meta name="description" content="RowKey 尽量简短
@@ -20,16 +20,16 @@ ID 在前
 优先级排序
 高频查询的越靠前">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/rowkey-design/">
+<link rel="canonical" href="https://young1lin.github.io/posts/rowkey-design/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.4a977a24927dfcb104c05a21e8acc6782a45726abfb278fdc609607b38e0aa5c.css" integrity="sha256-Spd6JJJ9/LEEwFoh6KzGeCpFcmq/snj9xglgezjgqlw=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://young1lin.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://young1lin.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://young1lin.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://young1lin.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://young1lin.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="zh-cn" href="http://localhost:1313/posts/rowkey-design/">
+<link rel="alternate" hreflang="zh-cn" href="https://young1lin.github.io/posts/rowkey-design/">
 <noscript>
     <style>
         #theme-toggle,
@@ -324,6 +324,125 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+  
+  const initMermaid = () => {
+    const isDark = document.body.className.includes("dark");
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: isDark ? 'dark' : 'default',
+      securityLevel: 'loose',
+    });
+  };
+
+  
+  initMermaid();
+
+  
+  window.addEventListener('DOMContentLoaded', () => {
+    const observer = new MutationObserver(() => {
+      
+      initMermaid();
+
+      
+      document.querySelectorAll('.mermaid').forEach((element) => {
+        element.removeAttribute('data-processed');
+      });
+
+      mermaid.run();
+    });
+
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  });
+</script>
+<meta property="og:url" content="https://young1lin.github.io/posts/rowkey-design/">
+  <meta property="og:site_name" content="YL&#39;s Log">
+  <meta property="og:title" content="RowKey 设计规约">
+  <meta property="og:description" content="RowKey 尽量简短 Data Block 是 HBase 中文件读取的最小单元。Data Block中主要存储用户的KeyValue数据，而KeyValue结构是HBase存储的核心。HBase中所有数据都是以KeyValue结构存储在HBase中。
+KeyValue由4个部分构成，分别为Key Length、Value Length、Key和Value。其中，Key Length和Value Length是两个固定长度的数值，Value是用户写入的实际数据，Key是一个复合结构，由多个部分构成：Rowkey、Column Family、Column Qualif ier、TimeStamp以及KeyType。其中，KeyType有四种类型，分别是Put、Delete、DeleteColumn和DeleteFamily。
+HBase中数据在最底层是以KeyValue的形式存储的，其中Key是一个比较复杂的复合结构。
+这也是HBase系统在表结构设计时经常强调Rowkey、Column Family以及ColumnQualif ier尽可能设置短的根本原因。列族一般情况下设置为 1 个。
+——《HBase 原理与实战》
+等长 类似桶排序规则。
+ID 在前 &lt;user_id&gt;&lt;业务字段&gt;
+优先级排序 高频查询的越靠前">
+  <meta property="og:locale" content="zh-CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-09-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-09-25T00:00:00+00:00">
+    <meta property="article:tag" content="HBase">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RowKey 设计规约">
+<meta name="twitter:description" content="RowKey 尽量简短
+Data Block 是 HBase 中文件读取的最小单元。Data Block中主要存储用户的KeyValue数据，而KeyValue结构是HBase存储的核心。HBase中所有数据都是以KeyValue结构存储在HBase中。
+KeyValue由4个部分构成，分别为Key Length、Value Length、Key和Value。其中，Key Length和Value Length是两个固定长度的数值，Value是用户写入的实际数据，Key是一个复合结构，由多个部分构成：Rowkey、Column Family、Column Qualif ier、TimeStamp以及KeyType。其中，KeyType有四种类型，分别是Put、Delete、DeleteColumn和DeleteFamily。
+HBase中数据在最底层是以KeyValue的形式存储的，其中Key是一个比较复杂的复合结构。
+这也是HBase系统在表结构设计时经常强调Rowkey、Column Family以及ColumnQualif ier尽可能设置短的根本原因。列族一般情况下设置为 1 个。
+——《HBase 原理与实战》
+等长
+类似桶排序规则。
+ID 在前
+&lt;user_id&gt;&lt;业务字段&gt;
+优先级排序
+高频查询的越靠前">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://young1lin.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "RowKey 设计规约",
+      "item": "https://young1lin.github.io/posts/rowkey-design/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "RowKey 设计规约",
+  "name": "RowKey 设计规约",
+  "description": "RowKey 尽量简短 Data Block 是 HBase 中文件读取的最小单元。Data Block中主要存储用户的KeyValue数据，而KeyValue结构是HBase存储的核心。HBase中所有数据都是以KeyValue结构存储在HBase中。\nKeyValue由4个部分构成，分别为Key Length、Value Length、Key和Value。其中，Key Length和Value Length是两个固定长度的数值，Value是用户写入的实际数据，Key是一个复合结构，由多个部分构成：Rowkey、Column Family、Column Qualif ier、TimeStamp以及KeyType。其中，KeyType有四种类型，分别是Put、Delete、DeleteColumn和DeleteFamily。\nHBase中数据在最底层是以KeyValue的形式存储的，其中Key是一个比较复杂的复合结构。\n这也是HBase系统在表结构设计时经常强调Rowkey、Column Family以及ColumnQualif ier尽可能设置短的根本原因。列族一般情况下设置为 1 个。\n——《HBase 原理与实战》\n等长 类似桶排序规则。\nID 在前 \u0026lt;user_id\u0026gt;\u0026lt;业务字段\u0026gt;\n优先级排序 高频查询的越靠前\n",
+  "keywords": [
+    "HBase"
+  ],
+  "articleBody": "RowKey 尽量简短 Data Block 是 HBase 中文件读取的最小单元。Data Block中主要存储用户的KeyValue数据，而KeyValue结构是HBase存储的核心。HBase中所有数据都是以KeyValue结构存储在HBase中。\nKeyValue由4个部分构成，分别为Key Length、Value Length、Key和Value。其中，Key Length和Value Length是两个固定长度的数值，Value是用户写入的实际数据，Key是一个复合结构，由多个部分构成：Rowkey、Column Family、Column Qualif ier、TimeStamp以及KeyType。其中，KeyType有四种类型，分别是Put、Delete、DeleteColumn和DeleteFamily。\nHBase中数据在最底层是以KeyValue的形式存储的，其中Key是一个比较复杂的复合结构。\n这也是HBase系统在表结构设计时经常强调Rowkey、Column Family以及ColumnQualif ier尽可能设置短的根本原因。列族一般情况下设置为 1 个。\n——《HBase 原理与实战》\n等长 类似桶排序规则。\nID 在前 \u003c业务字段\u003e\n优先级排序 高频查询的越靠前\n",
+  "wordCount" : "31",
+  "inLanguage": "zh-cn",
+  "datePublished": "2020-09-25T00:00:00Z",
+  "dateModified": "2020-09-25T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://young1lin.github.io/posts/rowkey-design/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "YL's Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://young1lin.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -341,7 +460,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="YL&#39;s Log (Alt + H)">YL&#39;s Log</a>
+            <a href="https://young1lin.github.io/" accesskey="h" title="YL&#39;s Log (Alt + H)">YL&#39;s Log</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -367,22 +486,22 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/" title="首页">
+                <a href="https://young1lin.github.io/" title="首页">
                     <span>首页</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="搜索">
+                <a href="https://young1lin.github.io/search/" title="搜索">
                     <span>搜索</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="标签">
+                <a href="https://young1lin.github.io/tags/" title="标签">
                     <span>标签</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/films" title="电影">
+                <a href="https://young1lin.github.io/films" title="电影">
                     <span>电影</span>
                 </a>
             </li>
@@ -439,14 +558,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/hbase/">HBase</a></li>
+      <li><a href="https://young1lin.github.io/tags/hbase/">HBase</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">YL&#39;s Log</a></span> · 
+        <span>&copy; 2025 <a href="https://young1lin.github.io/">YL&#39;s Log</a></span> · 
 
     <span>
         Powered by

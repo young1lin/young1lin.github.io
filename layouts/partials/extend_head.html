@@ -255,3 +255,41 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+<!-- Mermaid 支持 -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+  // 初始化配置
+  const initMermaid = () => {
+    const isDark = document.body.className.includes("dark");
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: isDark ? 'dark' : 'default',
+      securityLevel: 'loose',
+    });
+  };
+
+  // 页面加载时初始化
+  initMermaid();
+
+  // 监听主题切换
+  window.addEventListener('DOMContentLoaded', () => {
+    const observer = new MutationObserver(() => {
+      // 重新初始化并渲染
+      initMermaid();
+
+      // 清除已处理的标记并重新渲染
+      document.querySelectorAll('.mermaid').forEach((element) => {
+        element.removeAttribute('data-processed');
+      });
+
+      mermaid.run();
+    });
+
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  });
+</script>

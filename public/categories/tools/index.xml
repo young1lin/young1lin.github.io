@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tools on YL&#39;s Log</title>
-    <link>http://localhost:1313/categories/tools/</link>
+    <link>https://young1lin.github.io/categories/tools/</link>
     <description>Recent content in Tools on YL&#39;s Log</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 16 Jul 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://young1lin.github.io/categories/tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mac 下 Docker 更改国内镜像源</title>
-      <link>http://localhost:1313/posts/mac-docker--mirrors/</link>
+      <link>https://young1lin.github.io/posts/mac-docker--mirrors/</link>
       <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/mac-docker--mirrors/</guid>
+      <guid>https://young1lin.github.io/posts/mac-docker--mirrors/</guid>
       <description>&lt;h1 id=&#34;打开-dockerdesktop&#34;&gt;打开 &lt;code&gt;DockerDesktop&lt;/code&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;img alt=&#34;docker更改国内镜像源.png&#34; loading=&#34;lazy&#34; src=&#34;https://i.loli.net/2020/07/16/BM374ek9xKfoOZT.png&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;如果你有其他配置改了的直接复制这个记住前面的逗号不要删&#34;&gt;如果你有其他配置改了的，直接复制这个，记住前面的逗号不要删&lt;/h1&gt;

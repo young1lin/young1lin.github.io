@@ -2,115 +2,115 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on YL&#39;s Log</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://young1lin.github.io/tags/</link>
     <description>Recent content in Tags on YL&#39;s Log</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>AI</title>
-      <link>http://localhost:1313/tags/ai/</link>
-      <pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ai/</guid>
-      <description></description>
-    </item>
+    <lastBuildDate>Thu, 18 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://young1lin.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LLM</title>
-      <link>http://localhost:1313/tags/llm/</link>
-      <pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/llm/</guid>
+      <link>https://young1lin.github.io/tags/llm/</link>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://young1lin.github.io/tags/llm/</guid>
       <description></description>
     </item>
     <item>
-      <title>Interview</title>
-      <link>http://localhost:1313/tags/interview/</link>
-      <pubDate>Sat, 22 Feb 2025 19:22:00 +0800</pubDate>
-      <guid>http://localhost:1313/tags/interview/</guid>
+      <title>AI</title>
+      <link>https://young1lin.github.io/tags/ai/</link>
+      <pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://young1lin.github.io/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Other</title>
-      <link>http://localhost:1313/tags/other/</link>
+      <link>https://young1lin.github.io/tags/other/</link>
       <pubDate>Thu, 03 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/other/</guid>
+      <guid>https://young1lin.github.io/tags/other/</guid>
       <description></description>
     </item>
     <item>
       <title>Film</title>
-      <link>http://localhost:1313/tags/film/</link>
+      <link>https://young1lin.github.io/tags/film/</link>
       <pubDate>Tue, 15 Jun 2021 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/tags/film/</guid>
+      <guid>https://young1lin.github.io/tags/film/</guid>
       <description></description>
     </item>
     <item>
       <title>LOL</title>
-      <link>http://localhost:1313/tags/lol/</link>
+      <link>https://young1lin.github.io/tags/lol/</link>
       <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/lol/</guid>
+      <guid>https://young1lin.github.io/tags/lol/</guid>
       <description></description>
     </item>
     <item>
       <title>TFT</title>
-      <link>http://localhost:1313/tags/tft/</link>
+      <link>https://young1lin.github.io/tags/tft/</link>
       <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tft/</guid>
+      <guid>https://young1lin.github.io/tags/tft/</guid>
       <description></description>
     </item>
     <item>
       <title>HBase</title>
-      <link>http://localhost:1313/tags/hbase/</link>
+      <link>https://young1lin.github.io/tags/hbase/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/hbase/</guid>
+      <guid>https://young1lin.github.io/tags/hbase/</guid>
       <description></description>
     </item>
     <item>
       <title>Cache</title>
-      <link>http://localhost:1313/tags/cache/</link>
+      <link>https://young1lin.github.io/tags/cache/</link>
       <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cache/</guid>
+      <guid>https://young1lin.github.io/tags/cache/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interview</title>
+      <link>https://young1lin.github.io/tags/interview/</link>
+      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://young1lin.github.io/tags/interview/</guid>
       <description></description>
     </item>
     <item>
       <title>JUC</title>
-      <link>http://localhost:1313/tags/juc/</link>
+      <link>https://young1lin.github.io/tags/juc/</link>
       <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/juc/</guid>
+      <guid>https://young1lin.github.io/tags/juc/</guid>
       <description></description>
     </item>
     <item>
       <title>JVM</title>
-      <link>http://localhost:1313/tags/jvm/</link>
+      <link>https://young1lin.github.io/tags/jvm/</link>
       <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/jvm/</guid>
+      <guid>https://young1lin.github.io/tags/jvm/</guid>
       <description></description>
     </item>
     <item>
       <title>Spring</title>
-      <link>http://localhost:1313/tags/spring/</link>
+      <link>https://young1lin.github.io/tags/spring/</link>
       <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/spring/</guid>
+      <guid>https://young1lin.github.io/tags/spring/</guid>
       <description></description>
     </item>
     <item>
       <title>Structure</title>
-      <link>http://localhost:1313/tags/structure/</link>
+      <link>https://young1lin.github.io/tags/structure/</link>
       <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/structure/</guid>
+      <guid>https://young1lin.github.io/tags/structure/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
-      <link>http://localhost:1313/tags/docker/</link>
+      <link>https://young1lin.github.io/tags/docker/</link>
       <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/docker/</guid>
+      <guid>https://young1lin.github.io/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Effective Java</title>
-      <link>http://localhost:1313/tags/effective-java/</link>
+      <link>https://young1lin.github.io/tags/effective-java/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/effective-java/</guid>
+      <guid>https://young1lin.github.io/tags/effective-java/</guid>
       <description></description>
     </item>
   </channel>

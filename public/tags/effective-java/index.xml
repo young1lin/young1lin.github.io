@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Effective Java on YL&#39;s Log</title>
-    <link>http://localhost:1313/tags/effective-java/</link>
+    <link>https://young1lin.github.io/tags/effective-java/</link>
     <description>Recent content in Effective Java on YL&#39;s Log</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 18 Jun 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/effective-java/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://young1lin.github.io/tags/effective-java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Effective Java(with Spring core)</title>
-      <link>http://localhost:1313/posts/effective-java-spring/</link>
+      <link>https://young1lin.github.io/posts/effective-java-spring/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/effective-java-spring/</guid>
+      <guid>https://young1lin.github.io/posts/effective-java-spring/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.oreilly.com/library/view/effective-java/9780134686097/&#34;&gt;电子原版目录以及概要&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;请购买实体书籍，支持作者、翻译以及出版社&lt;/p&gt;
 &lt;h1 id=&#34;creating-and-destroying-objects&#34;&gt;Creating and Destroying Objects&lt;/h1&gt;

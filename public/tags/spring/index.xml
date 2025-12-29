@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Spring on YL&#39;s Log</title>
-    <link>http://localhost:1313/tags/spring/</link>
+    <link>https://young1lin.github.io/tags/spring/</link>
     <description>Recent content in Spring on YL&#39;s Log</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 29 Jul 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://young1lin.github.io/tags/spring/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>For Interview</title>
-      <link>http://localhost:1313/posts/interview/</link>
+      <link>https://young1lin.github.io/posts/interview/</link>
       <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/interview/</guid>
+      <guid>https://young1lin.github.io/posts/interview/</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;仅供本人面试前准备，其他人还是别看了，没意义。有很多我缩写，省去了很多易理解的部分。&lt;/p&gt;
 &lt;p&gt;我尽量找别人已经总结过的东西，而不是自己写，无意义，面试的八股文罢了。都是靠努力就能实现的东西。&lt;/p&gt;

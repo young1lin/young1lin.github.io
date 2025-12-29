@@ -2,17 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>LLM on YL&#39;s Log</title>
-    <link>http://localhost:1313/tags/llm/</link>
+    <link>https://young1lin.github.io/tags/llm/</link>
     <description>Recent content in LLM on YL&#39;s Log</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://young1lin.github.io/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从零理解 MCP</title>
+      <link>https://young1lin.github.io/posts/mcp/</link>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://young1lin.github.io/posts/mcp/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;在使用 Cline、Claude Desktop、Cursor 这些应用的时候，只需要配置一个 &lt;code&gt;mcp.json&lt;/code&gt; 文件，就可以让大模型使用各种工具，这种是否很神奇？例如下面的配置，我就能让 Cursor 或者 Cline 操作 Chrome 浏览器进行各种操作，例如访问某个网站，点击某个按钮。这一切，都很简单，如果你知道大模型本质是什么，可以跳过下面的 LLM 的内容，直接看&lt;a href=&#34;https://young1lin.github.io/posts/mcp/#%e8%83%8c%e6%99%af%e4%bb%8b%e7%bb%8d&#34;&gt;背景介绍&lt;/a&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;mcpServers&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;chrome-devtools&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;npx&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;chrome-devtools-mcp@latest&amp;#34;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下面的操作是不是看起来很神秘，只需要输入文字，就能打开网页，点击登录，输入账号。&lt;/p&gt;
+&lt;p&gt;&lt;video src=&#34;https://github.com/user-attachments/assets/6720b83b-3eef-4ab8-8643-e6629ac5348e&#34; controls width=&#34;100%&#34;&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;其实这个做了这几件事情，在 D-Cline 的进程中，&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 npx 命令启动一个了一个子进程，这个进行接受 stdio 输入一段内容；&lt;/li&gt;
+&lt;li&gt;将 MCP TOOL 的提示词填充进 D-Cline 的 system prompt 中；&lt;/li&gt;
+&lt;li&gt;用户输入然后 D-Cline 调用大模型，返回结构化的 XML 文本；&lt;/li&gt;
+&lt;li&gt;Buffer 回复内容，解析 XML 调用相关的 Tool；&lt;/li&gt;
+&lt;li&gt;如果是 MCP，则会调用对应的 MCP 子进程的 Tool；&lt;/li&gt;
+&lt;li&gt;调用结果输出 stdio，D-Cline 收到输出的内容决定是否进行下一步操作；&lt;/li&gt;
+&lt;li&gt;如此循环，直到调用 FinalAnswer Tool 返回最终答案。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;当然，我这里为了避免无限循环调用工具，加了硬编码的固定最大对话轮数限制。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>最近用 LLM 产品写代码的一些感想</title>
-      <link>http://localhost:1313/posts/llm-write-code/</link>
+      <link>https://young1lin.github.io/posts/llm-write-code/</link>
       <pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/llm-write-code/</guid>
+      <guid>https://young1lin.github.io/posts/llm-write-code/</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;在 ChatGPT 刚出来的时候，也就是 GPT-3 就开始用了，那个时候免费用，也勉强能用来写代码。它能在提供的沙箱环境执行 Python 代码，任何微小的校验方法编写，例如验证身份证方法直接丢给它，让它写，提示词就写：根据你学到的知识，帮我编写下面的代码—— 就是要它和训练的数据输出一模一样的内容。到后面 ChatGPT4 出来，让它转 Python 后端项目到 Java 项目，DAG 构建族谱，计算同一个祠堂下两个人的关系，两千行的代码，也能正常转，只不过提示词要多写点，还得一点点手动拆分代码。那个时候是和 Claude 一起用，即使两个都是 Pro Plan 但是架不住代码比较多消耗 Token 很快。现在只有 Claude 写的代码能勉强用于生产，因为简单的代码 Cursor 就能自动补全，GPT-5 也就那样，甚至开源的 Qwen3-Coder-480B-A35B-Instruct 写代码能力都比 GPT-5 强。&lt;/p&gt;
 &lt;p&gt;在当前阶段，LLM 根本替代不了高级开发，尤其是一些大模型，例如 Qwen3 或者 GPT5 完全比不上 Claude4.1。但是把一些琐碎的，低层级的任务丢给大模型，它会做得很好，不要一句话，“帮我把这个文档弄一下”，这种没有明确的目的废话。&lt;/p&gt;
@@ -21,9 +50,9 @@
     </item>
     <item>
       <title>llm-1</title>
-      <link>http://localhost:1313/posts/llm-1/</link>
+      <link>https://young1lin.github.io/posts/llm-1/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/llm-1/</guid>
+      <guid>https://young1lin.github.io/posts/llm-1/</guid>
       <description>&lt;h1 id=&#34;大语言模型-llm-初探&#34;&gt;大语言模型 LLM 初探&lt;/h1&gt;
 &lt;p&gt;先进行接口调用，快速了解大语言模型能做什么，再逐个了解其原理。&lt;/p&gt;
 &lt;h2 id=&#34;通过-http-请求初探&#34;&gt;通过 HTTP 请求初探&lt;/h2&gt;
@@ -94,9 +123,9 @@
     </item>
     <item>
       <title>llm-0</title>
-      <link>http://localhost:1313/posts/llm-0/</link>
+      <link>https://young1lin.github.io/posts/llm-0/</link>
       <pubDate>Sat, 08 Mar 2025 00:04:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/llm-0/</guid>
+      <guid>https://young1lin.github.io/posts/llm-0/</guid>
       <description>&lt;h1 id=&#34;又是一波风口来了&#34;&gt;又是一波风口来了&lt;/h1&gt;
 &lt;p&gt;又开始了，不懂行的，只会高谈阔论放没有味道屁的，又开始了，“李一舟” 们又复活了。开始利用大家的焦虑，开始卖些没有营养的课，新一波的收割又来了。那些高谈阔论的砖家疯狂啃噬着这新鲜的养料。&lt;/p&gt;
 &lt;ol&gt;

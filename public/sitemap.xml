@@ -2,110 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/ai/</loc>
+    <loc>https://young1lin.github.io/categories/</loc>
+    <lastmod>2025-12-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://young1lin.github.io/tags/llm/</loc>
+    <lastmod>2025-12-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://young1lin.github.io/categories/notes/</loc>
+    <lastmod>2025-12-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://young1lin.github.io/posts/</loc>
+    <lastmod>2025-12-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://young1lin.github.io/tags/</loc>
+    <lastmod>2025-12-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://young1lin.github.io/</loc>
+    <lastmod>2025-12-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://young1lin.github.io/posts/mcp/</loc>
+    <lastmod>2025-12-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://young1lin.github.io/tags/ai/</loc>
     <lastmod>2025-08-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://young1lin.github.io/posts/llm-write-code/</loc>
     <lastmod>2025-08-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/llm/</loc>
-    <lastmod>2025-08-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/notes/</loc>
-    <lastmod>2025-08-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-08-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-08-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-08-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/llm-write-code/</loc>
-    <lastmod>2025-08-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/llm-1/</loc>
+    <loc>https://young1lin.github.io/posts/llm-1/</loc>
     <lastmod>2025-08-11T00:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/llm-0/</loc>
+    <loc>https://young1lin.github.io/posts/llm-0/</loc>
     <lastmod>2025-03-08T00:04:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/interview/</loc>
-    <lastmod>2025-02-22T19:22:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/get-a-job/</loc>
-    <lastmod>2025-02-22T19:22:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/other/</loc>
+    <loc>https://young1lin.github.io/tags/other/</loc>
     <lastmod>2022-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/principles/</loc>
+    <loc>https://young1lin.github.io/posts/principles/</loc>
     <lastmod>2022-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/film/</loc>
+    <loc>https://young1lin.github.io/tags/film/</loc>
     <lastmod>2021-06-15T00:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/films/</loc>
+    <loc>https://young1lin.github.io/films/</loc>
     <lastmod>2021-06-15T00:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/films/film-mooc/</loc>
+    <loc>https://young1lin.github.io/films/film-mooc/</loc>
     <lastmod>2021-06-15T00:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/lol/</loc>
+    <loc>https://young1lin.github.io/tags/lol/</loc>
     <lastmod>2020-12-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tft/</loc>
+    <loc>https://young1lin.github.io/tags/tft/</loc>
     <lastmod>2020-12-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/tft/</loc>
+    <loc>https://young1lin.github.io/posts/tft/</loc>
     <lastmod>2020-12-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hbase/</loc>
+    <loc>https://young1lin.github.io/tags/hbase/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/rowkey-design/</loc>
+    <loc>https://young1lin.github.io/posts/rowkey-design/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cache/</loc>
+    <loc>https://young1lin.github.io/tags/cache/</loc>
     <lastmod>2020-07-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/interview/</loc>
+    <loc>https://young1lin.github.io/posts/interview/</loc>
     <lastmod>2020-07-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/interview/</loc>
+    <loc>https://young1lin.github.io/categories/interview/</loc>
     <lastmod>2020-07-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/juc/</loc>
+    <loc>https://young1lin.github.io/tags/interview/</loc>
     <lastmod>2020-07-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/jvm/</loc>
+    <loc>https://young1lin.github.io/tags/juc/</loc>
     <lastmod>2020-07-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/spring/</loc>
+    <loc>https://young1lin.github.io/tags/jvm/</loc>
     <lastmod>2020-07-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/structure/</loc>
+    <loc>https://young1lin.github.io/tags/spring/</loc>
     <lastmod>2020-07-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/docker/</loc>
+    <loc>https://young1lin.github.io/tags/structure/</loc>
+    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://young1lin.github.io/tags/docker/</loc>
     <lastmod>2020-07-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/mac-docker--mirrors/</loc>
+    <loc>https://young1lin.github.io/posts/mac-docker--mirrors/</loc>
     <lastmod>2020-07-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/tools/</loc>
+    <loc>https://young1lin.github.io/categories/tools/</loc>
     <lastmod>2020-07-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/effective-java/</loc>
+    <loc>https://young1lin.github.io/tags/effective-java/</loc>
     <lastmod>2020-06-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/effective-java-spring/</loc>
+    <loc>https://young1lin.github.io/posts/effective-java-spring/</loc>
     <lastmod>2020-06-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en-us/search/</loc>
+    <loc>https://young1lin.github.io/en-us/search/</loc>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://young1lin.github.io/search/</loc>
   </url>
 </urlset>

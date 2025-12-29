@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Films on YL&#39;s Log</title>
-    <link>http://localhost:1313/films/</link>
+    <link>https://young1lin.github.io/films/</link>
     <description>Recent content in Films on YL&#39;s Log</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 15 Jun 2021 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/films/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://young1lin.github.io/films/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>电影概论-Mooc</title>
-      <link>http://localhost:1313/films/film-mooc/</link>
+      <link>https://young1lin.github.io/films/film-mooc/</link>
       <pubDate>Tue, 15 Jun 2021 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/films/film-mooc/</guid>
+      <guid>https://young1lin.github.io/films/film-mooc/</guid>
       <description>&lt;p&gt;源自于&lt;a href=&#34;https://www.icourse163.org/learn/HENU-1003369001?tid=1461424469#/learn/content?type=detail&amp;amp;id=1237803381&amp;amp;sm=1&#34;&gt;电影概论&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;一电影总览&#34;&gt;一、电影总览&lt;/h1&gt;
 &lt;h2 id=&#34;八大艺术&#34;&gt;八大艺术&lt;/h2&gt;

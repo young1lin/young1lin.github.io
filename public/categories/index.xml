@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on YL&#39;s Log</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>https://young1lin.github.io/categories/</link>
     <description>Recent content in Categories on YL&#39;s Log</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://young1lin.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes</title>
-      <link>http://localhost:1313/categories/notes/</link>
-      <pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/notes/</guid>
+      <link>https://young1lin.github.io/categories/notes/</link>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://young1lin.github.io/categories/notes/</guid>
       <description></description>
     </item>
     <item>
       <title>Interview</title>
-      <link>http://localhost:1313/categories/interview/</link>
+      <link>https://young1lin.github.io/categories/interview/</link>
       <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/interview/</guid>
+      <guid>https://young1lin.github.io/categories/interview/</guid>
       <description></description>
     </item>
     <item>
       <title>Tools</title>
-      <link>http://localhost:1313/categories/tools/</link>
+      <link>https://young1lin.github.io/categories/tools/</link>
       <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/tools/</guid>
+      <guid>https://young1lin.github.io/categories/tools/</guid>
       <description></description>
     </item>
   </channel>

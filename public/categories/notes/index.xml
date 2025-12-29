@@ -2,17 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Notes on YL&#39;s Log</title>
-    <link>http://localhost:1313/categories/notes/</link>
+    <link>https://young1lin.github.io/categories/notes/</link>
     <description>Recent content in Notes on YL&#39;s Log</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://young1lin.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从零理解 MCP</title>
+      <link>https://young1lin.github.io/posts/mcp/</link>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://young1lin.github.io/posts/mcp/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;在使用 Cline、Claude Desktop、Cursor 这些应用的时候，只需要配置一个 &lt;code&gt;mcp.json&lt;/code&gt; 文件，就可以让大模型使用各种工具，这种是否很神奇？例如下面的配置，我就能让 Cursor 或者 Cline 操作 Chrome 浏览器进行各种操作，例如访问某个网站，点击某个按钮。这一切，都很简单，如果你知道大模型本质是什么，可以跳过下面的 LLM 的内容，直接看&lt;a href=&#34;https://young1lin.github.io/posts/mcp/#%e8%83%8c%e6%99%af%e4%bb%8b%e7%bb%8d&#34;&gt;背景介绍&lt;/a&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;mcpServers&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;chrome-devtools&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;npx&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;chrome-devtools-mcp@latest&amp;#34;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下面的操作是不是看起来很神秘，只需要输入文字，就能打开网页，点击登录，输入账号。&lt;/p&gt;
+&lt;p&gt;&lt;video src=&#34;https://github.com/user-attachments/assets/6720b83b-3eef-4ab8-8643-e6629ac5348e&#34; controls width=&#34;100%&#34;&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;其实这个做了这几件事情，在 D-Cline 的进程中，&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 npx 命令启动一个了一个子进程，这个进行接受 stdio 输入一段内容；&lt;/li&gt;
+&lt;li&gt;将 MCP TOOL 的提示词填充进 D-Cline 的 system prompt 中；&lt;/li&gt;
+&lt;li&gt;用户输入然后 D-Cline 调用大模型，返回结构化的 XML 文本；&lt;/li&gt;
+&lt;li&gt;Buffer 回复内容，解析 XML 调用相关的 Tool；&lt;/li&gt;
+&lt;li&gt;如果是 MCP，则会调用对应的 MCP 子进程的 Tool；&lt;/li&gt;
+&lt;li&gt;调用结果输出 stdio，D-Cline 收到输出的内容决定是否进行下一步操作；&lt;/li&gt;
+&lt;li&gt;如此循环，直到调用 FinalAnswer Tool 返回最终答案。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;当然，我这里为了避免无限循环调用工具，加了硬编码的固定最大对话轮数限制。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>最近用 LLM 产品写代码的一些感想</title>
-      <link>http://localhost:1313/posts/llm-write-code/</link>
+      <link>https://young1lin.github.io/posts/llm-write-code/</link>
       <pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/llm-write-code/</guid>
+      <guid>https://young1lin.github.io/posts/llm-write-code/</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;在 ChatGPT 刚出来的时候，也就是 GPT-3 就开始用了，那个时候免费用，也勉强能用来写代码。它能在提供的沙箱环境执行 Python 代码，任何微小的校验方法编写，例如验证身份证方法直接丢给它，让它写，提示词就写：根据你学到的知识，帮我编写下面的代码—— 就是要它和训练的数据输出一模一样的内容。到后面 ChatGPT4 出来，让它转 Python 后端项目到 Java 项目，DAG 构建族谱，计算同一个祠堂下两个人的关系，两千行的代码，也能正常转，只不过提示词要多写点，还得一点点手动拆分代码。那个时候是和 Claude 一起用，即使两个都是 Pro Plan 但是架不住代码比较多消耗 Token 很快。现在只有 Claude 写的代码能勉强用于生产，因为简单的代码 Cursor 就能自动补全，GPT-5 也就那样，甚至开源的 Qwen3-Coder-480B-A35B-Instruct 写代码能力都比 GPT-5 强。&lt;/p&gt;
 &lt;p&gt;在当前阶段，LLM 根本替代不了高级开发，尤其是一些大模型，例如 Qwen3 或者 GPT5 完全比不上 Claude4.1。但是把一些琐碎的，低层级的任务丢给大模型，它会做得很好，不要一句话，“帮我把这个文档弄一下”，这种没有明确的目的废话。&lt;/p&gt;
@@ -21,9 +50,9 @@
     </item>
     <item>
       <title>llm-0</title>
-      <link>http://localhost:1313/posts/llm-0/</link>
+      <link>https://young1lin.github.io/posts/llm-0/</link>
       <pubDate>Sat, 08 Mar 2025 00:04:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/llm-0/</guid>
+      <guid>https://young1lin.github.io/posts/llm-0/</guid>
       <description>&lt;h1 id=&#34;又是一波风口来了&#34;&gt;又是一波风口来了&lt;/h1&gt;
 &lt;p&gt;又开始了，不懂行的，只会高谈阔论放没有味道屁的，又开始了，“李一舟” 们又复活了。开始利用大家的焦虑，开始卖些没有营养的课，新一波的收割又来了。那些高谈阔论的砖家疯狂啃噬着这新鲜的养料。&lt;/p&gt;
 &lt;ol&gt;
@@ -45,54 +74,10 @@
 &lt;p&gt;并且，如果不懂 Git，不了解 GitLab、Github，毫无软件开发经验，用 Cursor 写出来的东西，不会做版本控制，也不知道提交到远端仓库，本地电脑坏了，或者其他意外情况，代码全丢了，那就全完了。就算了解 Git，也不了解软件开发推崇的敏捷开发，项目管理，版本变更兼容，需求和实现需要定期同步等等的坑，光有想法和结构化思维，是做不出来可迭代的，优秀的产品。没有人能一次性写出完美的代码，就算是 Linux Kernnel 的代码，也有大约 20% 的提交都是重构的代码，&lt;strong&gt;重构非常重要&lt;/strong&gt;。重构的前提，是编写良好的单元测试。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>找一份工作</title>
-      <link>http://localhost:1313/posts/get-a-job/</link>
-      <pubDate>Sat, 22 Feb 2025 19:22:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/get-a-job/</guid>
-      <description>&lt;h1 id=&#34;现状&#34;&gt;现状&lt;/h1&gt;
-&lt;p&gt;不得不接受的事实是，目前软件开发就业环境很烂，远不如前几年。如果你没有完全符合你想要去的公司的要求，例如 xx 年行业经验，做过 xx，面试都不会约你，这是很正常的。如果你是 Boss 直聘投递的，20 次问候，只有一次回复，是非常正常的情况，具体的我会在【投递简历】那里细说。&lt;strong&gt;国内外都一样&lt;/strong&gt;，你投国外英文简历更多都是不回的，或者回复模板发给你。&lt;/p&gt;
-&lt;p&gt;可能站在猎头的角度看，这次真的是金三银四，招聘岗位增多，是因为 DeepSeek 开源炸出了一堆的 AI 相关的岗位。但是，投递的人非常非常多，&lt;strong&gt;普通人投递的简历大都已读不回/未读未回&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;大家都在“&lt;strong&gt;降本增效&lt;/strong&gt;”，甚至有些企业只想通过降本来增效，而不是利用 AI 增效。例如 xx 电器，想通过 LLM Agent 做 Customer Service，完全替代人工，这种如果有得选的话，最好别去，主打降本的公司你会过得很艰难。话又说回来，这个环境又有哪些公司还在扩张呢。连 U.S. 都在精简 ZF 部门，成立 DOGE Department of Government Efficiency 来裁员。&lt;/p&gt;
-&lt;p&gt;想找到合适的工作，难上加难，给出合理的薪资，正常双休的公司，在杭州可能算是“违法”吧。很多公司的老板创业也不容易，投资人也焦虑，所以他们就想把这些焦虑转嫁给研发人员，试图以制造业的经验，增加研发人员的工时，期望得到更高的产出。可是，研发是脑力劳动，不休息，少休息，出错的概率会更大，反而 BUG 会更多，带来的潜在损失也会更大。&lt;strong&gt;996，大小休，直接拒绝&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;个人情况&#34;&gt;个人情况&lt;/h2&gt;
-&lt;p&gt;首先你要明确一些你很在意的，不那么在意的，不在意的，罗列出来。&lt;strong&gt;明确你的目标&lt;/strong&gt;，很重要。我给一些样例，例如你很在意薪资，对工作环境，工作时长不那么在意，对员工福利根本不在意，那你应该按重要程度这样列出来。&lt;/p&gt;
-&lt;h3 id=&#34;列出你关心的因素&#34;&gt;列出你关心的因素&lt;/h3&gt;
-&lt;p&gt;求职时，每个人关注的点都不一样。列了一些因素：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;薪资&lt;/strong&gt;：期望的收入水平（如月薪、奖金等）；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;工作时长&lt;/strong&gt;：是否接受加班、996、大小休等高强度安排；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;工作环境&lt;/strong&gt;：办公条件、团队氛围、是否需要吸二手烟等；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;员工福利&lt;/strong&gt;：社保、公积金、带薪休假、补助等；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;成长空间&lt;/strong&gt;：职业发展机会、学习新技能的可能性；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;公司稳定性&lt;/strong&gt;：初创公司还是成熟企业，是否面临裁员风险；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;行业和岗位&lt;/strong&gt;：是否是你感兴趣或擅长的领域；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;通勤时间&lt;/strong&gt;：上下班的距离和交通便利性；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;工作内容&lt;/strong&gt;：是否有挑战性，能否发挥你的能力；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;工作与生活的平衡&lt;/strong&gt;：是否有时间陪伴家人、休息或追求兴趣。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;按重要程度排序&#34;&gt;按重要程度排序&lt;/h3&gt;
-&lt;p&gt;将这些因素分为&lt;strong&gt;重要&lt;/strong&gt;、&lt;strong&gt;普通&lt;/strong&gt;和&lt;strong&gt;不重要&lt;/strong&gt;三个等级。例如：&lt;br&gt;
-如果你无法接受996、薪资是底线、工作环境其次，那么可以这样排序：&lt;br&gt;
-1. 工作时长（重要）
-2. 薪资（重要）
-3. 工作环境（普通）
-4. 成长空间（普通）
-5. 员工福利（不重要）
-排序后，你的目标会更清晰，知道哪些条件可以妥协，哪些必须坚持。&lt;/p&gt;
-&lt;h3 id=&#34;明确底线和期望&#34;&gt;明确底线和期望&lt;/h3&gt;
-&lt;p&gt;对于每个重要因素，设定一个&lt;strong&gt;底线&lt;/strong&gt;（最低接受标准）和一个&lt;strong&gt;期望&lt;/strong&gt;（理想状态）：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;薪资&lt;/strong&gt;：底线是月薪 xx K，期望是 yy K；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;工作时长&lt;/strong&gt;：底线是每周正常上下班，996 或大小休是接受不了的；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;工作环境&lt;/strong&gt;：底线是不吸二手烟，期望是有相对安静的，不会被随时打断的工作环境。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;如果这份工作已经触及到底线了，或者底线都到不了，别犹豫，一定不要去，去了一定后悔。&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>原则</title>
-      <link>http://localhost:1313/posts/principles/</link>
+      <link>https://young1lin.github.io/posts/principles/</link>
       <pubDate>Thu, 03 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/principles/</guid>
+      <guid>https://young1lin.github.io/posts/principles/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;对我而言，有意义的工作是指一项我能全身心投入的使命；有意义的人际关系是指我既深深地关心对方，对方也深深地关心我。&lt;/p&gt;
@@ -226,9 +211,9 @@
     </item>
     <item>
       <title>电影概论-Mooc</title>
-      <link>http://localhost:1313/films/film-mooc/</link>
+      <link>https://young1lin.github.io/films/film-mooc/</link>
       <pubDate>Tue, 15 Jun 2021 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/films/film-mooc/</guid>
+      <guid>https://young1lin.github.io/films/film-mooc/</guid>
       <description>&lt;p&gt;源自于&lt;a href=&#34;https://www.icourse163.org/learn/HENU-1003369001?tid=1461424469#/learn/content?type=detail&amp;amp;id=1237803381&amp;amp;sm=1&#34;&gt;电影概论&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;一电影总览&#34;&gt;一、电影总览&lt;/h1&gt;
 &lt;h2 id=&#34;八大艺术&#34;&gt;八大艺术&lt;/h2&gt;
@@ -301,9 +286,9 @@
     </item>
     <item>
       <title>云顶之弈如何从零到最强王者</title>
-      <link>http://localhost:1313/posts/tft/</link>
+      <link>https://young1lin.github.io/posts/tft/</link>
       <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tft/</guid>
+      <guid>https://young1lin.github.io/posts/tft/</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;我玩了比较久的云顶之弈，也**“间接开发”过阵容**，就是 S3 最火热的 6 暗星羊刀水银泽拉斯。最快两天从水晶之痕没有段位到超凡大师（后面排到人比较慢，不愿玩，而且段位提升只是把数的堆积）。我也是美服以及艾欧尼亚两个赛季超凡大师，最高到一区前 200 名左右吧，3 月 26 日左右（具体几号真忘了）早上8 点斗鱼、卷子的第一把，和南波儿的两个小弟的7点多到8点那一把的录播视频为证。&lt;/p&gt;
 &lt;p&gt;只要你时间够，上个王者不成问题。后面比较喜欢玩 PBE（测试服），提前感受版本，厄加特的大招开始是&lt;strong&gt;没有写明&lt;/strong&gt;无视复活甲的，也是我向官方报告的 “bug”，后面官方改了技能说明，之前的英文介绍里面没有 GA（Guardian Angel）。其他的大家都知道的 bug，我也不愿向官方反馈。&lt;/p&gt;
@@ -330,9 +315,9 @@
     </item>
     <item>
       <title>RowKey 设计规约</title>
-      <link>http://localhost:1313/posts/rowkey-design/</link>
+      <link>https://young1lin.github.io/posts/rowkey-design/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/rowkey-design/</guid>
+      <guid>https://young1lin.github.io/posts/rowkey-design/</guid>
       <description>&lt;h1 id=&#34;rowkey-尽量简短&#34;&gt;RowKey 尽量简短&lt;/h1&gt;
 &lt;p&gt;Data Block 是 HBase 中文件读取的最小单元。Data Block中主要存储用户的KeyValue数据，而KeyValue结构是HBase存储的核心。HBase中所有数据都是以KeyValue结构存储在HBase中。&lt;/p&gt;
 &lt;p&gt;KeyValue由4个部分构成，分别为Key Length、Value Length、Key和Value。其中，Key Length和Value Length是两个固定长度的数值，Value是用户写入的实际数据，Key是一个复合结构，由多个部分构成：Rowkey、Column Family、Column Qualif ier、TimeStamp以及KeyType。其中，KeyType有四种类型，分别是Put、Delete、DeleteColumn和DeleteFamily。&lt;/p&gt;
@@ -348,9 +333,9 @@
     </item>
     <item>
       <title>Effective Java(with Spring core)</title>
-      <link>http://localhost:1313/posts/effective-java-spring/</link>
+      <link>https://young1lin.github.io/posts/effective-java-spring/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/effective-java-spring/</guid>
+      <guid>https://young1lin.github.io/posts/effective-java-spring/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.oreilly.com/library/view/effective-java/9780134686097/&#34;&gt;电子原版目录以及概要&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;请购买实体书籍，支持作者、翻译以及出版社&lt;/p&gt;
 &lt;h1 id=&#34;creating-and-destroying-objects&#34;&gt;Creating and Destroying Objects&lt;/h1&gt;

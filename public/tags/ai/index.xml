@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>AI on YL&#39;s Log</title>
-    <link>http://localhost:1313/tags/ai/</link>
+    <link>https://young1lin.github.io/tags/ai/</link>
     <description>Recent content in AI on YL&#39;s Log</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://young1lin.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>最近用 LLM 产品写代码的一些感想</title>
-      <link>http://localhost:1313/posts/llm-write-code/</link>
+      <link>https://young1lin.github.io/posts/llm-write-code/</link>
       <pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/llm-write-code/</guid>
+      <guid>https://young1lin.github.io/posts/llm-write-code/</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;在 ChatGPT 刚出来的时候，也就是 GPT-3 就开始用了，那个时候免费用，也勉强能用来写代码。它能在提供的沙箱环境执行 Python 代码，任何微小的校验方法编写，例如验证身份证方法直接丢给它，让它写，提示词就写：根据你学到的知识，帮我编写下面的代码—— 就是要它和训练的数据输出一模一样的内容。到后面 ChatGPT4 出来，让它转 Python 后端项目到 Java 项目，DAG 构建族谱，计算同一个祠堂下两个人的关系，两千行的代码，也能正常转，只不过提示词要多写点，还得一点点手动拆分代码。那个时候是和 Claude 一起用，即使两个都是 Pro Plan 但是架不住代码比较多消耗 Token 很快。现在只有 Claude 写的代码能勉强用于生产，因为简单的代码 Cursor 就能自动补全，GPT-5 也就那样，甚至开源的 Qwen3-Coder-480B-A35B-Instruct 写代码能力都比 GPT-5 强。&lt;/p&gt;
 &lt;p&gt;在当前阶段，LLM 根本替代不了高级开发，尤其是一些大模型，例如 Qwen3 或者 GPT5 完全比不上 Claude4.1。但是把一些琐碎的，低层级的任务丢给大模型，它会做得很好，不要一句话，“帮我把这个文档弄一下”，这种没有明确的目的废话。&lt;/p&gt;
@@ -21,9 +21,9 @@
     </item>
     <item>
       <title>llm-0</title>
-      <link>http://localhost:1313/posts/llm-0/</link>
+      <link>https://young1lin.github.io/posts/llm-0/</link>
       <pubDate>Sat, 08 Mar 2025 00:04:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/llm-0/</guid>
+      <guid>https://young1lin.github.io/posts/llm-0/</guid>
       <description>&lt;h1 id=&#34;又是一波风口来了&#34;&gt;又是一波风口来了&lt;/h1&gt;
 &lt;p&gt;又开始了，不懂行的，只会高谈阔论放没有味道屁的，又开始了，“李一舟” 们又复活了。开始利用大家的焦虑，开始卖些没有营养的课，新一波的收割又来了。那些高谈阔论的砖家疯狂啃噬着这新鲜的养料。&lt;/p&gt;
 &lt;ol&gt;
