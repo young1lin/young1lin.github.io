@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Web3 on YL&#39;s Log</title>
+    <link>https://young1lin.github.io/tags/web3/</link>
+    <description>Recent content in Web3 on YL&#39;s Log</description>
+    <generator>Hugo -- 0.150.1</generator>
+    <language>zh-CN</language>
+    <atom:link href="https://young1lin.github.io/tags/web3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java 转 Go：AI 时代后端开发者的最佳选择</title>
+      <link>https://young1lin.github.io/posts/java-to-go-ai-native/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://young1lin.github.io/posts/java-to-go-ai-native/</guid>
+      <description>&lt;h1 id=&#34;前言为什么-go-是-ai-原生语言&#34;&gt;前言：为什么 Go 是 AI 原生语言&lt;/h1&gt;
+&lt;p&gt;在 AI 辅助编程时代，选择后端语言不仅要考虑性能和生态，更要考虑&lt;strong&gt;语言本身对 LLM 的友好程度&lt;/strong&gt;。Go 在这方面有着天然优势——它的设计哲学与 AI 编程的需求完美契合。&lt;/p&gt;
+&lt;p&gt;从 Java 转向 Go 需要的是&lt;strong&gt;忘掉比学会更多的东西&lt;/strong&gt;——最难的不是 Go 的语法，而是放弃那些 Go 刻意拒绝的、已经根深蒂固的 OOP 模式。但在 AI 辅助下，这个转型过程可以&lt;strong&gt;显著加速&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;为什么-go-是-ai-原生语言&#34;&gt;为什么 Go 是 AI 原生语言&lt;/h2&gt;
+&lt;h3 id=&#34;1-极简语法llm-理解准确率更高&#34;&gt;1. 极简语法，LLM 理解准确率更高&lt;/h3&gt;
+&lt;p&gt;Go 只有 &lt;strong&gt;25 个关键字&lt;/strong&gt;，而 Java 有 50+。这不仅仅是数量差异——更少的语法意味着更少的歧义，LLM 生成错误代码的概率显著降低。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Go：一眼看懂，LLM 一次生成正确&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ProcessOrder&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;ctx&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;context&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Context&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;orderID&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;error&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;order&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getOrder&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;ctx&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;orderID&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Errorf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;获取订单失败: %w&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;processPayment&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;ctx&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;order&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Java：需要理解异常层次、泛型、注解...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@Transactional&lt;/span&gt;(rollbackFor &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Exception.&lt;span style=&#34;color:#a6e22e&#34;&gt;class&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; OrderDTO &lt;span style=&#34;color:#a6e22e&#34;&gt;processOrder&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;@NonNull&lt;/span&gt; String orderId)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;throws&lt;/span&gt; OrderNotFoundException, PaymentException {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Order order &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; orderRepository.&lt;span style=&#34;color:#a6e22e&#34;&gt;findById&lt;/span&gt;(orderId)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            .&lt;span style=&#34;color:#a6e22e&#34;&gt;orElseThrow&lt;/span&gt;(() &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; OrderNotFoundException(orderId));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; paymentService.&lt;span style=&#34;color:#a6e22e&#34;&gt;process&lt;/span&gt;(order);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; (DataAccessException e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;throw&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; PaymentException(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;处理失败&amp;#34;&lt;/span&gt;, e);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;实测数据&lt;/strong&gt;（基于 Claude 4.5 和 GPT-4）：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

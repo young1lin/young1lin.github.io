@@ -439,7 +439,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </h2>
   </header>
   <div class="entry-content">
-    <p>前言 在使用 Cline、Claude Desktop、Cursor 这些应用的时候，只需要配置一个 mcp.json 文件，就可以让大模型使用各种工具，这种是否很神奇？例如下面的配置，我就能让 Cursor 或者 Cline 操作 Chrome 浏览器进行各种操作，例如访问某个网站，点击某个按钮。这一切，都很简单，如果你知道大模型本质是什么，可以跳过下面的 LLM 的内容，直接看背景介绍。
+    <p>前言 注：文档太长了，太多了，如果想快速了解 MCP 是什么，可以利用 Claude Code，接入智谱或者 MiniMax2 的模型，让它来把代码 Clone 下来，然后对单个文件进行分析，每一步是怎么实现的，是怎么做的。通过合适的提问，来实现你想要了解的内容。
+在使用 Cline、Claude Desktop、Cursor 这些应用的时候，只需要配置一个 mcp.json 文件，就可以让大模型使用各种工具，这种是否很神奇？例如下面的配置，我就能让 Cursor 或者 Cline 操作 Chrome 浏览器进行各种操作，例如访问某个网站，点击某个按钮。这一切，都很简单，如果你知道大模型本质是什么，可以跳过下面的 LLM 的内容，直接看背景介绍。
 { &#34;mcpServers&#34;: { &#34;chrome-devtools&#34;: { &#34;command&#34;: &#34;npx&#34;, &#34;args&#34;: [&#34;chrome-devtools-mcp@latest&#34;] } } } 下面的操作是不是看起来很神秘，只需要输入文字，就能打开网页，点击登录，输入账号。
 其实这个做了这几件事情，在 D-Cline 的进程中，
 使用 npx 命令启动一个了一个子进程，这个进行接受 stdio 输入一段内容； 将 MCP TOOL 的提示词填充进 D-Cline 的 system prompt 中； 用户输入然后 D-Cline 调用大模型，返回结构化的 XML 文本； Buffer 回复内容，解析 XML 调用相关的 Tool； 如果是 MCP，则会调用对应的 MCP 子进程的 Tool； 调用结果输出 stdio，D-Cline 收到输出的内容决定是否进行下一步操作； 如此循环，直到调用 FinalAnswer Tool 返回最终答案。 当然，我这里为了避免无限循环调用工具，加了硬编码的固定最大对话轮数限制。
@@ -499,10 +500,26 @@ DeepSeek 这 xx 条指令帮你更好掌握 xx 创始人梁文峰 xx 量化投�
   <footer class="entry-footer"><span title='2025-03-08 00:04:00 +0000 UTC'>March 8, 2025</span></footer>
   <a class="entry-link" aria-label="post link to LLM-0" href="https://young1lin.github.io/posts/llm-0/"></a>
 </article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Java 转 Go：AI 时代后端开发者的最佳选择
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前言：为什么 Go 是 AI 原生语言 在 AI 辅助编程时代，选择后端语言不仅要考虑性能和生态，更要考虑语言本身对 LLM 的友好程度。Go 在这方面有着天然优势——它的设计哲学与 AI 编程的需求完美契合。
+从 Java 转向 Go 需要的是忘掉比学会更多的东西——最难的不是 Go 的语法，而是放弃那些 Go 刻意拒绝的、已经根深蒂固的 OOP 模式。但在 AI 辅助下，这个转型过程可以显著加速。
+为什么 Go 是 AI 原生语言 1. 极简语法，LLM 理解准确率更高 Go 只有 25 个关键字，而 Java 有 50&#43;。这不仅仅是数量差异——更少的语法意味着更少的歧义，LLM 生成错误代码的概率显著降低。
+// Go：一眼看懂，LLM 一次生成正确 func ProcessOrder(ctx context.Context, orderID string) error { order, err := getOrder(ctx, orderID) if err != nil { return fmt.Errorf(&#34;获取订单失败: %w&#34;, err) } return processPayment(ctx, order) } // Java：需要理解异常层次、泛型、注解... @Transactional(rollbackFor = Exception.class) public OrderDTO processOrder(@NonNull String orderId) throws OrderNotFoundException, PaymentException { try { Order order = orderRepository.findById(orderId) .orElseThrow(() -&gt; new OrderNotFoundException(orderId)); return paymentService.process(order); } catch (DataAccessException e) { throw new PaymentException(&#34;处理失败&#34;, e); } } 实测数据（基于 Claude 4.5 和 GPT-4）：
+...</p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to Java 转 Go：AI 时代后端开发者的最佳选择" href="https://young1lin.github.io/posts/java-to-go-ai-native/"></a>
+</article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://young1lin.github.io/">YL&#39;s Log</a></span> · 
+        <span>&copy; 2026 <a href="https://young1lin.github.io/">YL&#39;s Log</a></span> · 
 
     <span>
         Powered by
